@@ -1,0 +1,52 @@
+{% from 'macro.twig' import widget_header, thumbnail, no_items_available %}
+
+
+{% extends 'section-widget.twig' %}
+
+{% set widget_class='landing testimonials-section' %}
+
+{% block header %}
+  {{ widget_header(section.title, section.subtitle, 'review') }}
+{% endblock %}
+
+{% block content %}
+  {#@var section \cf47\plugin\realtyspace\module\testimonial\section\TestimonialView #}
+  <!-- BEGIN SECTION REVIEW-->
+  <div class="review review--wide">
+    <!-- end of block .review__header-->
+    {% if section.items %}
+      <div class="review__list" id="{{ js_module('testimonials', {
+        'animate': true
+      }) }}">
+        <div class="review__slider js-slick-slider">
+          {% for testimonial in section.items %}
+            <div class="review__item">
+              <div class="review__photo">
+                {{ thumbnail(testimonial.featured_image.src, 112, null, 'review__photo-img') }}
+              </div>
+              <div class="review__details">
+                <span class="review__name">{{ testimonial.title|raw }}</span>
+                <span class="review__post">{{ testimonial.job_title }}</span>
+              </div>
+              <div class="review__info">
+                <div class="review__info-quote review__info-quote--open">&ldquo;</div>
+                <p>
+                  {{ testimonial.preview(50, true, false)|raw }}
+                </p>
+                <div class="review__info-quote review__info-quote--close">&rdquo;</div>
+              </div>
+              <div class="clearfix"></div>
+              <!-- end of block .review__item-->
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% else %}
+      <div class="review__list">
+        {{ no_items_available() }}
+      </div>
+    {% endif %}
+    <!-- end of block .review__list-->
+  </div>
+  <!-- END SECTION REVIEW-->
+{% endblock %}

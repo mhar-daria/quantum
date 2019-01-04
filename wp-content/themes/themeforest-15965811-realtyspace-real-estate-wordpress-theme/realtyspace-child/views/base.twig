@@ -1,0 +1,68 @@
+<!doctype html>
+<html class="no-js" {{ site.language_attributes }}>
+{% include 'partials/head.twig' %}
+{% import 'macro.twig' as macro %}
+{# @var option \cf47\theme\realtyspace\module\core\Options #}
+{% set sidebar_position = page.sidebar is defined ? page.sidebar : option.layout_sidebar_position %}
+
+<body class="
+{{ body_class }}
+{{ option.layout_wide_boxed == 'boxed' ? 'boxed' : 'non-boxed' }}
+{{ option.layout_bg_pattern != '!none' ? option.layout_bg_pattern ~ ' custom-background' }}
+{{ sidebar_position == 'left' ? 'sidebar-left' }}
+{{ sidebar_position == 'none' ? 'sidebar-hide' }}
+menu-default slider-default hover-default
+" data-controller="{% block js_controller %}{% endblock %}">
+
+<div class="box js-box">
+  {% include 'partials/header.twig' %}
+  <div class="site-wrap js-site-wrap">
+    {% if breadcrumbs.enabled(page) %}
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ul class="breadcrumbs__list">
+            {{ breadcrumbs.render|raw }}
+          </ul>
+        </div>
+      </nav>
+    {% endif %}
+    {% block hero_unit %}
+      {# @var hero_unit \cf47\themecore\herounit\HeroPageTrait #}
+      {% if hero_unit is defined and hero_unit.enabled %}
+        {{ include('partials/hero-unit.twig', {'hero_unit': hero_unit }, with_context = false) }}
+      {% endif %}
+    {% endblock %}
+    {% block wide_section %}{% endblock %}
+    {% block container %}
+      <div class="center">
+        <div class="container">
+          {% block row %}
+            <div class="row">
+              {% block content %}{% endblock %}
+              {% block sidebar %}
+                <div class="sidebar" data-show="{{ __('Show', 'realtyspace') }}" data-hide="{{ __('Hide', 'realtyspace') }}" >
+                  {% set sidebar = dynamic_sidebar('cf47rs-global-sidebar') %}
+                  {% if sidebar %}
+                    {{ sidebar|raw }}
+                  {% else %}
+                    {% include 'partials/default-sidebars.twig' %}
+                  {% endif %}
+                </div>
+                <div class="clearfix"></div>
+              {% endblock %}
+              {% block subcontent %}{% endblock %}
+            </div>
+          {% endblock %}
+        </div>
+      </div>
+    {% endblock %}
+    {% include 'partials/footer.twig' %}
+  </div>
+</div>
+{% if layout.scrollup_enabled %}
+  <button type="button" class="scrollup js-scrollup"></button>
+{% endif %}
+{{ function('wp_footer') }}
+{% block body_end %}{% endblock %}
+</body>
+</html>

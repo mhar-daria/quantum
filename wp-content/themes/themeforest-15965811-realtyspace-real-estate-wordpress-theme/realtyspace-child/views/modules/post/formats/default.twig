@@ -1,0 +1,6 @@
+{% from 'macro.twig' import thumbnail %}
+{% if post.featured_image %}
+  <div class="article__preview">
+    {{ thumbnail(post.featured_image, 1170, null, null, false, post.featured_image.alt) }}
+  </div>
+{% endif %}

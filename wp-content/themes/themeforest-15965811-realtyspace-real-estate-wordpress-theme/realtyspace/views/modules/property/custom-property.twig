@@ -1,0 +1,246 @@
+{# @var page \cf47\theme\realtyspace\module\property\viewmodel\CustomPropertyModel #}
+
+{% extends 'custom-base-archive.twig' %}
+{% from 'modules/property/macro.twig' import price %}
+{% from 'macro.twig' import widget_header %}
+
+{% set property = page %}
+{% block content %}
+
+  <div class="site site--main">
+    <!-- BEGIN PROPERTY DETAILS-->
+    <div class="property">
+
+      <div class="property__slider">
+        <div class="property__ribon">{{ property.type }}</div>
+        <div class="slider slider--small js-dapi-slickslider  js-dapi-gallery slider--fixed"  data-adaptiveHeight="true">
+          {% if property.images %}
+            {% for image in property.images %}
+                <div data-size="0x0" data-caption="{{ property.title }}" data-item data-src="{{ image }}"></div>
+            {% endfor %}
+          {% endif %}
+          <div class="slider__block" data-slick data-wrapper>
+            {% for image in property.images %}
+              <div class="slider__item">
+                {% set href=image %}
+                {% set img=macro.thumbnail_src(image, 1170, 600) %}
+
+                <a href="{{ href }}" data-index='{{ loop.index0 }}' data-trigger class="slider__img">
+                  <img data-lazy="{{ img }}" src="{{ fn('get_template_directory_uri') }}/public/img/lazy-image.jpg" alt="">
+                    <span class="slider__description">{{ property.title }}</span>
+                </a>
+              </div>
+            {% else %}
+              <div class="slider__item">
+                <div class="slider__img">{{ macro.thumbnail(null, 870, 480) }} </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="slider slider--thumbs js-nav-slickslider" data-variablewidth="true">
+          <div class="slider__wrap">
+            <div class="slider__block" data-slick>
+              {% for image in property.images %}
+                <div data-slide-rel='{{ loop.index0 }}' class="slider__item slider__item--{{ loop.index0 }}">
+                  <div class="slider__img">
+                    <img data-lazy="{{ macro.thumbnail_src(image, 270, 0) }}" src="{{ image }}" alt="{{ property.title }}">
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+            <button type="button" class="slider__control slider__control--prev" data-prev>
+              <svg class="slider__control-icon">
+                <use xlink:href="#icon-arrow-left"></use>
+              </svg>
+            </button>
+            <button type="button" class="slider__control slider__control--next" data-next>
+              <svg class="slider__control-icon">
+                <use xlink:href="#icon-arrow-right"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+
+      <h1 class="property__title">
+        {{ property.title }}
+        <span class="property__city">{{ property.community }}</span>
+      </h1>
+      <div class="property__header">
+        <div class="property__price">
+          <strong class="properties__offer-period">
+              {{ property.price }}
+          </strong>
+        </div>
+
+        <div class="social social--properties">
+            <span class="social__title">Share this:</span>
+              <a href="https://www.facebook.com/sharer/sharer.php?display=popup&amp;redirect_uri=http%3A%2F%2Fwww.facebook.com&amp;u={{ property.set_permalinks }}" target="_blank" class="social__item"> <i class="fa fa-facebook "></i> </a>
+              <a href="https://twitter.com/intent/tweet?text=Property+%26+sidebar+agent&amp;url={{ property.set_permalinks }}" target="_blank" class="social__item"> <i class="fa fa-twitter "></i> </a>
+              <a href="https://plus.google.com/share?url={{ property.set_permalinks }}" target="_blank" class="social__item"> <i class="fa fa-google-plus "></i> </a>
+          </div>
+
+        <div class="property__actions">
+          <button type="button" class="btn--default property__actions--print" onclick="window.print()"><i class="fa fa-print"></i>{{ __('Print', 'realtyspace') }}</button>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+      
+      <div class="property__info">
+        {% if property.unit_reference_no %}
+          <div class="property__info-item">{{ __('Unit Reference No', 'realtyspace') }}:<strong> {{ property.unit_reference_no }}</strong>
+          </div>
+        {% endif %}
+        {% if property.type %}
+          <div class="property__info-item">{{ __('Property type', 'realtyspace') }}:<strong> {{ property.type }}</strong>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="widget js-widget widget--details">
+        <div class="widget__content">
+          <div class="property__plan">
+            {% if property.plot_area %}
+              <dl class="property__plan-item">
+                <dt class="property__plan-icon">
+                  <svg>
+                    <use xlink:href="#icon-area"></use>
+                  </svg>
+                </dt>
+                <dd class="property__plan-title">{{ __('Area', 'realtyspace') }} ({{ property.plot_area }})</dd>
+                <dd class="property__plan-value">{{ property.plot_area|area(false) }}</dd>
+              </dl>
+            {% endif %}
+            {% if property.no_of_rooms %}
+              <dl class="property__plan-item">
+                <dt class="property__plan-icon">
+                  <svg>
+                    <use xlink:href="#icon-window"></use>
+                  </svg>
+                </dt>
+                <dd class="property__plan-title">{{ __('Rooms', 'realtyspace') }}</dd>
+                <dd class="property__plan-value">{{ property.no_of_rooms }}</dd>
+              </dl>
+            {% endif %}
+            {% if property.bathrooms %}
+              <dl class="property__plan-item">
+                <dt class="property__plan-icon">
+                  <svg>
+                    <use xlink:href="#icon-bathrooms"></use>
+                  </svg>
+                </dt>
+                <dd class="property__plan-title">{{ __('Bathrooms', 'realtyspace') }}</dd>
+                <dd class="property__plan-value">{{ property.no_of_bathrooms }}</dd>
+              </dl>
+            {% endif %}
+            {% if property.bedrooms %}
+              <dl class="property__plan-item">
+                <dt class="property__plan-icon">
+                  <svg>
+                    <use xlink:href="#icon-bedrooms"></use>
+                  </svg>
+                </dt>
+                <dd class="property__plan-title">{{ __('Bedrooms', 'realtyspace') }}</dd>
+                <dd class="property__plan-value">{{ property.bedrooms }}</dd>
+              </dl>
+            {% endif %}
+            {% if property.parking %}
+              <dl class="property__plan-item">
+                <dt class="property__plan-icon">
+                  <svg>
+                    <use xlink:href="#icon-garage"></use>
+                  </svg>
+                </dt>
+                <dd class="property__plan-title">{{ __('Garages', 'realtyspace') }}</dd>
+                <dd class="property__plan-value">{{ property.parking }}</dd>
+              </dl>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      {% if property.facilities %}
+        <div class="widget js-widget widget--details">
+          <div class="widget__header">
+            <h3 class="widget__title">{{ __('Amenities', 'realtyspace') }}</h3>
+          </div>
+          <div class="widget__content">
+            <div class="property__params">
+              <ul class="property__params-list property__params-list--options">
+                {% for facility in property.facilities %}
+                  <li>{{ facility|raw }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if property.web_remarks %}
+        <div class="widget js-widget widget--details">
+          <div class="widget__header">
+            <h3 class="widget__title">{{ __('Description', 'realtyspace') }}</h3>
+          </div>
+          <div class="widget__content">
+            <div class="property__description js-unhide-block">
+              <div class="property__description-wrap1">{{ property.web_remarks|raw }}</div>
+              <button type="button" class="property__btn-more js-unhide">{{ __('More information ...', 'realtyspace') }}</button>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if property.address %}
+        {% set module_id = js_module('panoramaMapSwitcher',{
+        'showPanorama': true,
+        'showMap': true,
+        'mapType': 'roadmap',
+        'mapZoom': '11',
+        'location': {'address': property.address, 'lat': property.latitude, 'lng': property.longitude}
+        }) %}
+
+        <div class="widget js-widget widget--details">
+          <div class="widget__content">
+            <div class="map map--properties" id="{{ module_id }}">
+              <div class="map__buttons">
+                  <button type="button" class="map__change-map js-map-btn active">{{ __('Map', 'realtyspace') }}</button>
+                  <button type="button" class="map__change-panorama js-panorama-btn">{{ __('Street view', 'realtyspace') }}</button>
+              </div>
+              <div class="map__wrap">
+                  <div data-type="map" class="map__view js-map-canvas"></div>
+                  <div data-type="panorama" class="map__view map__view--panorama js-map-canvas"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+  <!-- end of block .property-->
+  <!-- END PROPERTY DETAILS-->
+{% endblock %}
+
+{% set related_property = property.related_properties %}
+
+{% block subcontent %}
+  {% if property.related_properties %}
+    <div class="widget widget--landing widget--collapsing js-widget ">
+      <div class="widget__header">
+        <h2 class="widget__title">Similar properties</h2>
+      </div>
+      <div class="widget__content">
+        <div class="listing listing--grid properties properties--grid">
+          {% for related_property in property.related_properties %}
+            {% set property_boxes = property.generate_boxes(related_property) %}
+            {{ property_boxes|raw }}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

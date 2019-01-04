@@ -1,0 +1,11 @@
+{% import 'modules/faq/macro.twig' as faq_macro %}
+
+{# @var category \TimberTerm #}
+{# @var entities array #}
+<div role="tablist" aria-multiselectable="true" class="faq">
+  {% if is_grouped %}
+    {{ faq_macro.mixed_list(entities) }}
+  {% else %}
+    {{ faq_macro.list(entities) }}
+  {% endif %}
+</div>

@@ -1,0 +1,32 @@
+{# @var section \cf47\plugin\realtyspace\module\other\section\counter\CounterView #}
+{% from 'macro.twig' import no_items_available, icon %}
+{% set module_id = js_module('achievement', {
+'animate': true,
+}) %}
+
+{% extends 'section-widget.twig' %}
+{% set widget_class='landing achievement' %}
+
+{% block content %}
+  <!-- BEGIN SECTION ACHIEVEMENT-->
+  <div class="achievement">
+    {% if section.is_vc %}
+      {{ section.inner_content|raw }}
+    {% else %}
+      {% for item in section.items %}
+        <div class="achievement__item">
+          {{ icon(item.icon|e('html_attr'), 'achievement__icon') }}
+          <div data-count-end="{{ item.number }}" data-count-duration="1"
+               class="achievement__counter achievement__counter--lg js-count-up">
+            {{ item.number }}
+          </div>
+          <div class="achievement__counter">{{ item.number }}</div>
+          <div class="achievement__name">{{ item.label|raw }}</div>
+        </div>
+      {% else %}
+        {{ no_items_available() }}
+      {% endfor %}
+    {% endif %}
+  </div>
+  <!-- END SECTION ACHIEVEMENT-->
+{% endblock %}

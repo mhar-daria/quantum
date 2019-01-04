@@ -1,0 +1,37 @@
+{% import 'modules/agent/macro.twig' as am %}
+
+{% from 'macro.twig' import widget_header %}
+{% extends 'widget.twig' %}
+
+{% block header %}
+  {{ widget_header(title, subtext, widget.modifier) }}
+{% endblock %}
+
+{% block content %}
+  <div class="worker--advanced worker--{{ widget.modifier }} js-unhide-block">
+    <div class="worker__item vcard">
+      {{ am.name_and_title(agent) }}
+      {{ am.photo(agent, 218, 209) }}
+      <div class="worker__intro">
+        {{ am.contact_and_count(agent) }}
+        <div class="worker__intro-row">
+          <div class="worker__intro-col">
+            {{ am.contacts(agent) }}
+          </div>
+          <div class="worker__intro-col">
+            {{ am.social(agent) }}
+          </div>
+        </div>
+      </div>
+      {{ am.description(agent, 20) }}
+      <div class="clearfix"></div>
+    </div>
+    <div class="worker__form">
+      {% if cf7_form %}
+        <div class="form form--{{ widget.modifier }} form--sidebar-workers">
+          {{ cf7_form|raw }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endblock content %}

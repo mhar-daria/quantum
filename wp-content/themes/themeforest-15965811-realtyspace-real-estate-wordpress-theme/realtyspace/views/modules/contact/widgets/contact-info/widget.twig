@@ -1,0 +1,35 @@
+{% from 'macro.twig' import widget_header %}
+
+{% extends 'widget.twig' %}
+
+{% block header %}
+  {{ widget_header(title, subtext, widget.modifier) }}
+{% endblock %}
+
+{% block content %}
+  <address class="address address--{{ widget.modifier }}">
+    <div class="address__main">
+      {% if address %}
+        <span>{{ address }}</span>
+      {% endif %}
+      {% if hours %}
+        <span>{{ hours }}</span>
+      {% endif %}
+      {% if phone %}
+        <a href="tel:{{ phone|replace({' ': ''}) }}">{{ phone }}</a>
+      {% endif %}
+      {% if cellphone %}
+        <a href="tel:{{ cellphone|replace({' ': ''}) }}">{{ cellphone }}</a>
+      {% endif %}
+      {% if fax %}
+        <span>{{ fax }}</span>
+      {% endif %}
+      {% if email %}
+        <a href="mailto:{{ email|antispambot }}">{{ email|antispambot }}</a>
+      {% endif %}
+    </div>
+    {% if html %}
+      {{ html|raw }}
+    {% endif %}
+  </address>
+{% endblock %}

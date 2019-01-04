@@ -1,0 +1,52 @@
+{% from 'macro.twig' import thumbnail_src %}
+{% from 'modules/property/macro.twig' import short_params, price %}
+{# @var section \cf47\plugin\realtyspace\module\property\section\slider\SliderView #}
+
+{% extends 'section-widget.twig' %}
+
+{% block content %}
+  <!-- BEGIN SLIDER-->
+  <div id="{{ js_module('propslider', {'parallax': section.parallax, speed: section.speed, autoplay: section.autoplay, autoplaySpeed: section.autoplaySpeed }) }}" class="slider slider--wide slider--slideInUp">
+    <div class="slider__block js-slick-slider">
+      {% for property in section.properties %}
+        <div class="slider__item">
+          <div class="slider__preview">
+            <div class="slider__img slider__img--lg">
+              <img data-lazy="{{ thumbnail_src(property.thumbnail.src, 2336,1100) }}" src="{{ fn('get_template_directory_uri') }}/public/img/lazy-image.jpg" alt="">
+            </div>
+            <div class="slider__img slider__img--sm">
+              <img data-lazy="{{ thumbnail_src(property.thumbnail.src, 830,540) }}" src="{{ fn('get_template_directory_uri') }}/public/img/lazy-image.jpg" alt="">
+            </div>
+          </div>
+          <div class="slider__caption">
+            <div class="slider__price">
+              {{ price(property, true, false) }}
+            </div>
+            <!-- end of block .slider__price-->
+            <a href="{{ property.link }}" class="slider__address">
+              {{ property.title|raw }}
+              <span class="slider__address-city">
+                                {% for location_part in property.get_location() %}
+                                  {{ location_part.name }}{{ not loop.last ? ',' }}
+                                {% endfor %}
+                            </span>
+            </a>
+            <!-- end of block .slider__address-->
+            <div class="slider__params">
+              {{ short_params(property, null, true) }}
+            </div>
+            <!-- end of block .slider__params-->
+            <a href="{{ property.link }}" class="slider__more">{{ __('Details', 'realtyspace') }}</a>
+          </div>
+          <!-- end of block .slider__caption-->
+        </div>
+      {% endfor %}
+    </div>
+    <!-- end of block .slider__block-->
+    <div class="slider__controls">
+      <button class="slider__control slider__control--prev js-banner-prev"></button>
+      <button class="slider__control slider__control--next js-banner-next"></button>
+    </div>
+  </div>
+  <!-- END SLIDER-->
+{% endblock %}

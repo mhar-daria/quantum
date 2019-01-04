@@ -1,0 +1,23 @@
+{% extends 'section-widget.twig' %}
+{% from 'macro.twig' import widget_header %}
+
+{% set widget_class='main' %}
+
+{% block header %}
+  {{ widget_header(__('Agent Listings', 'realtyspace')) }}
+{% endblock %}
+
+{% block content %}
+  {# from 'macro.twig' import pagination #}
+  {% from 'macro.twig' import no_items_available %}
+  {# from 'modules/property/macro.twig' import items as property_items #}
+  <div class="listing listing--{{ page.agent_properties_display_mode }} listing--lg-{{ page.agent_properties_grid_size|e('html_attr') }} properties properties--{{ page.agent_properties_display_mode }} js-ajax-container">
+    {% for property in page.agent_properties.properties %}
+      {{ page.customProperties.generate_boxes(property, true)|raw }}
+    {% else %}
+      {{ no_items_available(__('No properties available', 'realtyspace')) }}
+    {% endfor %}
+  </div>
+
+  {# pagination(data.pagination) #}
+{% endblock %}

@@ -1,0 +1,28 @@
+{% from 'macro.twig' import widget_header %}
+{# @var section \cf47\theme\realtyspace\module\home\view\template\Search #}
+{% set form = section.search_form %}
+
+{% extends 'section-widget.twig' %}
+
+{% set widget_class='landing' %}
+
+{% block header %}
+  {{ widget_header(section.title, section.subtitle) }}
+{% endblock %}
+
+{% block content %}
+  <!-- BEGIN SEARCH-->
+  <!-- end of block .search__header-->
+  <form action="{{ section.form_link() }}" class="form form--search js-search-form form--banner-sidebar form--light form--slider" method="get">
+  {# form_start(form, {'attr': {'class': 'form form--search js-search-form form--wide form--wide-default'}}) #}
+
+  {{ form_widget(form, {'attr': {'class': 'row'}}) }}
+
+  <div class="row form__buttons form__buttons--double">
+    <button type="reset" class="form__reset js-form-reset">{{ __('Reset', 'realtyspace') }}</button>
+    <button type="submit" class="form__submit">{{ __('Search', 'realtyspace') }}</button>
+  </div>
+  {{ form_end(form) }}
+  <!-- end of block .search__form#search-form-->
+  <!-- END SEARCH-->
+{% endblock %}

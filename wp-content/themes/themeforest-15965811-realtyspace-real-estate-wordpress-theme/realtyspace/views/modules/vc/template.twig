@@ -1,0 +1,9 @@
+{# Render before the rest so that we can modify the header #}
+{% set content = content() %}
+{% extends 'base.twig' %}
+{% set body_class = body_class ~ ' ' %}
+{% block container %}
+  <div class="wrapper">
+    {{ content|raw }}
+  </div>
+{% endblock %}

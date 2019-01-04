@@ -1,0 +1,49 @@
+<!-- BEGIN AUTH LOGIN-->
+
+<h5 class="auth__title">{{ __('Login in your account', 'realtyspace') }}</h5>
+{% if type == 'inline' %}
+  <p class="alert alert-info">{{ __('This page is available for authentificated users only!', 'realtyspace') }}</p>
+{% endif %}
+<form action="{{ fn('site_url', 'wp-login.php', 'login-post') }}" class="form form--auth js-login-form">
+  <div class="row">
+    <div class="form-group">
+      <label for="login-username-{{ type }}" class="control-label">{{ __('Username', 'realtyspace') }}</label>
+      <input type="text" name="log" id="login-username-{{ type }}" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="login-password-{{ type }}" class="control-label">{{ __('Password', 'realtyspace') }}</label>
+      <input type="password" name="pwd" id="login-password-{{ type }}" required class="form-control">
+    </div>
+  </div>
+  {% do action('wordpress_social_login') %}
+  <div class="row">
+    <div class="form__options form__options--forgot">
+      <a href="{{ fn('wp_lostpassword_url') }}" class="auth__forgot">{{ __('Forgot password?', 'realtyspace') }}</a>
+    </div>
+    <button type="submit" class="form__submit">{{ __('Sign in', 'realtyspace') }}</button>
+  </div>
+  <span class="form__remember">
+    <input id="remember-in-{{ type }}" name="rememberme" type="checkbox" class="in-checkbox" value="forever">
+    <label for="remember-in-{{ type }}" class="in-label">{{ __('Remember me', 'realtyspace') }}</label>
+  </span>
+  {% if can_register %}
+    <div class="row">
+      <div class="form__options">
+        {{ __('Not a user yet?', 'realtyspace') }}
+        {% set label =  __('Get an account', 'realtyspace') %}
+        {% if type == 'dropdown' %}
+          <button type="button" class="js-user-register">{{ label }}</button>
+        {% else %}
+          <a href="{{ wpurl.url('/register/') }}">{{ label }}</a>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+  {{ nonce_field('ajax-login') }}
+  {% if wprequest.query.has('redirect_to') %}
+    <input type="hidden" name="redirect_to" value="{{ wprequest.query.get('redirect_to') }}">
+  {% endif %}
+</form>
+
+<!-- end of block .auth__form-->
+<!-- END AUTH LOGIN-->

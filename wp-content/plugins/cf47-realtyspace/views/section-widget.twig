@@ -1,0 +1,17 @@
+{# @var section \cf47\themecore\section\AbstractSectionView  #}
+<div class="widget
+  {% if widget_class %}
+    {{ ('widget--' ~ widget_class|replace({' ': ' widget--' }))|e('esc_attr') }}
+  {% endif %}
+  js-widget {{ extra_classes|e('esc_attr') }}
+  {{ section.container_classes }}
+"
+     {% if module_id %}id="{{ module_id|e('esc_attr') }}"{% endif %}
+    {% block section_attr %}{% endblock %}
+    {% if section.is_vc and section.container_styles %} style="{{ section.container_styles }}"{% endif %}
+>
+  {% block header %}{% endblock %}
+  <div class="widget__content">
+    {% block content %}{% endblock %}
+  </div>
+</div>

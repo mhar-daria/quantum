@@ -1,0 +1,53 @@
+{% macro header(post) %}
+  {% from _self import categories %}
+  {% from _self import post_format %}
+  <div class="article__item-header">
+    <time datetime="{{ post.date('Y-m-d') }}" class="article__time">
+      {{ post.date('M') }}
+      <strong>{{ post.date('d') }}</strong>
+    </time>
+    <a href="{{ post.link }}#comments" class="article__comment">
+      <i class="fa fa-comments"></i>{{ comments_number_text(post.id) }}
+    </a>
+    <div class="article__item-info">
+      <h3 class="article__item-title"><a href="{{ post.link }}">{{ post.title|raw }}</a></h3>
+      <div class="article__meta">
+        <div class="article__tags post__author">
+          Author: {{ post.author.name|raw}}
+        </div>
+        {{ post_format(post.format) }}
+        {{ categories(post.id) }}
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro categories(post_id) %}
+  <div class="article__tags">
+    {{ __('Categories', 'realtyspace') }}:
+    {{ category_list(post_id, ',')|default(__('None', 'realtyspace'))|raw }}
+  </div>
+{% endmacro %}
+
+{% macro tags(post_id) %}
+  <div class="article__tags">{{ __('Tags', 'realtyspace') }}:
+    {{ tag_list(post_id, ',')|raw|default(__('None', 'realtyspace'))|raw }}
+  </div>
+{% endmacro %}
+
+{% macro post_format(format) %}
+  {% if format %}
+    <a class="article__post-format" href="{{ wpurl.post_format_url(format) }}">
+      <i class="fa fa-{% if format == 'video' %}video-camera{% elseif format == 'gallery' %}picture-o{% elseif format == '' %}{% elseif format == '' %}{% endif %}"></i>
+    </a>
+  {% endif %}
+{% endmacro %}
+
+{% macro post_preview(post) %}
+  {% set post_format = post.format|default('default') %}
+  {% if post_format not in ['default', 'gallery', 'video'] %}
+    {% set post_format = 'default' %}
+  {% endif %}
+
+  {{ include ("modules/post/formats/#{post_format}.twig") }}
+{% endmacro %}

@@ -1,0 +1,30 @@
+<!-- BEGIN AUTH REGISTER-->
+<h5 class="auth__title">{{ __('Sign up a new account', 'realtyspace') }}</h5>
+<form action="{{ fn('wp_registration_url') }}" class="form form--auth js-register-form">
+  <div class="row">
+    <div class="form-group form-group--col-6">
+      <label for="register-name-{{ type }}" class="auth__label control-label">{{ __('Username', 'realtyspace') }}</label>
+      <input type="text" name="username" id="register-name-{{ type }}" required class="auth__in auth__in--text form-control">
+    </div>
+    <div class="form-group form-group--col-6">
+      <label for="register-email-{{ type }}" class="auth__label control-label">{{ __('E-mail', 'realtyspace') }}</label>
+      <input type="email" name="email" id="register-email-{{ type }}" required class="auth__in auth__in--text form-control">
+    </div>
+    {% do action('register_form') %}
+  </div>
+  <div class="row">
+    <span class="form__options">{{ __('Back to', 'realtyspace') }}
+      {% set label =  __('Log In', 'realtyspace') %}
+      {% if type == 'dropdown' %}
+        <button type="button" class="js-user-login">{{ label }}</button>
+        {% else %}
+        <a href="{{ wpurl.url('/login/') }}">{{ label }}</a>
+      {% endif %}
+    </span>
+    <button type="submit" class="form__submit">{{ __('Sign up', 'realtyspace') }}</button>
+  </div>
+  {{ nonce_field('ajax-register') }}
+</form>
+<div class="alert alert-info hidden js-postreg-msg" role="alert">{{ __('Registration complete. Please check your email.', 'realtyspace') }}</div>
+<!-- end of block .auth__form-->
+<!-- END AUTH REGISTER-->

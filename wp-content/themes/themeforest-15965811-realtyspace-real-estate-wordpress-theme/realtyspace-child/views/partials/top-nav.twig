@@ -1,0 +1,22 @@
+<!-- BEGIN NAVBAR-->
+<div id="header-nav-offset"></div>
+<nav id="header-nav" class="
+navbar navbar--header
+ {% if layout.show_hero_header(page) %}
+    navbar--overlay
+    {% elseif layout.show_slider_header(page) %}
+    navbar--overlay navbar--brand
+ {% endif %}
+ navbar--{{ option.header_logo_position }}
+">
+  <div class="container">
+    <div class="navbar__row js-navbar-row">
+      <div class="navbar__brand"></div>
+      {% if logged_in %}
+        {{ nav_menu('logged_in_header_menu') }}
+      {% else %}
+        {{ nav_menu('logged_out_header_menu') }}
+      {% endif %}
+    </div>
+  </div>
+</nav>

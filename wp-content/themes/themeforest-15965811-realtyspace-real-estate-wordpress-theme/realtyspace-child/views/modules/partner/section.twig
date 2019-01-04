@@ -1,0 +1,40 @@
+{% from 'macro.twig' import widget_header, thumbnail, no_items_available %}
+{# @var section \cf47\plugin\realtyspace\module\partner\section\PartnersView #}
+
+{% extends 'section-widget.twig' %}
+
+{% set widget_class='landing partners-section' %}
+
+  {% block header %}
+    {{ widget_header(section.title, section.subtitle) }}
+  {% endblock %}
+
+  {% block content %}
+    <!-- BEGIN PARTNERS-->
+    {% if section.items %}
+      <div class="partners" id="{{ js_module('partners', {
+        'animate': true,
+        'slidesToShow': section.slides_to_show
+      }) }}">
+        <div class="partners__slider js-slick-slider">
+          {% for partner in section.items %}
+            <a class="partners__item" {% if partner.url %}href="{{ partner.url }}"{% endif %}>
+              {{ thumbnail(partner.image.src, 175, 50) }}
+              <span class="partners__name">{{ partner.title }}</span>
+            </a>
+          {% endfor %}
+        </div>
+        <div class="partners__controls">
+          <button class="partners__arrow partners__arrow--prev js-partners-prev"></button>
+          <button class="partners__arrow partners__arrow--next js-partners-next"></button>
+        </div>
+        <!-- end of block .partners__controls-->
+      </div>
+    {% else %}
+      <div class="partners__list">
+        {{ no_items_available() }}
+      </div>
+    {% endif %}
+    <!-- end of block .partners-->
+    <!-- END PARTNERS-->
+  {% endblock %}

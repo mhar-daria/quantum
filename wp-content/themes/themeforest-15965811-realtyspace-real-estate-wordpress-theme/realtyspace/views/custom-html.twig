@@ -1,0 +1,45 @@
+<!doctype html>
+<html class="no-js" {{ site.language_attributes }}>
+<head>
+  <meta charset="{{ site.charset }}"/>
+  <meta name="description" content="{{ site.description }}">
+  <!--[if IE]>
+  <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+  <![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  {% if site.pingback_url %}
+    <link rel="pingback" href="{{ site.pingback_url }}"/>
+  {% endif %}
+  {{ wp_head() }}
+  {# function('wp_head')|raw #}
+  <title>Sample</title>
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ feed_link }}">
+</head>
+{% import 'macro.twig' as macro %}
+{# @var option \cf47\theme\realtyspace\module\core\Options #}
+{% set sidebar_position = page.sidebar is defined ? page.sidebar : option.layout_sidebar_position %}
+
+<body class="
+{{ body_class }}
+{{ option.layout_wide_boxed == 'boxed' ? 'boxed' : 'non-boxed' }}
+{{ option.layout_bg_pattern != '!none' ? option.layout_bg_pattern ~ ' custom-background' }}
+{{ sidebar_position == 'left' ? 'sidebar-left' }}
+{{ sidebar_position == 'none' ? 'sidebar-hide' }}
+menu-default slider-default hover-default
+" data-controller="{% block js_controller %}{% endblock %}">
+
+<div class="box js-box">
+  {% include 'partials/header.twig' %}
+  <div class="site-wrap js-site-wrap">
+    {% block content %}{% endblock %}
+    {% include 'partials/footer.twig' %}
+  </div>
+</div>
+{% if layout.scrollup_enabled %}
+  <button type="button" class="scrollup js-scrollup"></button>
+{% endif %}
+{{ function('wp_footer') }}
+{% block body_end %}{% endblock %}
+</body>
+</html>

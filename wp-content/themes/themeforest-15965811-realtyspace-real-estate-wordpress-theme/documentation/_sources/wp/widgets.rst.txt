@@ -1,0 +1,48 @@
+Widgets setup
+=============
+
+.. important::
+
+    Please check our `FAQ <faq.html>`_ , most probabaly there is already an answer to your question.
+    If you didn't find what you need, please contact us at support@codefactory47.com
+
+.. _reference-widgets:
+
+Realtyspace widgets
+-------------------
+
+.. image:: ../img/widgets.png
+
+#. Realtyspace: Property search
+#. Realtyspace: Contact
+#. Realtyspace: Latest posts
+#. Realtyspace: Contact Form 7
+#. Realtyspace: Property recent/fetured
+#. Realtyspace: Single Agent
+#. Realtyspace: Agent List
+#. Realtyspace: Partners
+#. Realtyspace: Social Links
+
+
+.. image:: ../img/widgets--demo.png
+
+
+.. note::
+
+    Standart Wordpress widgets are also supported by Realtyspace theme.
+
+
+
+Sidebar zones
+-------------
+
+* Sidebar on supbages
+* 3 footer columns
+
+If you have imported demo content, there is added 5 specific sidebars
+
+* Sidebar Properties & Agent - on property details page, which include agent widget
+* Sidebar Blog - on blog listing/details pages
+* Sidebar Agents - on agents listing/details pages
+* Sidebar Properties - on properties listing/details pages
+* Sidebar IDX Press  - on IDX Press listing/details pages

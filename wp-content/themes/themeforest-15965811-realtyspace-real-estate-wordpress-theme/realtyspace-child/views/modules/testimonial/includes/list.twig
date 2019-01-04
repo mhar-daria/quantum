@@ -1,0 +1,37 @@
+{# @var archive \cf47\theme\realtyspace\module\testimonial\ArchiveEntity #}
+
+{% import 'macro.twig' as macro %}
+<div class="site__main">
+  <div class="js-testimonials-ajax">
+    <div class="listing listing--list review review--list">
+      {% for testimonial in archive.items %}
+        <div class="listing__item">
+          <div class="review__item">
+            <div class="review__photo">
+              {{ macro.thumbnail(testimonial.featured_image, 112, 98, 'review__photo-img') }}
+            </div>
+            <div class="review__details">
+              <span class="review__name">{{ testimonial.title|raw }}</span>
+              <span class="review__post">{{ testimonial.job_title }}</span>
+              <div class="review__stars">
+                <i class="glyphicon glyphicon-star"></i>
+                <i class="glyphicon glyphicon-star"></i>
+                <i class="glyphicon glyphicon-star"></i>
+                <i class="glyphicon glyphicon-star"></i>
+                <i class="glyphicon glyphicon-star"></i>
+              </div>
+            </div>
+            <div class="review__info">
+              <div class="review__info-quote review__info-quote--open">&ldquo;</div>
+              {{ testimonial.content|raw }}
+              <div class="review__info-quote review__info-quote--close">&rdquo;</div>
+            </div>
+            <div class="clearfix"></div>
+            <!-- end of block .review__item-->
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  {{ macro.pagination(archive.pagination) }}
+</div>

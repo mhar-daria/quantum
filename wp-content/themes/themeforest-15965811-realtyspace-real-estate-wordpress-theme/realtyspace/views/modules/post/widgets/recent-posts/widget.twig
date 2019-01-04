@@ -1,0 +1,40 @@
+{% from 'macro.twig' import widget_header %}
+{% extends 'widget.twig' %}
+
+{% block header %}
+  {{ widget_header(title, subtext, widget.modifier) }}
+{% endblock %}
+
+{% block content %}
+  <div class=" article article--{{ widget.modifier }}">
+    <!-- end of block .article__header-->
+    <div class="listing listing--{{ widget.modifier }} js-data-container">
+      {% for post in posts %}
+        <div class="listing__item">
+          <div class="article__item">
+            <div class="article__details">
+              <a href="{{ post.link }}" class="article__item-title">
+                {{ post.title|raw }}
+              </a>
+              <time datetime="{{ post.date('Y-m-d') }}" class="article__time">
+                {{ post.date('D - j M - g:i a') }}
+              </time>
+              {% if widget.modifier != 'footer' %}
+                <div class="article__intro">
+                  <p>{{ post.preview(20, true, false)|raw }}</p>
+                </div>
+                <a href="{{ post.link }}" class="article__more">{{ __('Read more', 'realtyspace') }}</a>
+              {% endif %}
+            </div>
+          </div>
+          <!-- end of block .article__item-->
+        </div>
+      {% endfor %}
+    </div>
+    <!-- end of block .article__list-->
+    {% if widget.modifier == 'footer' %}
+      <a href="{{ archive_path('post') }}" class="widget__more js-loadmore"> {{ __('More articles', 'realtyspace') }}</a>
+    {% endif %}
+
+  </div>
+{% endblock %}

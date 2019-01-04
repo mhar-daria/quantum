@@ -1,0 +1,7 @@
+{{ sitename }}
+-------------------------------------
+{#Email: {{ email }}\n\n#}
+{% for field_name, field_value in fields %}
+  {{ field_name|capitalize }}: {{ field_value }}\n\n
+{% endfor %}
+{#Message: {{ message }}#}

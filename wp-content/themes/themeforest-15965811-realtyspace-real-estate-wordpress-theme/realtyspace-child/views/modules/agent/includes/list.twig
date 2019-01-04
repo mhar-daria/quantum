@@ -1,0 +1,15 @@
+{% from 'modules/agent/macro.twig' import agent_item %}
+
+{% extends 'section-widget.twig' %}
+
+{% block content %}
+  <div class="js-agents-ajax">
+    <div class="listing listing--{{ page.display_mode }} worker--{{ page.display_mode }}">
+      {% for agent in page.items %}
+        {{ agent_item(agent, page.display_mode) }}
+      {% endfor %}
+    </div>
+    <div class="clearfix"></div>
+    {{ macro.pagination(page.pagination,  '.js-agents-ajax') }}
+  </div>
+{% endblock %}

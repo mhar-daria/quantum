@@ -1,0 +1,55 @@
+<div class="widgets {% if hero_unit.prefix %} hero-unit__{{ hero_unit.prefix|e('html_attr') }}{% endif %}">
+  {% if hero_unit.content_type == 'map' %}
+    <div class="contacts__map">
+      <div class="map map--contacts js-dapi-gmap"
+           data-lat="{{ hero_unit.map.lat }}"
+           data-long="{{ hero_unit.map.lng }}"
+           data-clat="{{ hero_unit.map.center_lat|default(hero_unit.map.lat) }}"
+           data-clong="{{ hero_unit.map.center_lng|default(hero_unit.map.lng) }}"
+           data-zoom="{{ hero_unit.map_zoom|default(15) }}"
+          {% if hero_unit.map_infobox_text %}
+            data-infobox-text="{{ hero_unit.map_infobox_text|nl2br }}"
+            data-infobox-template="#{{ js_template('contact-map-tooltip', 'modules/contact/map-tooltip.twig') }}"
+            data-infobox-theme="white"
+          {% endif %}
+      >
+        <div class="map__buttons">
+          <button data-map-button type="button" class="map__change-map">{{ __('Address Map', 'realtyspace') }}</button>
+        </div>
+        <div class="map__wrap">
+          <div data-map-canvas class="map__view"></div>
+        </div>
+      </div>
+    </div>
+  {% elseif hero_unit.content_type == 'image' %}
+    <div class="banner banner--subpage">
+      <div class="banner__item">
+        <div class="banner__preview">
+          <img src="{{ hero_unit.background_image.src|default('holder.js/100px510?auto=yes&text=&font=FontAwesome') }}" class="banner__img">
+        </div>
+        <div class="banner__caption">
+          <div class="container">
+
+            {% if hero_unit.use_page_title %}
+              {% if title is not empty %}
+                <h2 class="banner__title">{{ title|raw }}</h2>
+              {% endif %}
+              {% if subtitle is not empty %}
+                <h4 class="banner__subtitle">{{ subtitle }}</h4>
+              {% endif %}
+            {% else %}
+              {% if hero_unit.custom_title is not empty %}
+                <h2 class="banner__title">{{ hero_unit.custom_title|raw }}</h2>
+              {% endif %}
+              {% if hero_unit.custom_subtitle is not empty %}
+                <h4 class="banner__subtitle">{{ hero_unit.custom_subtitle }}</h4>
+              {% endif %}
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+</div>

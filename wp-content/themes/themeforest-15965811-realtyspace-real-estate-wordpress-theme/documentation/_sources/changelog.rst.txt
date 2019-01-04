@@ -1,0 +1,403 @@
+Changelog
+=========
+
+Wordpress
+---------
+
+[1.4.13] - 2018-01-12
+--------------
+- Updated currency converter
+- Fixed WPML compatibility
+- Updated ACF plugin
+- Updated Visual Composer plugin
+- Updated Slider Revolution
+
+1.4.12] - 2017-11-16
+---------------------
+- [UPDATE] Visual Composer 5.4.3
+- [UPDATE] Slider Revolution 5.4.6.3.1
+
+[1.4.11] - 2017-11-15
+---------------------
+- [UPDATE] Video player for posts
+- [UPDATE] Area switcher
+- [UPDATE] Reenabled showing all gallery items for post
+- [UPDATE] Featured post images alt attribute
+- [UPDATE] Added map performance improvements
+- [UPDATE] Deps and Premium plugins
+- [UPDATE] Currency module
+- [UPDATE] Show Author post in blogpost
+
+[1.4.10] - 2017-06-10
+--------------
+- Added support for recaptcha
+- Fixed ACF5 Select v4 compat issue
+- Updated bundled plugins
+- [Fixed] Kirki version 3.0.9 compatibility
+
+
+[1.4.9.2] - 2017-05-26
+----------------------
+- [UPDATE] Fixed map infobox issue
+
+[1.4.9.1] - 2017-05-14
+----------------------
+- [UPDATE] Fix broken dependency
+
+[1.4.9] - 2017-05-13
+--------------------
+- [UPDATE] Fixed dropdown menu link behavior on Ipad
+- [ADD] New property tags field type
+- [UPDATE] Significant performance improvements related to various pages and sections
+- [UPDATE] Added new translation strings
+- [UPDATED] Updated bundled plugin versions
+- [UPDATED] Updated internal libraries to the latest version
+- [UPDATE] Added profile translatable fields
+- [UPDATE] iHomefinder property gallery
+- [UPDATE] Fixed location field issue
+
+[1.4.8] - 2017-03-10
+--------------------
+- [UPDATE] Fixed gallery popup
+- [ADD] Map search results feature
+- [UPDATE] Search input style option
+- [UPDATE] Added excerpt support for product list
+- [UPDATE] Remove positive security validation constraint as unnecessary
+- [UPDATE] Fixed agent email detection
+
+[1.4.7] - 2017-02-22
+--------------------
+- [UPDATE] Improved wrapper file compatibility with different php configurations
+- [ADD] Print version
+- [UPDATE] Fixed "featured" field value
+- [UPDATE] Added alt value for agent grid
+- [UPDATE] Fixed iHomefinder multiselect
+- [UPDATE] Fixed comment's icon on mobile
+- [UPDATE] Updated docs
+- [ADD] Alt attribute for logo
+- [UPDATE] Fixed section counter on mobile
+- [ADD] Property Slider Section options
+- [UPDATE] Fixed text on register popup
+- [UPDATE] Added ribon status on my properties
+- [UPDATE] iHomefinder v3.7.1 compatibilty
+- [UPDATE] Added new ACF version
+
+
+[1.4.6] - 2016-12-07
+--------------------
+- [ADD] Listing shortcode
+- [UPDATE] Improved ACF taxonomy field configuration
+- [UPDATE] Improved WPML integration and translation process
+- [UPDATE] Added urlencode for the redirect url
+- [UPDATE] Fix WPML widget compatibility
+- [UPDATE] Fix widget post dates
+- [UPDATE] Show a different contact form title when the property submitter is not an agent
+- [UPDATE] Removed deprecated option
+- [UPDATE] Fixed land size display
+- [UPDATE] Fixed agent pagination issue
+- [UPDATE] Fixed field type for copyright text
+- [UPDATE] Fixed default iHomeFinder page
+- [UPDATE] Menu order fix for WordPress 4.7
+- [UPDATE] Updated dependencies
+- [UPDATE] Updated Visual Composer, ACF and Slider Revolution plugins
+- [UPDATE] Fixed multiselect reset
+
+
+1.4.5
+-----
+- [UPDATE] Improve the image generation for social sharing
+- [UPDATE] Set featured image to full width
+- [UPDATE] Improve original image display
+- [UPDATE] Fixed new line handling on the contact page
+- [UPDATE] Changed permalink flush logic
+- [UPDATE] Disable formatting for year field
+- [UPDATE] Potential fix for pagination trailing slash issue
+- [UPDATE] Updated Visual Composer to version 5
+- [FIXED] Preloader option on property area switcher
+
+1.4.4
+-----
+- [ADD] new separate from/to field for bedrooms, area and price
+- [ADD] autocomplete fields intead of choice dropdowns for contract type, location, etc
+- [UPDATE] iHomefinder v3.6.0 compatibility
+- [UPDATE] Advanced Custom Fields version
+
+1.4.3
+-----
+- [FIXED] Banner subpage squished on iphone
+- [FIXED] Scheme colors LightBlue Beige
+- [FIXED] Error when showing only panorama or map
+- [FIXED] Optimized PhotoSwipe popup for origianl photos
+- [FIXED] Remove trailing slash in pagination
+- [ADD] Advanced customization of property gallery photos
+- [FIXED] Disabled abbreviations for range slider year field
+- [FIXED] contact form 7 regression
+- [FIXED] agent name escaping issue
+- [ADD] target blank for social links
+- [ADD] Updated Slider Revolution to latest version
+- [ADD] Custom map marker
+- [ADD] Edit footer copyright text
+- [ADD] New search field rooms
+- [ADD] Updated translations
+
+1.4.2
+-----
+- Added missing instruction for icons
+- Added missing instuction for icons
+- Disabled required for attachment field
+- Translated all dropzone fields
+- [FIXED] iHomfinder multiselect in form
+- [ADDED] "Counter Up" customization options
+- [FIXED] Set default position for marker on autocomplete map
+
+1.4.1
+-----
+- Pagination improvement
+- Improvemed color scheme switcher
+- Added link to the agent profile from the property page
+- Increased preview text size for the agent bio
+- Added Polylang compatibility
+
+1.4.0
+-----
+- [MAJOR] Added advanced ReatyPress support for Canadian CREA DDF
+- [MAJOR] Added multiple iHomeFinder improvements
+- Added custom color scheme builder
+- Added option to disable numeric abbreviations
+- Added currency and language choice for all devices
+- Reworked widget system
+- Improved language switcher integration with Google translate
+- Added "Featured" field option to submit form
+- Added acre support to land area
+- Added virtual page support
+- Added standalone auth pages
+- Added more options for partner section
+- Added default view mode
+- Improved pluging compatibility
+- Fixed opegraph and twitter image tags
+- Improved ACF map integration
+- Updated translations
+- Updated Visual Composer version
+- Updated ACF5 version
+
+1.3.3
+-----
+- Fixed rangeslider search small bug
+- Added view mode customization
+- Added property tag support
+
+1.3.2
+-----
+- Added basic ReatyPress support for Canadian CREA DDF
+- Fixed countup decimal handling
+- Fixed testimonials title escaping
+
+1.3.1
+-----
+- Fixed some missing translation
+- Added redirect after login feature
+- Fix invalid property card
+- Added fixed menu timeout and color customization
+- Added possibility to hide agent properties
+- Improved contact form choice list
+- Improved related algorhytm
+- Disabled double escaping for amenities
+- Updated dependencies
+
+1.3
+---
+
+- MAJOR FEATURE: Added advanced iHomeFinder support
+- Added support for dsIDXpress in sections
+- Multiple dsIDXpress improvements
+- Enable template autoreload
+- Fixed breadcrumb plugin detection
+- Fixed area unit escaping
+- Fixed title escaping
+- Improved secondary currency separator logic
+- Added currency decimals separator
+
+1.2.10
+------
+
+- Fix sidebar on pages
+- Add unlimited number of properties to the map
+- Added "Scroll down to expore" option
+- Enforce string return type for terms
+- Fixed missing "bedroom" property in item cards
+- Enabled slider autostart
+- Fixed loading textdomain from child theme
+- Added loading similar properties by feature criteria
+- Added posibility to disabled the preloader
+- Documentation improvements for translation
+- Added notes for translators regarding "slug" translation
+
+1.2.9
+-----
+
+- Added possibility to replace plugin views
+- Updated plugin version
+- Added Envato Market to the list of recommended plugins
+- BREAKING CHANGE: In some cases hero header may get disabled, please reenable by editing the page and selecting
+  Force header style / Style 1
+- Added example functions.php in child theme
+- Fixed map zoom issue on property page
+- Added property card exceprt control
+- Fixed tab issue with non-lating string
+- Removed editor stylesheet
+- Hide comment form when comments not allowed
+- Added menu color control
+- Updated importer version
+- Fixed header meta
+- Fixed showing property description instead of agent description
+
+1.2.8
+-----
+
+- Better query handling
+- Improved "user as agent" photo display
+- Updated ACF plugin version
+- Improved old PHP version handling
+- Improved demo content
+- Added recommended plugin
+- Fixed Property Type field saving from frontened
+- Allow adding taxonomy relations by subscribers
+
+1.2.7
+-----
+
+- Fixed select dropdown in property submit
+- Updated demo data
+
+1.2.6
+-----
+
+- Fixed missing translations
+- Fix link to google API in customizer
+- Temporary fix for ACF5 pro Google Maps issue
+- Fixed issue when some users were unable to upgrade ACF5
+
+1.2.5
+-----
+
+- Fix empty ACF5 repeater
+- Do not show amenities section, when its empty
+- Hide descrption section when its empty
+- Fixed post-submission edge-case
+
+1.2.4
+-----
+
+- Show empty property types and contracts in the submit page
+
+1.2.3
+-----
+
+- Fixed widget import file
+
+1.2.2
+-----
+
+- Added possibility to switch color schemes from public get param
+- Fixed issue of "... ago" for some locales
+- Added Social Login support
+
+1.2.1
+-----
+
+- Minor i18n fixes
+- Better message while updating theme
+- Added WordPress Social Login plugin support
+
+1.2.0
+-----
+
+- Fixed front-end submit when images are missing
+- Added possibility to specify autocompletion region for maps
+- Added possibility to set custom Google Maps API key
+- Improved property search field naming
+- Added new search field: SKU
+- Fixed SKU visibilty in property details
+- Added property SKU visibility in cards
+- Added possibility to add contact form into hero section
+- Added possibility to toggle login dropdown visibility
+- Fixed "fixed menu" option
+- Added possibility to set specific header style on each page
+- Fixed background pattern label escaping
+- Added support for Custom css & js in Customizer
+- Fixed escaping issue with features item text
+- Fixed color scheme chaning
+- Added option to hide price box, amenities, description and the space section
+- Added search field custom labels
+- Improved i18n
+- Updated WPML translations
+
+1.1
+---
+
+- Updated plugins
+- Added full Visual Composer support
+- Fixed translation domain typo
+- Updated pot files
+- Updated vendor dependecies
+- Fixed unstranslatable strings
+- Fixed various RTL issues
+- Updated ACF plugin version
+- Added theme icons to Visual Composer
+- Added plugin version check logic
+
+HTML
+----
+
+1.4.4
+-----
+
+- Reactored forms for better bs3 compatibility
+- Fixed broken npm package
+- Added Lastpass plugin compatibility support
+
+1.4.2
+-----
+
+- Fixed dropdown auth on mobile
+- Improved menu performance on mobile
+- Fixed slider arrow jumping on mobile
+
+1.4.1
+-----
+
+- Fixed grid.js issue
+
+1.4
+---
+
+- Updated routing system
+- New header panel design, settings options for: measures, currency
+- Added Datetime filed, http://www.daterangepicker.com/
+- Slider and search home variation
+- Updated icons in achievements
+- Banner and register home variation
+
+1.3
+---
+
+- Visual-hierarchy improvememnt: Major changes in property block area in order to remove the crowded feeling, all the secondary information was removed or hidden in order to reveal on hover action
+- Visual-hierarchy improvement: Removed secondary information in agent and news blocks in order to make them look more lightweight
+- Visual-hierarchy improvement: Increased font-sizing and spacing between blocks and headers
+- More improvements related to spacing, alignment and consistency
+- Removed other unimportant information from theme and moved it to the dedicated item page.
+
+1.2
+---
+- Added new "Welcome" block and frontpage
+- Added new "Call to action" block on frontpage
+- Redesigner main slide banner to a bigger and nicer version
+- Major overhaul and redesign of UI blocks in order to follow along WebDesign Hierarchy principles
+- Improved color contrast in all color themes
+- Major improvements in domain of spacing and alignment issues between UI elements
+- Performance improvements on smartphones
+- Complete menu module rewrite, now it works even better on mobile devices
+
+1.0
+---
+- First version

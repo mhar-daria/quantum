@@ -1,0 +1,47 @@
+{# @var section \cf47\plugin\realtyspace\module\property\section\MapView #}
+{% set tooltip_template_id = js_template('property-map-tooltip', 'modules/property/misc/map-tooltip.twig') %}
+{% set module_id = js_module('propmap', {
+'infoboxTemplate': tooltip_template_id,
+'theme': section.infobox_theme,
+'fullscreen': section.fullscreen
+}) %}
+{% set form = section.search_form %}
+
+{% extends 'section-widget.twig' %}
+{% set widget_class='gray' %}
+
+{% block content %}
+
+  <div class="map map--index js-map  map--{{ section.panel_position }}
+    {#{{ section.panel_position == 'bottom' ? 'map--bottom' }}#}
+    " id="{{ module_id }}">
+    <div class="map__buttons">
+      <button type="button" class="map__change-map js-map-btn">{{ __('Show map', 'realtyspace') }}</button>
+    </div>
+    <div class="map__wrap">
+      <div class="map__view js-map-index-canvas "></div>
+    </div>
+
+    <div class="map__search">
+      {% set formClass = 'form form--search js-search-form' %}
+
+      {% if section.panel_position == 'bottom' %}
+        {% set formClass = formClass ~ ' form--wide form--map-bottom' %}
+      {% elseif section.panel_position == 'left' %}
+        {% set formClass = formClass ~ ' form--banner-sidebar' %}
+      {% endif %}
+      <!-- end of block .search__header-->
+      {{ form_start(form, {'attr': {'class': formClass ~ ' form--' ~ section.panel_theme }}) }}
+      {{ form_widget(form, {'attr': {'class': 'row'}}) }}
+      <div class="row form__buttons form__buttons--double">
+        <button type="reset" class="form__reset js-form-reset">{{ __('Reset', 'realtyspace') }}</button>
+        <button type="submit" class="form__submit">{{ __('Search', 'realtyspace') }}</button>
+      </div>
+      {{ form_end(form) }}
+      <!-- end of block .search__form#search-form-->
+    </div>
+
+  </div>
+
+
+{% endblock %}

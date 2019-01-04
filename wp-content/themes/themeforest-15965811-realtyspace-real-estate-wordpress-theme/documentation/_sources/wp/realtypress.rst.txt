@@ -1,0 +1,59 @@
+Realtypress
+===========
+
+.. important::
+
+    Please check our `FAQ <faq.html>`_ , most probabaly there is already an answer to your question.
+    If you didn't find what you need, please contact us at support@codefactory47.com
+
+
+Home page variation ``Banner & Search``
+---------------------------------------
+
+.. image:: ../img/realtypress-main.png
+
+Create new page, select in Page Attributes Visual Composer Template. Then switch Visual Composer to "Classic Mode", in editor change tab from "Visual" to "Text" and paste shortcode below.
+
+.. image:: ../img/realtypress--page.png
+
+Shortcodes for this page:
++++++++++++++++++++++++++
+
+.. code-block:: html
+
+    [vc_row full_width="stretch_row_content_no_spaces" css=".vc_custom_1473428143559{padding-top: 0px !important;background-image: url(http://rp.realtyspace.codefactory47.com/app/uploads/2016/04/banner-2.jpg?id=17) !important;background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;}"][vc_column css=".vc_custom_1472912737096{padding-top: 0px !important;}"][cf47rs_section_hero title="RealtyPress is the best way to find your home" show_form_shortcode="true" form_shortcode="`{`rps-listing-search-form style=vertical hide=``business,bathrooms,community,neighbourhood,province,postal```}`"][/cf47rs_section_hero][/vc_column][/vc_row][vc_row][vc_column el_class="widget--landing"][vc_column_text el_class="container"][rps-listing-search-form hide="bathrooms"][/vc_column_text][/vc_column][/vc_row][vc_row][vc_column el_class="widget--landing"][vc_column_text el_class="container"][rps-listing-carousel title='My Recent Listings' ][/vc_column_text][/vc_column][/vc_row][vc_row el_class="container"][vc_column el_class="widget--landing"][vc_column_text][rps-listings show_header=false show_filters=false show_look_box=false][/vc_column_text][/vc_column][/vc_row]
+
+
+
+Home page variation ``Video``
+-----------------------------
+
+.. image:: ../img/realtypress-video.png
+
+Create new page, select in Page Attributes Visual Composer Template. Then switch Visual Composer to "Classic Mode", in editor change tab from "Visual" to "Text" and paste shortcode below.
+
+.. image:: ../img/realtypress--page.png
+
+Shortcodes for this page:
++++++++++++++++++++++++++
+
+.. code-block:: html
+
+    [vc_row full_width="stretch_row_content_no_spaces" full_height="yes" video_bg="yes" video_bg_url="https://www.youtube.com/watch?v=fau7Op4kZbA" css=".vc_custom_1473433193390{background-image: url(http://rp.realtyspace.codefactory47.com/app/uploads/revslider/RealtyspaceSlider11/banner-4.jpg?id=218) !important;}" el_class="widget--hero"][vc_column el_class="container"][vc_column_text][rps-listing-search-box box_text=”Search our Properties”][/vc_column_text][/vc_column][/vc_row][vc_row][vc_column el_class="widget--landing"][vc_column_text el_class="container"][rps-listing-carousel title='My Recent Listings' ][/vc_column_text][/vc_column][/vc_row][vc_row el_class="container"][vc_column el_class="widget--landing"][vc_column_text][rps-listings show_header=false show_filters=false show_look_box=false][/vc_column_text][/vc_column][/vc_row]
+
+
+Home page variation ``Slider``
+------------------------------
+
+.. image:: ../img/realtypress-slider.png
+
+Create new page, select in Page Attributes Visual Composer Template. Then switch Visual Composer to "Classic Mode", in editor change tab from "Visual" to "Text" and paste shortcode below.
+
+.. image:: ../img/realtypress--page.png
+
+Shortcodes for this page:
++++++++++++++++++++++++++
+
+.. code-block:: html
+
+    [vc_row full_width="stretch_row_content_no_spaces"][vc_column][vc_column_text][rps-listing-slider][/vc_column_text][/vc_column][/vc_row][vc_row][vc_column el_class="widget--landing"][vc_column_text el_class="container"][rps-listing-search-form hide="bathrooms"][/vc_column_text][/vc_column][/vc_row][vc_row][vc_column el_class="widget--landing"][vc_column_text el_class="container"][rps-listing-carousel title='My Recent Listings' ][/vc_column_text][/vc_column][/vc_row][vc_row el_class="container"][vc_column el_class="widget--landing"][vc_column_text][rps-listings show_header=false show_filters=false show_look_box=false][/vc_column_text][/vc_column][/vc_row]

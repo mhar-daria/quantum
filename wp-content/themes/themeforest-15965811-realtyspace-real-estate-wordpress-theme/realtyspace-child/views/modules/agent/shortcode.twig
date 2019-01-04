@@ -1,0 +1,14 @@
+{% import 'modules/agent/macro.twig' as macro %}
+
+{# @var category \TimberTerm #}
+{# @var agents[] \cf47\theme\realtyspace\module\agent\Entity #}
+{% if agents|length %}
+  <div>
+    <div class="worker--list">
+      {% for agent in agents %}
+        {{ macro.agent_item(agent, 'list') }}
+      {% endfor %}
+    </div>
+    <div class="clearfix"></div>
+  </div>
+{% endif %}

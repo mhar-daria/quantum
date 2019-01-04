@@ -1,0 +1,19 @@
+{# @var section \cf47\plugin\realtyspace\module\other\section\counter\item\CounterItemView #}
+{% from 'macro.twig' import icon %}
+<div class="achievement__item">
+  {% if section.icon %}
+    {{ icon(section.icon, 'achievement__icon') }}
+  {% endif %}
+  <div data-count-end="{{ section.number }}"
+       data-count-separator="{{ section.separator }}"
+       data-count-deciaml="{{ section.decimal }}"
+       data-count-duration="{{ section.duration }}"
+       data-count-prefix="{{ section.prefix }}"
+       data-count-suffix="{{ section.suffix }}"
+
+       class="achievement__counter achievement__counter--lg js-count-up">
+    {{ section.number }}
+  </div>
+  <div class="achievement__counter">{{ section.prefix }}{{ section.number }}{{ section.suffix }}</div>
+  <div class="achievement__name">{{ section.label|raw }}</div>
+</div>

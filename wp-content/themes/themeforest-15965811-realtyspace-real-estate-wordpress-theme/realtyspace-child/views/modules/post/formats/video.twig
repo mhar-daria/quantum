@@ -1,0 +1,42 @@
+{# @var post \cf47\themecore\post\Entity #}
+
+{% if post.video_sources %}
+  <div class="article__preview">
+    {% for video_source in post.video_sources %}
+    <div class="player">
+      {#Remote video#}
+      {% if video_source.acf_fc_layout == 'cf47rs_video_remote' %}
+        {% if post.is_youtube(video_source.url) %}
+          {#YouTube#}
+          {% set id = post.get_youtube_video_id(video_source.url) %}
+          {% if id %}
+            <div data-type="youtube" data-video-id="{{ id }}"></div>
+          {% endif %}
+        {% elseif post.is_vimeo(video_source.url) %}
+          {#Vimeo#}
+          {% set id = post.get_vimeo_video_id(video_source.url) %}
+          {% if id %}
+            <div data-type="vimeo" data-video-id="{{ id }}"></div>
+          {% endif %}
+        {% else %}
+          {#Local video#}
+
+          <video poster="{{ post.video_cover.src }}" controls crossorigin>
+            {% for video_source in post.video_sources %}
+              <source src="{{ video_source.url }}" >
+            {% endfor %}
+          </video>
+        {% endif %}
+      {% elseif video_source.acf_fc_layout == 'cf47rs_local_video' %}
+        <video poster="{{ post.video_cover.src }}" controls crossorigin>
+          {% for video_source in post.video_sources %}
+            <source src="{{ video_source.file.url }}" type="{{ video_source.file.mime_type }}">
+          {% endfor %}
+        </video>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+{% else %}
+  {% include 'modules/post/formats/default.twig' %}
+{% endif %}

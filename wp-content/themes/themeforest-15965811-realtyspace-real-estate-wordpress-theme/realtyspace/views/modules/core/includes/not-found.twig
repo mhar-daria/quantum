@@ -1,0 +1,24 @@
+<div class="center">
+  <div class="container">
+
+    <div class="widget js-widget widget--landing">
+      <div class="widget__conent">
+        <div class="form form--error-status">
+          {{ search_form() }}
+        </div>
+      </div>
+    </div>
+    <div class="widget js-widget widget--landing widget--sep">
+      <header class="widget__header">
+        <h1 class="widget__title">
+          {{ title|default(__('Nothing Found', 'realtyspace')) }}
+        </h1>
+        {% if subtitle %}
+          <h2 class="widget__headline">
+            {{ subtitle }}
+          </h2>
+        {% endif %}
+      </header>
+    </div>
+  </div>
+</div>

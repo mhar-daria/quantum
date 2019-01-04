@@ -1,0 +1,50 @@
+{% macro item(faq, expanded = false) %}
+  {# @var faq \cf47\theme\realtyspace\module\faq\Entity #}
+  <dl class="faq__item">
+    <dt id="faq_heading_{{ faq.id }}" role="tab" class="faq__title">
+      {#{{ edit_post_link(faq.id) }}#}
+      <a data-toggle="collapse" data-parent="#faq_accordion" href="#faq_collapse_{{ faq.id }}" aria-expanded="true" aria-controls="faq_collapse_{{ faq.id }}" class="faq__expander {% if not expanded %}collapsed{% endif %}">
+        {{ faq.title|raw }}
+      </a>
+    </dt>
+    <dd id="faq_collapse_{{ faq.id }}" role="tabpanel" aria-labelledby="faq_heading_{{ faq.id }}" class="faq__content collapse {% if expanded %}in{% endif %}" {% if expanded %}aria-expanded="true"{% endif %}>
+      <div class="faq__body">
+        {{ faq.content | raw }}
+      </div>
+      <div class="faq__footer">
+        <a data-toggle="collapse" data-parent="#faq_accordion" aria-controls="faq_collapse_{{ faq.id }}" href="#faq_collapse_{{ faq.id }}" class="faq__close">
+          {{ __('Close', 'realtyspace') }}
+        </a>
+      </div>
+    </dd>
+  </dl>
+{% endmacro %}
+
+{% macro list(items = [], cat_id = 0, cat_name = null, cat_description = null) %}
+  {% from _self import item %}
+  {% from 'macro.twig' import no_items_available %}
+  {% if cat_name %}
+    <h1>{{ cat_name }}</h1>
+  {% endif %}
+  {% if cat_description %}
+    <p>{{ cat_description }}</p>
+  {% endif %}
+  {% for faq in items %}
+    {{ item(faq) }}
+  {% else %}
+    {{ no_items_available() }}
+  {% endfor %}
+{% endmacro %}
+
+{% macro mixed_list(items = []) %}
+  {% from _self import list %}
+  {% for category_id,group in items %}
+    {% if category_id > 0 %}
+      {{ list(group.items, category_id, group.category.name, group.category.description) }}
+    {% else %}
+      {{ list(group) }}
+    {% endif %}
+  {% else %}
+    aaa
+  {% endfor %}
+{% endmacro %}

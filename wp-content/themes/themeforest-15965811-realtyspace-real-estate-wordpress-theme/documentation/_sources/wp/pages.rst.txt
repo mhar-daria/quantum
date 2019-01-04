@@ -1,0 +1,19 @@
+Pages
+=====
+
+.. important::
+
+    Please check our `FAQ <faq.html>`_ , most probabaly there is already an answer to your question.
+    If you didn't find what you need, please contact us at support@codefactory47.com
+
+
+.. toctree::
+    :maxdepth: 2
+
+    property-details
+    properties-listing
+    agent-profile
+    agents-listings
+
+
+.. _reference-pages:

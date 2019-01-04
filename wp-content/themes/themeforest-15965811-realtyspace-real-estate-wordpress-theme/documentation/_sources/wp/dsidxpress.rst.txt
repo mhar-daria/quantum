@@ -1,0 +1,43 @@
+dsIDXpress
+==========
+
+.. important::
+
+    Please check our `FAQ <faq.html>`_ , most probabaly there is already an answer to your question.
+    If you didn't find what you need, please contact us at support@codefactory47.com
+
+
+
+dsIDXpress integration
+----------------------
+
+First you need download and activate "dsIDXPress" plugin, then you will get new VC section, widgets, and listings pages.
+
+To add search form on home page, follow these steps:
+
+#. Create new row in VC
+#. Insert **"Property Hero"** section
+#. Check field "Show custom shortcode"
+#. Insert in next field shortcode ``[idx-quick-search format="vertical"]``
+#. Save
+
+
+.. image:: ../img/dsidxpress.png
+
+dsIDXPress Grid section
++++++++++++++++++++++++
+
+.. image:: ../img/dsidxpress-grid-section.png
+
+
+dsIDXPress widgets
+++++++++++++++++++
+
+
+#. IDX Guided Search
+#. IDX Quick Search
+#. IDX Areas
+#. IDX Listings
+
+
+.. image:: ../img/dsidx-widgets.png

@@ -1,0 +1,25 @@
+Search properties
+=================
+
+.. important::
+
+    Please check our `FAQ <faq.html>`_ , most probabaly there is already an answer to your question.
+    If you didn't find what you need, please contact us at support@codefactory47.com
+
+.. _reference-proeprty-search:
+
+To change `Property search labels` to your custom text you can in **Customize / Theme settings / Property / Search labels**.
+
+.. image:: ../img/search-labels.png
+
+
+Home page hero section
+++++++++++++++++++++++
+
+.. image:: ../img/hero-search.png
+
+By default on search change the image background will be replaced by map, where the propeties will load. To stop this behavior
+open your Home page in backend and disable map in Property hero settings
+
+
+.. image:: ../img/disable-map.png

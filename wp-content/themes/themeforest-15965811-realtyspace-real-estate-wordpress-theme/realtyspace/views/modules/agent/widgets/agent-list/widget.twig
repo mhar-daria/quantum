@@ -1,0 +1,15 @@
+{% from 'macro.twig' import widget_header %}
+{% from 'modules/agent/macro.twig' import agent_item_short %}
+{% extends 'widget.twig' %}
+
+{% block header %}
+  {{ widget_header(title, subtext, widget.modifier) }}
+{% endblock %}
+
+{% block content %}
+  <div class="listing listing--{{ widget.modifier }} worker worker--sidebar-list js-data-container">
+    {% for agent in agents %}
+      {{ agent_item_short(agent, is_wide) }}
+    {% endfor %}
+  </div>
+{% endblock %}

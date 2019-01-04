@@ -1,0 +1,15 @@
+{# @var section \cf47\plugin\realtyspace\module\ihomefinder\section\map\MapView #}
+
+{% extends 'section-widget.twig' %}
+
+{% set widget_class = 'ihomefinder-hero' %}
+{% set module_id = js_module('ihomefinderHero')%}
+{% block content %}
+  {{ '[optima_express_basic_search]'|shortcodes|raw }}
+  {#{{ '[optima_express_map_search height="500" address="Allen" zoom="10"]'|shortcodes|raw }}#}
+  {#{{ '[optima_express_advanced_search]'|shortcodes|raw }}#}
+  {#{{ '[optima_express_address_search style="horizontal"]'|shortcodes|raw }}#}
+  {#{{ '[optima_express_quick_search style="vertical" showPropertyType="true"]'|shortcodes|raw }}#}
+{% endblock %}
+
+

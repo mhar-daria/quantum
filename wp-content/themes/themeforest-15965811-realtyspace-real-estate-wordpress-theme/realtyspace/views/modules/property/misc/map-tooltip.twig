@@ -1,0 +1,32 @@
+{% extends "modules/core/js-template/layout.twig" %}
+{% block content %}
+  <div class="map__infobox map__infobox--${ theme }">
+    <span class="map__address">${ address }</span>
+    <div class="map__info">
+      <img class="map__photo" src="${ image }">
+      <div class="map__details">
+        <% if(type){ %>
+        <dl>
+          <dt>{{ __('Type', 'realtyspace') }}:</dt>
+          <dd>${ type }</dd>
+        </dl>
+        <% } %>
+        <% if(area){ %>
+        <dl>
+          <dt>{{ __('Area', 'realtyspace') }}:</dt>
+          <dd>${ area }</dd>
+        </dl>
+        <% } %>
+        <% if(bedrooms){ %>
+        <dl>
+          <dt>{{ __('Bedrooms', 'realtyspace') }}:</dt>
+          <dd>${ bedrooms }</dd>
+        </dl>
+        <% } %>
+      </div>
+    </div>
+    <span class="map__price"><strong>${ price }</strong></span>
+    <a class="map__more" href="${ url }">{{ __('Details', 'realtyspace') }}</a>
+  </div>
+{% endblock %}
+

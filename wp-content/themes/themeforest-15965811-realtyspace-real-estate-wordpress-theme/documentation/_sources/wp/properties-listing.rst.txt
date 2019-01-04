@@ -1,0 +1,66 @@
+Properties listing
+==================
+
+.. important::
+
+    Please check our `FAQ <faq.html>`_ , most probabaly there is already an answer to your question.
+    If you didn't find what you need, please contact us at support@codefactory47.com
+
+.. _reference-properties-listing:
+
+
+
+.. image:: ../img/properties-listing.png
+
+
+Editing layout
+++++++++++++++
+
+Open properties listing page, go to **Customize / Current page options / Layout**
+
+
+.. image:: ../img/start-customize.png
+
+.. image:: ../img/customize-current.png
+
+
+Here you will find options:
+
+* **Title**
+* **Subtitle**
+* **Panel**
+* **Sidebar position**
+    - As defined in Layout
+    - Left
+    - Right
+    - None
+* **Grid size**
+    - Small
+    - Medium
+    - Large
+* **Show search toolbar**
+* **Show sorting**
+* **Show view**
+* **Show limit per page**
+* **Show facets**
+* **Show total found in page subtitle**
+* **Enabled view modes**
+    - Grid
+    - List
+    - Table
+* **Default view mode**
+    - Grid
+    - List
+    - Table
+
+* **Table View Columns**
+
+
+
+.. tip::
+    Add one space in title or subtitle field to remove at all text from frontend. Remove default text from panel editor, will hide a green panel!
+
+
+
+
+.. image:: ../img/properties-listing-options.png

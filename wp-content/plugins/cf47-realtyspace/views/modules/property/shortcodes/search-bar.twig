@@ -1,0 +1,7 @@
+<form action="{{ form_link }}" class="form form--search js-search-form form--banner-sidebar form--light form--slider" method="get">
+{# form_start(form, {'attr': {'class': 'form form--search js-search-form form--banner-sidebar form--light form--slider '}}) #}
+{{ form_widget(form, {'attr': {'class': 'row'}}) }}
+<div class="row form__buttons">
+  <button type="submit" class="form__submit">{{ __('Search', 'realtyspace') }}</button>
+</div>
+{{ form_end(form) }}

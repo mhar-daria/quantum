@@ -1,0 +1,51 @@
+{% from 'modules/agent/pages/single/macro.twig' import property_list_wrapper %}
+{# @var page \cf47\theme\realtyspace\module\agent\viewmodel\SingleViewModel #}
+{# @var agent \cf47\theme\realtyspace\module\agent\Entity #}
+
+{% extends 'section-widget.twig' %}
+
+{% set widget_class='main' %}
+
+{% block content %}
+  <div class="worker worker--list worker--details js-unhide-block">
+    <div data-animate-end="animate-end" class="worker__item vcard">
+      {{ agent_macro.photo(agent, 500, 480, false) }}
+      <div class="worker__intro">
+        <div class="worker__intro-head">
+          <div class="worker__intro-name">
+            {{ agent_macro.name_and_title(agent) }}
+          </div>
+
+          <button type="button" class="worker__show js-unhide">{{ __('Contact agent', 'realtyspace') }}</button>
+        </div>
+        <div class="worker__intro-row">
+          <div class="worker__intro-col">
+            {{ agent_macro.contacts(agent) }}
+          </div>
+          <div class="worker__intro-col">
+            {{ agent_macro.social(agent) }}
+          </div>
+        </div>
+      </div>
+      <div class="worker__descr">{{ agent.content|raw }}</div>
+      <!-- end of block .worker__descr-->
+      <div class="clearfix"></div>
+    </div>
+    <!-- end of block .worker__item-->
+
+
+    {% if page.show_contact_form and page.cf7_form is not empty %}
+      <div class="widget js-widget widget--details">
+        <div class="widget__header">
+          <h3 class="widget__title">{{ __('Contact the Agent', 'realtyspace') }}</h3>
+        </div>
+        <div class="widget__content">
+          <div class="form">
+            {{ page.cf7_form|raw }}
+          </div>
+          <!-- end of block form-->
+        </div>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

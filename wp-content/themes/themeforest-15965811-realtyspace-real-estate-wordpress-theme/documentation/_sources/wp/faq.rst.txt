@@ -1,0 +1,277 @@
+Faq
+===
+
+.. attention::
+    If you have issues with installation, contact us by `email <https://themeforest.net/item/realtyspace-real-estate-wordpress-theme/15965811/support/contact>`_ . Our support team will assit you.
+
+    Please specify in your email the following data:
+
+    * **website url**
+    * WordPress admin login credentials **login and password**
+    * SSH and/or FTP credentials **hostname, username and password**
+    * cPanel user and password (if you have it)
+
+    **Make sure to change all the passwords that you've sent us after the issue is resolved**
+
+Installation issues:
+--------------------
+
+What hosting provider would you recommand?
+++++++++++++++++++++++++++++++++++++++++++
+
+We recommend to use `SiteGround <https://www.siteground.com/index.htm?afcode=fd8c9d359bcf7ddd922d04bfbbee2602>`_ hosting provider. For minimal price you will get well configurated server, which fits Realtyspace theme requirements. Customers who use it get excellent speed, performance and ease of use with our theme. We advise to save your money and time!
+
+I got a white screen/nothing happens/takes to long when I try import demo data
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    Make sure your server meets the :ref:`theme requirements <theme-requirements>`
+
+After installation I got a PHP error `Error: Parse error: syntax error, unexpected '[' in`
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    This error means that you have PHP version is lower than **5.4**.
+    Upgrade you PHP to match the :ref:`minimal required PHP version <theme-requirements>`.
+    If you don't know how to do this, please consult your hosting provider, usually they can do this for you free of charge.
+
+I got a error `Fatal error: Allowed memory size of 67108864 bytes exhausted (tried to allocate 72 bytes) in`
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    This error means that you increase your PHP **memory_limit** setting to the value defined in
+    :ref:`theme requirements <theme-requirements>`. If you don't know how to do this, please consult your hosting
+    provider.
+
+Looks like some features has failed to be imported.
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    .. image:: ../img/failed-import.jpg
+
+    Those warnings are related to the fact that demo data for some recommended plugins has not been installed because
+    those plugins were not active. You can safely ignore this if you don't need those plugins.
+
+
+
+
+
+When I am uploading it to install it gives me an error message saying it is missing style.css stylesheet.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    .. image:: ../img/installation-stylesheet-missing.png
+
+
+    Seems like you try install **wrong zip** folder. Please download from themeforest "Instalable WordPress file only" and then try upload it.
+
+I got a message from Themeforest that Realtyspace has updated. How I can update the theme?
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    Please see this `article <update.html>`_
+
+Configuration issues:
+---------------------
+
+I have installed theme Realtyspace, where do I can start configuration ?
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    You should start from **Customizer**. See this `customizer options <customizer.html>`_ and `base configuration <configuration.html>`_.
+
+Google maps on my website are not working
++++++++++++++++++++++++++++++++++++++++++
+
+    Recently Google changed the policy of providing access to his services. This affected also google maps, now all request to service require an API key.
+    We provide by default our key in theme, but it's good idea to change it to your. The instructions how do this are `here <map.html>`_.
+
+
+Can I change default map location to my country ?
++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    Yes, you can change it to any place by changing settings at
+    **Customizer / Theme Settings / Property/Map settings / Autocomplete region**.
+
+How I can stop map showing when search change ?
++++++++++++++++++++++++++++++++++++++++++++++++
+
+    Toggle the settings **Property Hero section Settings / Map enabled ? / Yes**.
+    Also see the `tutoarial <home-page.html>`_ of homepage setup.
+
+
+How can I change "home" icon for loader?
+++++++++++++++++++++++++++++++++++++++++
+
+    We currently support FontAwesome icons for loader. To replace frontend loader use CSS code below (add it in Appearance > Customize > Custom CSS&JS > Add css):
+
+.. code-block:: css
+
+    .loading-overlay .loading:before {
+        content: "" !important;
+    }
+
+
+In the content, place the unicode value from here http://fontawesome.io/icon/
+For example, if you want this icon: http://fontawesome.io/icon/snapchat-ghost/, type this code:
+
+.. code-block:: css
+
+    content: "\f2ac" !important;
+
+Because **f2ac** is the value in the unicode field.
+
+What languages does the theme support ?
++++++++++++++++++++++++++++++++++++++++
+
+    The theme supports any language. See `here <translating.html>`_ a short guide.
+
+Does this theme support RTL ?
++++++++++++++++++++++++++++++
+
+    Yes, it does.
+
+
+After I have translated some words of the theme, some pages stop to working.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    After translation url parts, the WordPress permalink cache should be dropped.
+    The simplest way is to go to  **Settings / Permalinks** and click on Save.
+
+
+I need add a currency of my country. It's possible?
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    Yes, you can add any currency.
+    Edit the option **Customizer / Theme Settings / Property/General settings /  Main currency** .
+
+
+How can I change the size of the logo?
+++++++++++++++++++++++++++++++++++++++
+
+    To adjust the **logo size** see :ref:`details <reference-logo>`
+
+Every time someone submits a new property from the frontend, this property is in the status `awaiting payment`.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    Please open **Customizer / Theme Settings / Property / Front-end submit**  and turn off **PayPal payments**.
+
+How integrate `iHomefinder`?
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    Please see this `article <idx.html>`_
+
+
+How can I edit text in colored box on Agents/Agent profile page?
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    This "colored box" is named Panel. It is present by default on Agents, Agent profile and FAQ pages. This text could be changed in customizer. Open necessary page and click "Customize" on black toolbar. Then go Current page options -> Layout -> Panel -> Open Editor.
+
+.. image:: ../img/start-customize.png
+
+.. image:: ../img/customize-current.png
+
+.. image:: ../img/open-editor.png
+
+In appeared window change text to yours. If you want to remove this "colored box" just remove demo text and save changes.
+
+How to add "Read More" button for post on blog page?
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    You need to insert "Read More" tag in post body in the end of excerpt text.
+
+.. image:: ../img/read-more-tag.png
+
+Is there option to hide Header bar?
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    It is possible to hide whole header bar using CSS code below (add it in Appearance / Customize / Custom CSS&JS / Add css):
+
+.. code-block:: css
+
+    @media (min-width: 1200px) {
+      .header {
+        display: none;
+      }
+    }
+
+Why I don't receive mail using contact form?
+++++++++++++++++++++++++++++++++++++++++++++
+
+First of all you need to contact your hosting provider and ask if your server support mailing functionality.
+
+Then you need to verify form settings. Go Contact / Contact Forms and select form you need. In "Form" tab is code structure of your form. Here you can see field names and field tags, which you need to use to setup your form.
+
+.. image:: ../img/form-structure.png
+
+Open "Mail" tab. In the top you can see all available tags. You need to place them in necessary fields. In field "To" paste email address you will use to receive messages.
+
+.. image:: ../img/form-setup.png
+
+You can edit demo tags, add your own however you like. Check `Contact Form 7 plugin documentation <https://contactform7.com/docs/>`_ to find more information.
+
+Pre-purchase questions:
+-----------------------
+
+What is the difference between Realtyspace HTML5 Template & Realtyspace - WordPress Theme?
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    * HTML5 Template is just a set of static pages without backend system. You can use it as a base for building your
+    own website with custom management logic. **It cannot be installed as WordPress theme.**
+
+    * Real Estate Wordpress Theme is a ready for use product, where you can add/edit:
+
+        #. Properties
+        #. Agents
+        #. Blog
+        #. etc.
+
+        You can manage payments, users, design looks, language and much more...
+
+
+If i purchase the theme, will i get unminified js & css (dev version) ?
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    Yes, there are unminified versions in the package.
+    Also we can share our Gulp configuration so that you can compile the assets by yourself.
+
+Is the $59 paid per month or one time to download the layout? Any renewal fees?
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    59$ is a one time price, no renewal fees, it includes 6 month of support
+
+Are a search form's fields customizable? Should I know how to program to change them?
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    The search fields are fully customizable. You can select any type of available fields, reorder them, and set any value.
+    No coding is required here.
+
+Which MLS solution are you support?
++++++++++++++++++++++++++++++++++++
+
+    Currently we supporting MLS listings via **dsidxpress**, **Ihomefinder** plugins. See here MLS http://www.diversesolutions.com/idx-coverage/
+    RealtyPress and idxBroker are soon to be available as well!
+
+What types of payments do yo have?
+++++++++++++++++++++++++++++++++++
+
+    The payments can be made via PayPal.
+
+The premium plugins are requiring activation, are they trial?
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    The plugins are not trial, they are full versions that you can use as long as you want.
+
+    We have agreement and permission from the corresponding plugin authors to provide free version for customers of our theme.
+
+    For example let's take Visual Composer, here's the only place you can get it https://codecanyon.net/item/visual-composer-page-builder-for-wordpress/242431?s_rank=1 .
+    So you'd have to pay 34$ to use it, however due to the fact that it is included in our theme, you can use it for free, activating you personal license is fully optional!
+
+    **So let to reiterate:**
+
+    #. These are non-trial plugins, you can use them as long as you want, they have exactly the same features as the full versions.
+    #. Activating the license is fully optional and ONLY if you want direct support and updates from their authors. Currently the support and updates are provided for us.
+
+
+Other questions
+---------------
+
+How do i find out what theme version do I have?
++++++++++++++++++++++++++++++++++++++++++++++++
+
+    To find out which version you have, go to **Appearance / Themes** and click on current theme image, you should
+    the theme version to right of the name.
+
+    .. image:: ../img/get-theme-version.png

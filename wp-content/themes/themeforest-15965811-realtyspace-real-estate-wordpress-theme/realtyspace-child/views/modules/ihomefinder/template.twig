@@ -1,0 +1,31 @@
+{% extends 'base-archive.twig' %}
+{# @var page \cf47\theme\realtyspace\module\ihomefinder\viewmodel\SingleViewModel #}
+{% block content %}
+  <div class="site site--main">
+    {{ macro.page_header(page) }}
+    <div class="site__main">
+      <div class="widget ">
+        <div class="widget__content">
+          {% if page.featured_image %}
+            {{ macro.thumbnail(page.featured_image, 870) }}
+          {% endif %}
+          <div class="ihf">
+            {{ page.content|raw }}
+          </div>
+          {#{{ content(__('Read more', 'realtyspace')) }}#}
+          {% if page.social_links|length %}
+            <div class="article__footer">
+              <div class="social social--article">
+                <span>{{ __('Share this post', 'realtyspace') }}</span>
+                {% from 'macro.twig' import sharing_links %}
+                {{ sharing_links(page.social_links) }}
+              </div>
+            </div>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+    <!-- END LISTING-->
+  </div>
+{% endblock %}

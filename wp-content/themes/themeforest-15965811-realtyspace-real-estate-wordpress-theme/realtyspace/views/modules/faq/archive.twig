@@ -1,0 +1,28 @@
+{% extends 'base-archive.twig' %}
+{% import 'modules/faq/macro.twig' as faq_macro %}
+
+{% block content %}
+  {# @var page \cf47\theme\realtyspace\module\faq\viewmodel\ArchiveViewModel #}
+  <div class="site site--main">
+    {{ macro.page_header(page) }}
+    <div class="site__main">
+      {% embed 'section-widget.twig' %}
+        {% from 'macro.twig' import widget_header %}
+        {% set widget_class='main' %}
+
+        {% block content %}
+          <!-- BEGIN FAQ-->
+          <div role="tablist" aria-multiselectable="true" class="faq">
+            {% if page.show_categories %}
+              {{ faq_macro.mixed_list(page.items_grouped) }}
+            {% else %}
+              {{ faq_macro.list(page.items) }}
+            {% endif %}
+            <!-- end of block .faq__item-->
+          </div>
+          <!-- END FAQ-->
+        {% endblock %}
+      {% endembed %}
+    </div>
+  </div>
+{% endblock %}

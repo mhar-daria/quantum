@@ -1,0 +1,63 @@
+{% from 'modules/property/macro.twig' import grid_item %}
+{% from 'macro.twig' import widget_header, no_items_available %}
+{# @var section \cf47\plugin\realtyspace\module\property\section\group\PropertyGroupView #}
+
+{% set module_id = js_module('propertyGroup', {
+'animate': true,
+}) %}
+
+{% extends 'section-widget.twig' %}
+
+{% set widget_class='landing gray properties-section' %}
+
+{% block header %}
+  {{ widget_header(section.title, section.subtitle) }}
+{% endblock %}
+
+{% block content %}
+
+  <!-- end of block .properties__header-->
+  {% if section.listing_types|length == 1 %}
+    {% for type_key, type_value in section.listing_types %}
+      <div class="listing listing--grid properties properties--grid">
+        {% for property in attribute(section.properties, type_key) %}
+          {{ grid_item(property) }}
+        {% endfor %}
+      </div>
+    {% endfor %}
+  {% else %}
+    <div class="tab tab--properties">
+      <ul role="tablist" class="nav tab__nav">
+        {% for type_key, type_value in section.listing_types %}
+          <li {% if loop.first %}class="active"{% endif %}>
+            <a href="#tab-{{ type_key }}" aria-controls="tab-{{ type_key }}" role="tab" data-toggle="tab" class="properties__btn js-pgroup-tab">
+              {{ type_value }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="tab-content">
+        {% for type_key, type_value in section.listing_types %}
+          <div id="tab-{{ type_key }}" class="tab-pane {% if loop.first %}in active{% endif %}">
+            <div class="listing listing--grid properties--grid">
+              {% for property in attribute(section.properties, type_key) %}
+                {{ grid_item(property) }}
+              {% else %}
+                {{ no_items_available() }}
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
+
+  {% if section.properties.recent or section.properties.featured %}
+    <div class="widget__footer">
+      <a href="{{ section.listing_url|e('esc_url') }}" class="widget__more">
+        {{ __('More properties', 'realtyspace') }}
+      </a>
+    </div>
+  {% endif %}
+{% endblock %}

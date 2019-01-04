@@ -1,0 +1,17 @@
+{% from 'macro.twig' import widget_header, fa_icon %}
+
+{% extends 'widget.twig' %}
+
+{% block header %}
+  {{ widget_header(title, subtext, widget.modifier) }}
+{% endblock %}
+
+{% block content %}
+  <div class="social social--{{ widget.modifier }}">
+    {% for service in services %}
+      <a target="_blank" href="{{ service.link }}" class="social__item" title="{{ service.name }}">
+        {{ fa_icon(service.icon) }}
+      </a>
+    {% endfor %}
+  </div>
+{% endblock %}

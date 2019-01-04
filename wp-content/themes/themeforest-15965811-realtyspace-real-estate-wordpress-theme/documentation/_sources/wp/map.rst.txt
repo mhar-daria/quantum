@@ -1,0 +1,35 @@
+Map
+===
+
+#. Go to https://console.developers.google.com/iam-admin/projects
+#. Create Project your project
+#. Under Library tabs *enable API* for services:
+    * Google Maps JavaScript API
+    * Google Maps Geocoding API
+    * Google Places API Web services
+#. Go to credentials section. Choose Api key.
+#. Copy API Key.
+#. Open Customizer / Theme settings / Property / Map settings / Google Maps API Key
+#. Replace the default API key with your new API key
+
+
+Google map API key setup video
+------------------------------
+
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="//www.youtube.com/embed/Z6-q4-4yTAo" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+    <br>
+
+
+Troubleshooting
+---------------
+
+When I insert address in the search map field, the map doesn't show any location
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Please, check again if all required API services are enabled.
+
+.. image:: ../img/maps-error.png

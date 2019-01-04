@@ -1,0 +1,31 @@
+{% from 'macro.twig' import widget_header %}
+{% from 'modules/property/macro.twig' import price, address_link, thumbnail %}
+
+{% extends 'widget.twig' %}
+
+{% block header %}
+  {{ widget_header(title, subtext, widget.modifier) }}
+{% endblock %}
+
+{% block content %}
+  <!-- BEGIN PROPERTIES-->
+  <div class="listing listing--{{ widget.modifier }} properties--{{ widget.modifier }}">
+    {% for property in properties %}
+      {#@var property \cf47\theme\realtyspace\module\property\Property #}
+      <div class="listing__item">
+        <div class="properties__item">
+          {{ thumbnail(property, false, true, false) }}
+          <!-- end of block .properties__thumb-->
+          <div class="properties__info">
+            {{ address_link(property) }}
+            <span class="properties__price">
+                        {{ price(property) }}
+                    </span>
+          </div>
+          <!-- end of block .properties__info-->
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <!-- END PROPERTIES-->
+{% endblock %}

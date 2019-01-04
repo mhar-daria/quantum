@@ -1,0 +1,13 @@
+{# @var section \cf47\plugin\realtyspace\module\other\section\features\item\FeaturesItemView #}
+{% from 'macro.twig' import icon %}
+<div class="feature__item">
+  {% if section.icon %}
+    {{ icon(section.icon, 'feature__icon') }}
+  {% endif %}
+  <div class="feature__item-content">
+    <h3 class="feature__item-title">{{ section.label|raw }}</h3>
+    <div class="feature__text">
+      {{ section.text|raw }}
+    </div>
+  </div>
+</div>

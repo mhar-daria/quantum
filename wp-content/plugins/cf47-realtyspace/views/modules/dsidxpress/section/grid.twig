@@ -1,0 +1,15 @@
+{# @var section \cf47\plugin\realtyspace\module\ihomefinder\section\grid\GridView #}
+{% from 'macro.twig' import widget_header %}
+{% extends 'section-widget.twig' %}
+
+{% block header %}
+  {{ widget_header(section.title, section.subtitle) }}
+{% endblock %}
+
+{% set widget_class = 'landing idxpress-group' %}
+
+{% block content %}
+  {{ '[idx-listings minprice="10000" maxprice="10000000"orderby="DateAdded" orderdir="DESC" showlargerphotos="true" count="6"]'|shortcodes|raw }}
+{% endblock %}
+
+

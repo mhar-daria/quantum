@@ -1,0 +1,11 @@
+{#{{ widget.before_widget|replace({'widget--wp': ''})|raw }}#}
+{#{{ widget.before_title|replace({'<div class="widget__header">': ''})|replace({'<h3 class="widget__title">': ''})|replace({'<h4 class="widget__title">': ''})|raw }}#}
+    {#{% block header %}{% endblock %}#}
+{#{{ widget.after_title|replace({'</h3>': ''})|replace({'</h4>': ''})|replace({'</div>': ''})|raw }}#}
+    {#{% block content %}{% endblock %}#}
+{#{{ widget.after_widget|raw }}#}
+
+{{ widget.before_widget|replace({'widget--wp': ''})|raw }}
+    {% block header %}{% endblock %}
+    {% block content %}{% endblock %}
+{{ widget.after_widget|raw }}

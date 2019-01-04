@@ -1,0 +1,422 @@
+{# @var page \cf47\theme\realtyspace\module\property\viewmodel\DetailsViewModel #}
+{# @var property \cf47\plugin\realtyspace\module\property\Entity #}
+
+
+{% extends 'base-archive.twig' %}
+{% from 'modules/property/macro.twig' import price %}
+{% from 'macro.twig' import widget_header %}
+
+{% set property = page.property %}
+{% block content %}
+  <div class="site site--main">
+    <!-- BEGIN PROPERTY DETAILS-->
+    <div class="property">
+      <h1 class="property__title">
+        {{ property.title|raw }}
+        <span class="property__city">
+                {% for location_part in property.location() %}
+                  {{ location_part.name }}{{ not loop.last ? ',' }}
+                {% endfor %}
+                </span>
+      </h1>
+      <div class="property__header">
+        {% if page.show_price_box %}
+          <div class="property__price">
+            {{ price(property, true) }}
+          </div>
+        {% endif %}
+        {% if page.show_sharing %}
+          <div class="social social--properties">
+            <span class="social__title">{{ __('Share this:', 'realtyspace') }}</span>
+            {% from 'macro.twig' import sharing_links %}
+            {{ sharing_links(page.social_links) }}
+          </div>
+        {% endif %}
+
+        <div class="property__actions">
+          <button type="button" class="btn--default property__actions--print" onclick="window.print()"><i class="fa fa-print"></i>{{ __('Print', 'realtyspace') }}</button>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+      <div class="property__slider">
+        {% if property.contract_type %}
+          <div class="property__ribon">{{ property.contract_type }}</div>
+        {% endif %}
+        <div class="slider slider--small js-dapi-slickslider  js-dapi-gallery {% if page.show_slider_fixed_height %} slider--fixed{% endif %}" {% if not page.show_slider_fixed_height %} data-adaptiveHeight="true"{% endif %}>
+          {% for image in property.images %}
+            {% if page.show_popup_original %}
+              <div data-size="0x0" data-caption="{{ image.caption }}" data-item data-src="{{ image.src }}"></div>
+            {% else %}
+              <div data-size="1740x960" data-caption="{{ image.caption }}" data-item data-src="{{ macro.thumbnail_src(image.src, 1740, 960) }}"></div>
+            {% endif %}
+          {% endfor %}
+          <div class="slider__block" data-slick data-wrapper>
+            {% for image in property.images %}
+              <div class="slider__item">
+                {% if page.show_slider_original %}
+                  {% set href= image.src %}
+                {% else %}
+                  {% set href = macro.thumbnail_src(image.src, 1740, 960) %}
+                {% endif %}
+
+                {% if page.show_slider_original %}
+                  {% set img = image.src %}
+                {% else %}
+                  {% set img = macro.thumbnail_src(image.src, 1170, 600) %}
+                {% endif %}
+
+                <a href="{{ href }}" data-index='{{ loop.index0 }}' data-trigger class="slider__img">
+                  <img data-lazy="{{ img }}" src="{{ fn('get_template_directory_uri') }}/public/img/lazy-image.jpg" alt="">
+                  {% if image.caption %}
+                    <span class="slider__description">{{ image.caption }}</span>
+                  {% endif %}
+                </a>
+              </div>
+            {% else %}
+              <div class="slider__item">
+                <div class="slider__img">{{ macro.thumbnail(null, 870, 480) }} </div>
+              </div>
+            {% endfor %}
+          </div>
+
+          {% if not page.show_slider_thumbs %}
+            <div class="slider__controls">
+              <button type="button" class="slider__control slider__control--prev" data-prev>
+                <svg class="slider__control-icon">
+                  <use xlink:href="#icon-arrow-left"></use>
+                </svg>
+              </button>
+              <span class="slider__current">
+                <span data-current>1</span> /</span>
+              <span class="slider__total" data-total>{{ post.gallery_items|length }}</span>
+              <button type="button" class="slider__control slider__control--next" data-next>
+                <svg class="slider__control-icon">
+                  <use xlink:href="#icon-arrow-right"></use>
+                </svg>
+              </button>
+            </div>
+          {% endif %}
+        </div>
+
+        {% if page.show_slider_thumbs %}
+          <div class="slider slider--thumbs js-nav-slickslider" {% if page.show_slider_original %} data-variablewidth="true"{% else %} data-centermode="true"{% endif %}>
+            <div class="slider__wrap">
+              <div class="slider__block" data-slick>
+                {% for image in property.images %}
+                  <div data-slide-rel='{{ loop.index0 }}' class="slider__item slider__item--{{ loop.index0 }}">
+                    <div class="slider__img">
+                      <img data-lazy="{% if page.show_slider_original %}{{ macro.thumbnail_src(image.src, 270, 0) }}{% else %}{{ macro.thumbnail_src(image.src, 270, 180) }}{% endif %}" src="{{ fn('get_template_directory_uri') }}/public/img/lazy-image.jpg" alt="">
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+              <button type="button" class="slider__control slider__control--prev" data-prev>
+                <svg class="slider__control-icon">
+                  <use xlink:href="#icon-arrow-left"></use>
+                </svg>
+              </button>
+              <button type="button" class="slider__control slider__control--next" data-next>
+                <svg class="slider__control-icon">
+                  <use xlink:href="#icon-arrow-right"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+      <div class="property__info">
+        {% if property.sku %}
+          <div class="property__info-item">{{ __('SKU', 'realtyspace') }}:<strong> {{ property.sku }}</strong>
+          </div>
+        {% endif %}
+        {% if property.type %}
+          <div class="property__info-item">{{ __('Property type', 'realtyspace') }}:<strong> {{ property.type }}</strong>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="widget js-widget widget--details">
+        <div class="widget__content">
+          <div class="property__plan">
+            {% if property.area %}
+              <dl class="property__plan-item">
+                <dt class="property__plan-icon">
+                  <svg>
+                    <use xlink:href="#icon-area"></use>
+                  </svg>
+                </dt>
+                <dd class="property__plan-title">{{ __('Area', 'realtyspace') }} ({{ wparea.current_unit_label|raw }})</dd>
+                <dd class="property__plan-value">{{ property.area|area(false) }}</dd>
+              </dl>
+            {% endif %}
+            {% if property.rooms %}
+              <dl class="property__plan-item">
+                <dt class="property__plan-icon">
+                  <svg>
+                    <use xlink:href="#icon-window"></use>
+                  </svg>
+                </dt>
+                <dd class="property__plan-title">{{ __('Rooms', 'realtyspace') }}</dd>
+                <dd class="property__plan-value">{{ property.rooms }}</dd>
+              </dl>
+            {% endif %}
+            {% if property.bathrooms %}
+              <dl class="property__plan-item">
+                <dt class="property__plan-icon">
+                  <svg>
+                    <use xlink:href="#icon-bathrooms"></use>
+                  </svg>
+                </dt>
+                <dd class="property__plan-title">{{ __('Bathrooms', 'realtyspace') }}</dd>
+                <dd class="property__plan-value">{{ property.bathrooms }}</dd>
+              </dl>
+            {% endif %}
+            {% if property.bedrooms %}
+              <dl class="property__plan-item">
+                <dt class="property__plan-icon">
+                  <svg>
+                    <use xlink:href="#icon-bedrooms"></use>
+                  </svg>
+                </dt>
+                <dd class="property__plan-title">{{ __('Bedrooms', 'realtyspace') }}</dd>
+                <dd class="property__plan-value">{{ property.bedrooms }}</dd>
+              </dl>
+            {% endif %}
+            {% if property.garages %}
+              <dl class="property__plan-item">
+                <dt class="property__plan-icon">
+                  <svg>
+                    <use xlink:href="#icon-garage"></use>
+                  </svg>
+                </dt>
+                <dd class="property__plan-title">{{ __('Garages', 'realtyspace') }}</dd>
+                <dd class="property__plan-value">{{ property.garages }}</dd>
+              </dl>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% if page.show_space_section and (property.additional_details or property.year_built or property.land_area) %}
+        <div class="widget js-widget widget--details">
+          <div class="widget__header">
+            <h3 class="widget__title">{{ __('The space', 'realtyspace') }}</h3>
+          </div>
+          <div class="widget__content">
+            <div class="property__params">
+              <ul class="property__params-list">
+                {% if property.land_area %}
+                  <li>{{ __('Land Size', 'realtyspace') }}: <strong>{{ property.land_area|area|default('-')|raw }}</strong></li>
+                {% endif %}
+                {% if property.year_built %}
+                  <li>{{ __('Year Built', 'realtyspace') }}: <strong>{{ property.year_built }}</strong>
+                  </li>
+                {% endif %}
+                {% for item in property.additional_details %}
+                  <li>{{ item.name }}: <strong>{{ item.value }}</strong></li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if page.show_amenities_section and property.features %}
+        <div class="widget js-widget widget--details">
+          <div class="widget__header">
+            <h3 class="widget__title">{{ __('Amenities', 'realtyspace') }}</h3>
+          </div>
+          <div class="widget__content">
+            <div class="property__params">
+              <ul class="property__params-list property__params-list--options">
+                {% for feature in property.features %}
+                  <li>{{ feature.name|raw }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if page.show_description and property.content %}
+        <div class="widget js-widget widget--details">
+          <div class="widget__header">
+            <h3 class="widget__title">{{ __('Description', 'realtyspace') }}</h3>
+          </div>
+          <div class="widget__content">
+            <div class="property__description js-unhide-block">
+              <div class="property__description-wrap1">{{ property.content|raw }}</div>
+              <button type="button" class="property__btn-more js-unhide">{{ __('More information ...', 'realtyspace') }}</button>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if property.attachments %}
+        <div class="widget js-widget widget--details widget--attachments">
+          <div class="widget__content">
+            <div class="property__files js-unhide-block">
+              <h3 class="widget__title">{{ __('Attachments', 'realtyspace') }}</h3>
+              {% for attachment in property.attachments %}
+                <a href="{{ attachment.url }}" class="property__files-item" target="_blank">
+                  <svg class="property__files-icon">
+                    <use xlink:href="#icon-doc"></use>
+                  </svg>
+                  {{ attachment.title|default(attachment.filename) }}
+                </a>
+              {% endfor %}
+            </div>
+            <button type="button" class="property__files-show js-unhide">{{ __('Show attachments', 'realtyspace') }}</button>
+          </div>
+        </div>
+
+      {% endif %}
+
+
+      {% if property.video_tour %}
+        <div class="widget js-widget widget--details widget--video-tour">
+          <div class="widget__header">
+            <h3 class="widget__title">{{ __('Video tour', 'realtyspace') }}</h3>
+          </div>
+          <div class="widget__content">
+            <div class="property__video">
+              {{ property.video_tour|raw }}
+            </div>
+          </div>
+        </div>
+
+      {% endif %}
+
+      <div class="property__photos--print js-photos-print">
+        {% for image in property.images %}
+          <img src="{{ macro.thumbnail_src(image.src, 800, 0) }}">
+        {% endfor %}
+      </div>
+
+      {% if property.map_location and (page.show_map or page.show_panorama) %}
+        {% set module_id = js_module('panoramaMapSwitcher',{
+        'showPanorama': page.show_panorama,
+        'showMap': page.show_map,
+        'mapType': page.map_type,
+        'mapZoom': page.map_zoom,
+        'location': property.map_location,
+        }) %}
+
+        <div class="widget js-widget widget--details">
+          <div class="widget__content">
+            <div class="map map--properties" id="{{ module_id }}">
+              <div class="map__buttons">
+                {% if page.show_map %}
+                  <button type="button" class="map__change-map js-map-btn active">{{ __('Map', 'realtyspace') }}</button>
+                {% endif %}
+                {% if page.show_panorama %}
+                  <button type="button" class="map__change-panorama js-panorama-btn">{{ __('Street view', 'realtyspace') }}</button>
+                {% endif %}
+              </div>
+              <div class="map__wrap">
+                {% if page.show_map %}
+                  <div data-type="map" class="map__view js-map-canvas"></div>
+                {% endif %}
+                {% if page.show_panorama %}
+                  <div data-type="panorama" class="map__view map__view--panorama js-map-canvas"></div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+      {% if page.show_agent and property.agent %}
+        {% from 'macro.twig' import thumbnail %}
+        {% from 'modules/agent/macro.twig' import contacts, social, photo %}
+        <div class="widget js-widget widget--details">
+          <div class="widget__header">
+            {% if property.agent.is_user %}
+              <h3 class="widget__title">{{ __('Contact the owner', 'realtyspace') }}</h3>
+            {% else %}
+              <h3 class="widget__title">{{ __('Contact the Agent', 'realtyspace') }}</h3>
+            {% endif %}
+          </div>
+          <div class="widget__content">
+            <div class="property__contact js-unhide-block">
+              <div class="worker worker--list worker--details">
+                <div class="worker__item vcard">
+                  {{ photo(property.agent, 500, 480, true) }}
+                  <div class="worker__intro">
+                    <div class="worker__intro-head">
+                      <div class="worker__intro-name">
+                        <h3 class="worker__name fn">
+                          <a href="{{ property.agent.link }}">{{ property.agent.name|raw }}</a></h3>
+                        <div class="worker__post">{{ property.agent.job_title }}</div>
+                        <button type="button" class="worker__show js-unhide">{{ __('Contact agent', 'realtyspace') }}</button>
+                      </div>
+                    </div>
+                    <div class="worker__intro-row">
+                      <div class="worker__intro-col">
+                        {{ contacts(property.agent) }}
+                      </div>
+                      <div class="worker__intro-col">
+                        {{ social(property.agent) }}
+                      </div>
+                    </div>
+                  </div>
+                  {% if property.agent.content %}
+                    <div class="worker__descr">
+                      {{ property.agent.content|excerpt(150)|raw }}
+                    </div>
+                  {% endif %}
+                  <!-- end of block .worker__descr-->
+                  <div class="clearfix"></div>
+                </div>
+                <!-- end of block .worker__item-->
+              </div>
+              {% if page.agent_form_id %}
+                <div class="property__contact-form">
+                  <div class="form form--property-agent">
+                    {{ page.agent_form|raw }}
+                  </div>
+                </div>
+              {% endif %}
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+
+      {% if page.show_tags_section and property.tags %}
+        <div class="widget js-widget widget--details">
+          <div class="widget__header">
+            <h3 class="widget__title">{{ __('Tags', 'realtyspace') }}</h3>
+          </div>
+          <div class="widget__content">
+            {% for tag in property.tags %}
+              <a href="{{ tag.link }}">{{ tag }}</a> {{ not loop.last ? ', ' }}
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  <!-- end of block .property-->
+  <!-- END PROPERTY DETAILS-->
+{% endblock %}
+
+{% block subcontent %}
+  {% if page.show_related and property.related_properties %}
+    {% embed 'section-widget.twig' %}
+      {% from 'modules/property/macro.twig' import items as property_items %}
+      {% from 'macro.twig' import widget_header %}
+      {% set widget_class='landing collapsing' %}
+
+      {% block header %}
+        {{ widget_header(__('Similar properties', 'realtyspace')) }}
+      {% endblock %}
+
+      {% block content %}
+        <div class="listing listing--grid properties properties--grid">
+          {{ property_items(property.related_properties, 'grid') }}
+        </div>
+      {% endblock %}
+    {% endembed %}
+  {% endif %}
+{% endblock %}

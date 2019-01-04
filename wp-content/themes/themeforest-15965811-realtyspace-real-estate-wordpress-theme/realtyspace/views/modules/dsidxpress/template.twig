@@ -1,0 +1,29 @@
+{% extends 'base-archive.twig' %}
+{# @var page \cf47\theme\realtyspace\module\dsidxpress\viewmodel\SingleViewModel #}
+{% block content %}
+  <div class="site site--main">
+    {{ macro.page_header(page) }}
+    <div class="site__main">
+      <div class="widget ">
+        <div class="widget__content">
+          <article class="article article--details article--page">
+            <div class="article__body">
+              {{ page.content|raw }}
+            </div>
+            {% if page.social_links|length %}
+              <div class="article__footer">
+                <div class="social social--article">
+                  <span>{{ __('Share this post', 'realtyspace') }}</span>
+                  {% from 'macro.twig' import sharing_links %}
+                  {{ sharing_links(page.social_links) }}
+                </div>
+              </div>
+            {% endif %}
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <!-- END LISTING-->
+  </div>
+{% endblock %}

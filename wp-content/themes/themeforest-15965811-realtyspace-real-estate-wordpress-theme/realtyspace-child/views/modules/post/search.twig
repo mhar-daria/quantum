@@ -1,0 +1,29 @@
+{% extends 'base-archive.twig' %}
+{% from 'modules/post/macro.twig' import header %}
+{% from 'macro.twig' import page_header %}
+
+{# @var page \cf47\theme\realtyspace\module\post\viewmodel\SearchViewModel #}
+
+{% block content %}
+  <div class="site site--main">
+    {{ page_header(page) }}
+    <div class="site__main">
+      <div class="listing listing--list article article--list ">
+        {% for post in page.posts %}
+          <div class="listing__item">
+            <article class="article__item {{ post.css_classes }}">
+              {{ header(post) }}
+            </article>
+          </div>
+        {% else %}
+          {{ include('partials/no-results.twig', {
+            'classes': 'listing__empty--properties',
+            'title': __('The search did not return any results', 'realtyspace'),
+            'headline': __('Please try again with different criteria.', 'realtyspace')
+          }) }}
+        {% endfor %}
+      </div>
+    </div>
+    {{ macro.pagination(page.pagination) }}
+  </div>
+{% endblock %}

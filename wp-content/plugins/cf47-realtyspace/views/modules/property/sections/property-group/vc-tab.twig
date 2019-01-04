@@ -1,0 +1,24 @@
+{% from 'modules/property/macro.twig' import grid_item %}
+{% from 'macro.twig' import widget_header, no_items_available %}
+{# @var section \cf47\plugin\realtyspace\module\property\section\group\tab\PropertyGroupTabView #}
+<li>
+  <a
+      href="#tab-{{ section.slug|e('esc_attr') }}"
+      aria-controls="tab-{{ section.slug|e('esc_attr') }}"
+      role="tab"
+      data-toggle="tab" class="properties__btn js-pgroup-tab"
+  >
+    {{ section.title }}
+  </a>
+</li>
+<!-- separator -->
+<div id="tab-{{ section.slug|e('esc_attr') }}" class="tab-pane">
+  <div class="listing listing--grid properties--grid">
+    {% for property in section.items %}
+      {{ grid_item(property) }}
+    {% else %}
+      {{ no_items_available() }}
+    {% endfor %}
+  </div>
+</div>
+<!-- separator -->

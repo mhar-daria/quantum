@@ -1,0 +1,6 @@
+{% extends 'base.twig' %}
+
+{% block container %}
+  {% set title = __('Access denied', 'realtyspace') %}
+  {{ include('modules/core/includes/not-found.twig', {'title': title}, false) }}
+{% endblock %}

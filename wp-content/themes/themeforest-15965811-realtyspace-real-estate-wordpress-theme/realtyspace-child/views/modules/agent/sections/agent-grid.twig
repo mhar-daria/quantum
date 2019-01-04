@@ -1,0 +1,62 @@
+{% from 'macro.twig' import widget_header, thumbnail, no_items_available %}
+{% from 'modules/agent/macro.twig' import social_item %}
+{# @var section \cf47\theme\realtyspace\module\home\view\template\AgentGrid #}
+
+{% set module_id = js_module('workerIndex', {
+'animate': true,
+}) %}
+
+{% extends 'section-widget.twig' %}
+
+{% set widget_class='landing gray worker-section' %}
+
+{% block header %}
+  {{ widget_header(section.title, section.subtitle, 'worker') }}
+{% endblock %}
+
+{% block content %}
+  <div class="listing listing--grid listing--small worker worker--index">
+    {% for agent in section.agents %}
+      <div class="listing__item">
+        <div class="worker__item vcard animate-end">
+          <div class="worker__photo">
+            <a href="{{ agent.link }}" class="item-photo item-photo--static">
+              {{ thumbnail(agent.featured_image, 500, 480, 'photo', false, agent.featured_image.alt) }}
+            </a>
+            <div class="worker__details">
+              {% if agent.job_title %}
+                <span class="worker__post">{{ agent.job_title }}</span>
+              {% endif %}
+              <div class="worker__links">
+                {% if agent.email %}
+                  <a class="worker__link" href="mailto:{{ agent.email|antispambot }}" title="{{ agent.email|antispambot }}">
+                    <svg class="worker__link-icon">
+                      <use xlink:href="#icon-mail"></use>
+                    </svg>
+                  </a>
+                {% endif %}
+
+                {% for social_profile in agent.social_profiles %}
+                  {{ social_item(social_profile, 'worker__link') }}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          <div class="worker__info">
+            <h4 class="worker__name fn">{{ agent.name|raw }}</h4>
+            {% set contact_number = agent.main_contact_number %}
+            {% if contact_number %}
+              <a href="tel:{{ contact_number.number|replace({' ': ''}) }}" class="worker__tel uri">{{ contact_number.number }}</a>
+            {% endif %}
+            <a href="{{ agent.link }}" class="worker__more">{{ __('Read more', 'realtyspace') }}</a>
+            <!-- end of block .worker__contacts-->
+          </div>
+          <!-- end of block .worker__info-->
+        </div>
+      </div>
+    {% else %}
+      {{ no_items_available() }}
+    {% endfor %}
+
+  </div>
+{% endblock %}

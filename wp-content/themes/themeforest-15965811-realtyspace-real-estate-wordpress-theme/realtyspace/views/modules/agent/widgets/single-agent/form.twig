@@ -1,0 +1,12 @@
+{% import 'macro-widget-form.twig' as widget %}
+<p>{{ __('The title and subtext will not be visible, if the widget is first in the sidebar.', 'realtyspace') }}</p>
+{{ widget.text_field(title, __('Title', 'realtyspace')) }}
+{{ widget.text_field(subtext, __('Subtext', 'realtyspace')) }}
+{{ widget.select_field(agent_list, __('Agent list', 'realtyspace')) }}
+{{ widget.select_field(cf7_list, __('Contact Form 7', 'realtyspace')) }}
+{#<p>If you choose <b>context-dependent</b> option, then this widget will work like this:</p>#}
+{#<ul>#}
+    {#<li>On "property details" page: it will display the agent assigned to the current property</li>#}
+    {#<li>On "agent details" page: it will display the agent to whome the properties belong</li>#}
+    {#<li>On other pages, it will display nothing</li>#}
+{#</ul>#}

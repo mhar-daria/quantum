@@ -1,0 +1,18 @@
+{% from 'macro.twig' import widget_header %}
+{% extends 'widget.twig' %}
+
+{% block header %}
+  {{ widget_header(title, subtext, widget.modifier) }}
+{% endblock %}
+
+{% block content %}
+  {{ form_start(form, {'widget_id': widget_id, 'attr': {'class': 'form form--search js-search-form form--' ~ widget.modifier}}) }}
+
+  {{ form_widget(form, {'attr': {'class': 'row'}}) }}
+
+  <div class="row form__buttons form__buttons--double">
+    <button type="reset" class="form__reset js-form-reset">{{ __('Reset', 'realtyspace') }}</button>
+    <button type="submit" class="form__submit">{{ __('Search', 'realtyspace') }}</button>
+  </div>
+  {{ form_end(form) }}
+{% endblock %}

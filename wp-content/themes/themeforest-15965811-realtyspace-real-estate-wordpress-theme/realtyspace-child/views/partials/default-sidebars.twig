@@ -1,0 +1,13 @@
+{% set args = {
+'before_widget': '<section id="%1$s" class="widget js-widget widget--sidebar %1$s">',
+'after_widget': '</div></section>',
+'before_title': '<header class="widget__header"><h3 class="widget__title">',
+'after_title': '</h3></header><div class="widget__content">',
+'modifier': 'sidebar',
+} %}
+
+{{ fn('the_widget', 'WP_Widget_Search', {}, args) }}
+{{ fn('the_widget', 'WP_Widget_Archives', {}, args) }}
+{{ fn('the_widget', 'WP_Widget_Calendar', {}, args) }}
+{{ fn('the_widget', 'WP_Widget_Categories', {}, args) }}
+{{ fn('the_widget', 'WP_Widget_Recent_Posts', {}, args) }}

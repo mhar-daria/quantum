@@ -1,0 +1,93 @@
+{% extends 'base-archive.twig' %}
+{# @var page \cf47\theme\realtyspace\module\contact\viewmodel\Template #}
+
+{% block content %}
+  <div class="site site--main">
+    {% embed 'section-widget.twig' %}
+      {% from 'macro.twig' import widget_header %}
+      {% set widget_class='landing' %}
+
+      {% block header %}
+        {{ widget_header(page.title, page.subtitle) }}
+      {% endblock %}
+
+      {% block content %}
+        <div class="contacts">
+          <div class="contacts__column">
+            <div class="contacts__address">
+              {% for section in page.sections %}
+                <address class="contacts__address-item">
+                  {% if section.group_name %}
+                    <span class="contacts__address-title">{{ section.group_name }}</span>
+                  {% endif %}
+                  {% if section.address %}
+                    <dl class="contacts__address-column">
+                      <dt class="contacts__address-column__title">{{ __('Address:', 'realtyspace') }}</dt>
+                      <dd>{{ section.address|nl2br }}</dd>
+                    </dl>
+                  {% endif %}
+                  {% if section.phone or section.fax %}
+                    <dl class="contacts__address-column">
+                      {% if section.phone %}
+                        <dt class="contacts__address-column__title">{{ __('Telephone:', 'realtyspace') }}</dt>
+                        <dd>{{ section.phone|nl2br }}</dd>
+                      {% endif %}
+                      {% if section.fax %}
+                        <dt class="contacts__address-column__title">{{ __('Fax:', 'realtyspace') }}</dt>
+                        <dd>{{ section.fax|nl2br }}</dd>
+                      {% endif %}
+                    </dl>
+                  {% endif %}
+                  {% if section.emails or section.working_hours %}
+                    <dl class="contacts__address-column">
+                      {% if section.emails %}
+                        <dt class="contacts__address-column__title">{{ __('Email:', 'realtyspace') }}</dt>
+                        <dd>
+                          {% for email in section.emails %}
+                            <a href="mailto:{{ email.email|antispambot }}">
+                              {{ email.email|antispambot }}
+                            </a><br>
+                          {% endfor %}
+                        </dd>
+                      {% endif %}
+                      {% if section.working_hours %}
+                        <dt class="contacts__address-column__title">{{ __('Working hours', 'realtyspace') }}:</dt>
+                        <dd>{{ section.working_hours|nl2br }}</dd>
+                      {% endif %}
+                    </dl>
+                  {% endif %}
+                </address>
+              {% endfor %}
+            </div>
+            {% if page.contactform7_id %}
+              <div class="contacts__form form">
+                {{ "[contact-form-7 id='#{page.contactform7_id}']"|shortcodes|raw }}
+              </div>
+            {% endif %}
+          </div>
+          <div class="contacts__column">
+            <div class="contacts__body">
+              {{ page.content|raw }}
+            </div>
+            {% if  page.social_profiles %}
+              <div class="contacts__social">
+                <div class="social social--worker social--contacts">
+                  <span class="contacts__social-title">{{ __('Our social profiles', 'realtyspace') }}:</span>
+                  {% for social_profile in page.social_profiles %}
+                    <a target="_blank" href="{{ social_profile.url }}" class="social__item">
+                      <i class="fa {{ social_profile.icon|e('html_attr') }}"></i>
+                    </a>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endblock %}
+    {% endembed %}
+  </div>
+
+{% endblock %}
+{% block sidebar %}{% endblock %}
+
+

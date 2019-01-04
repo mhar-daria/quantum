@@ -1,0 +1,58 @@
+Theme installation
+==================
+
+.. important::
+
+    Please check our `FAQ <faq.html>`_ , most probabaly there is already an answer to your question.
+    If you didn't find what you need, please contact us at support@codefactory47.com
+
+.. _reference-install:
+
+To install this theme you must have a working version of WordPress already installed. For information in regard to
+installing the WordPress platform, please read this :ref:`article <reference-newwp>`.
+
+When you are ready to install a theme, you must first upload the theme files and then activate the theme itself.
+To upload a theme, use one of the following methods:
+
+- Via Dashboard: Navigate to **Appearance > Themes**, click at button **Add new** , then click on **Browse**. Choose file *"realtypace.zip"* and next > **Install Now**.
+
+- Via FTP: Using your FTP client, upload the non-zipped theme folder into the */wp-content/themes/* folder on your server.
+  Once the theme is uploaded, you need to activate it. Go to **Appearance > Themes** and activate your chosen theme.
+
+
+Required plugin installation
+----------------------------
+
+In order to take the most advantage from our theme, we recommend installing both required and recommended plugins.
+
+Once you activate the theme, you will see a notice in the top part where the installation wizard will suggest
+installing the plugins. To proceed, click **Begin installing plugins**. After installation, go to plugins page,
+select all the plugins and **activate** them.
+
+
+
+Import demo data
+----------------
+
+Once all required plugins has been installed, you can go to **Appearance > Import Demo Data** and
+click on the button **Import data**.
+This wizard will automatically import demo data to your site and configure your WordPress installation
+to look like our demo site.
+
+Installation video
+------------------
+
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="//www.youtube.com/embed/FkdAPgpub_g" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+
+Troubleshooting
+---------------
+
+.. attention::
+    If you had issues during theme installation, please check our `FAQ <faq.html>`_ !
+
+
+

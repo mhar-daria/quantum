@@ -1,0 +1,36 @@
+{% from 'macro.twig' import widget_header, icon %}
+{# @var section \cf47\plugin\realtyspace\module\other\section\features\FeaturesView #}
+
+{% set module_id = js_module('features', {
+'animate': true,
+}) %}
+
+{% extends 'section-widget.twig' %}
+
+{% set widget_class='landing feature' %}
+
+{% block content %}
+  <div class="feature">
+    {{ widget_header(section.title, section.subtitle, 'feature') }}
+    <!-- end of block .feature__header-->
+    <div class="feature__list">
+      {% if section.is_vc %}
+        {{ section.inner_content|raw }}
+      {% else %}
+        {% for item in section.items %}
+          <div class="feature__item">
+            {{ icon(item.icon, 'feature__icon') }}
+            <div class="feature__item-content">
+              <h3 class="feature__item-title">{{ item.title }}</h3>
+              <div class="feature__text">
+                {{ item.text }}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+    <!-- end of block .feature__list-->
+    <!-- end of .feature__content-->
+  </div>
+{% endblock %}

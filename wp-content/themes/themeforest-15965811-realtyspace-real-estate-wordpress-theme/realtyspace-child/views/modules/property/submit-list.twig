@@ -1,0 +1,128 @@
+{% extends 'base-archive.twig' %}
+{% block js_controller 'submitList' %}
+{% from 'macro.twig' import page_header %}
+{% from 'modules/property/macro.twig' import thumbnail, address_link, paypal_btn %}
+{# @var page \cf47\theme\realtyspace\module\property\submit\viewmodel\SubmitListViewModel #}
+{% block content %}
+  <div class="site site--main">
+    <header class="site__header">
+      <h1 class="site__title {{ preview_hook('js-archive-title') }}">
+        {{ page.title|raw }}
+      </h1>
+      <h2 class="site__headline {{ preview_hook('js-archive-subtitle') }}">
+        {{ page.subtitle|raw }}
+      </h2>
+    </header>
+    <div class="site__panel">
+      {% if page.submit_page_id %}
+        <div class="pull-right">
+          <a href="{{ wpurl.page_url(page.submit_page_id)|e('esc_url') }}" class="btn--action">
+            {{ __('Submit property', 'realtyspace') }}
+          </a>
+        </div>
+
+      {% endif %}
+    </div>
+    <div class="site__main">
+      {% if page.properties %}
+        <div class="listing listing--grid properties properties--grid js-property-list">
+          {% for property in page.properties %}
+            <div class="listing__item">
+              <div class="properties__item js-property-item-container">
+                <div class="js-property-item">
+                  <div class="properties__header">
+                                <span class="js-property-status properties__state
+                                {% if property.status == 'draft' %}
+                                properties__state--hidden
+                                {% elseif property.status == 'pending' %}
+                                properties__state--pending
+                                {% elseif property.status != 'publish' %}
+                                properties__state--hidden
+                                {% elseif property.status == 'publish' %}
+                                properties__state--default
+                                {% endif %}">
+                                      {% if property.status == 'draft' %}
+                                        {{ __('Awaiting payment', 'realtyspace') }}
+                                      {% elseif property.status == 'pending' %}
+                                        {{ __('Awaiting review', 'realtyspace') }}
+                                      {% elseif property.status != 'publish' %}
+                                        {{ __('Hidden', 'realtyspace') }}
+                                      {% elseif property.status == 'publish' %}
+                                        {{ __('Published', 'realtyspace') }}
+                                      {% endif %}
+                                </span>
+                    <div class="properties__right">
+                      {% if property.status in ['publish', 'private'] %}
+                        <a
+                            href="{{ wpurl.route_ajax_url('frontSubmitHideProperty') }}"
+                            data-ajax-id="{{ property.id }}"
+                            class="properties__link js-property-hide {% if property.has_private_status %}hide{% endif %}"
+                        >
+                          {{ __('Hide', 'realtyspace') }}
+                        </a>
+                        <a
+                            href="{{ wpurl.route_ajax_url('frontSubmitShowProperty') }}"
+                            data-ajax-id="{{ property.id }}"
+                            class="properties__link js-property-show {% if property.has_published_status %}hide{% endif %}"
+                        >
+                          {{ __('Show', 'realtyspace') }}
+                        </a>
+                      {% endif %}
+                      <a href="{{ wpurl.page_url(page.submit_page_id, {'pid': property.id})|e('esc_url') }}" class="properties__link">
+                        {{ __('Edit', 'realtyspace') }}
+                      </a>
+                      <button
+                          data-url="{{ wpurl.route_ajax_url('frontSubmitDeleteProperty') }}"
+                          data-ajax-id="{{ property.id }}"
+                          data-toggle="modal" data-target="#delete-modal"
+                          class="properties__link js-property-delete">
+                        {{ __('Delete', 'realtyspace') }}
+                      </button>
+                    </div>
+                  </div>
+                  {% set display_link = property.status in ['private', 'publish'] %}
+                  <div class="properties__thumb">
+                    {{ thumbnail(property, false, true, true, display_link) }}
+                  </div>
+                  <div class="properties__info">
+                    {{ address_link(property, true, display_link) }}
+
+                    {% if page.payments_enabled and property.status == 'draft' %}
+                      {{ paypal_btn(property) }}
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+
+        </div>
+      {% else %}
+        {{ include('partials/no-results.twig', {
+          'classes': 'listing__empty--properties',
+          'title': __('You did not submit any properties yet', 'realtyspace')
+        }) }}
+      {% endif %}
+    </div>
+  </div>
+  <div id="delete-modal" tabindex="-1" role="dialog" class="modal fade">
+    <div role="document" class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" data-dismiss="modal" aria-label="Close" class="close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          {{ __('Are you sure?', 'realtyspace') }}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn--primary js-submit">{{ __('Delete', 'realtyspace') }}</button>
+          <button type="button" data-dismiss="modal" class="btn--default">{{ __('Cancel', 'realtyspace') }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+

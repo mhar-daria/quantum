@@ -1,0 +1,30 @@
+{% extends is_ajax() ? 'base-ajax.twig' : 'base-archive.twig' %}
+{% import 'modules/agent/macro.twig' as agent_macro %}
+
+{# @var page \cf47\theme\realtyspace\module\agent\viewmodel\SingleViewModel #}
+{# @var agent \cf47\theme\realtyspace\module\agent\Entity #}
+
+{% block content %}
+  {% set agent = page.agent %}
+  {% if not is_ajax() %}
+    <div class="site site--main">
+    {{ macro.page_header(page) }}
+    <div class="site__main">
+  {% endif %}
+
+  {% if not page.hide_agent_info %}
+    {% include 'modules/agent/pages/single/includes/agent-info.twig' %}
+  {% endif %}
+
+  {# if not page.hide_properties #}
+    {# include 'modules/agent/pages/single/includes/agent-properties.twig' #}
+  {# endif #}
+
+  {% include 'modules/agent/pages/single/includes/custom-agent-properties.twig' %}
+
+  {% if not is_ajax() %}
+    </div>
+    </div>
+  {% endif %}
+
+{% endblock %}

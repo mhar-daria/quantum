@@ -1,0 +1,62 @@
+Theme update
+============
+
+.. important::
+
+    Please check our `FAQ <faq.html>`_ , most probabaly there is already an answer to your question.
+    If you didn't find what you need, please contact us at support@codefactory47.com
+
+.. _reference-update:
+
+There are two ways to update `Realtyspace` theme: by **FTP** or via  **Envato Market**. Choose one way that suits you more.
+
+.. attention::
+
+    Before updating please backup your website!
+
+
+Update via FTP
+--------------
+
+#. Go to Themeforest site,  open **Downloads** section
+#. See in the list ``Realtyspace - Real estate WordPress Theme`` , click on the **Download** button, from dropdown select **Installable WordPress file only**
+#. Login via your favorite FTP client to your hosting. Navigate to your site location  and then find the folder `wp-content/themes/`
+#. Find the old theme **realtyspace**, and rename it to something like **realtyspace_backup**
+#. Unzip on you machine downloaded file from Themeforest
+#. Upload that folder to remote location `wp-content/themes/` via **FTP**
+
+Update via ``Envato market``
+----------------------------
+
+If you don't have it installed, please install it from http://envato.github.io/wp-envato-market/
+
+Once you have installed plugin, you will need to generate a personal token, and then insert it into plugin's settings.
+The api key can be generatated
+`here <https://build.envato.com/create-token/?purchase:download=t&purchase:verify=t&purchase:list=t>`_
+
+**Important: You should be logged in as user which has purchased the theme**
+
+#. Make sure you have installed plugin **Envato Market**
+#. Go to `Envato Market` tab
+
+    .. image:: ../img/envato-market-plugin.png
+
+#. Open in new tab `link <https://build.envato.com/create-token/?purchase:download=t&purchase:verify=t&purchase:list=t>`_ Make sure you are logined by user which make purchase
+#. Generate API key
+
+    .. image:: ../img/create-envato-token.png
+    .. image:: ../img/get-envato-key.png
+
+#. Insert API key on settings tab
+#. Check items
+#. Try update the theme
+
+.. note::
+    The customizition maded in Visual Composer, Customizer and Slider Revolution will not be touched. So you can update theme safely.
+
+
+.. image:: ../img/themeforest-downloads.png
+
+
+
+

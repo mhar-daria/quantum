@@ -1,0 +1,6 @@
+{% extends 'base.twig' %}
+
+{% block container %}
+  {% set subtitle = __('It seems we cannot find what you\'re looking for. Perhaps searching can help.', 'realtyspace') %}
+  {{ include('modules/core/includes/not-found.twig', {'subtitle': subtitle}, false) }}
+{% endblock %}

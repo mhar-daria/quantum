@@ -1,0 +1,31 @@
+Index
+=====
+
+Name
+    Realtyspace - Responsive Real Estate Theme
+Created by
+    codefactory47_
+Support
+    support@codefactory47.com
+
+
+Thank you for purchasing Realtyspace
+If you have questions that are beyound the scope of this help file, please
+feel free to email us at support@codefactory47.com
+
+
+If you looking html documentation, please check it `here <html>`_
+
+.. _codefactory47: http://codefactory47.com
+
+Table of contents
+~~~~~~~~~~~~~~~~~
+
+.. toctree::
+
+    :maxdepth: 3
+
+    wp
+    html
+    changelog
+    credits

@@ -1,0 +1,28 @@
+{# @var section \cf47\plugin\realtyspace\module\property\section\calltoaction\CallToActionView #}
+
+{% set module_id = js_module('goSubmit', {
+'animate': true,
+}) %}
+
+{% extends 'section-widget.twig' %}
+
+{% block content %}
+  <!-- BEGIN BLOCK GO SUBMIT-->
+  <div class="gosubmit">
+    <div class="container">
+      {% if not section.is_vc %}
+        <div class="gosubmit__title">
+          {{ section.text|raw }}
+        </div>
+        <!-- end of block .gosubmit__title-->
+        {% if section.button_page_link %}
+          {% set button_page = wpurl.page_url_with_name(section.button_page_link) %}
+          <a href="{{ button_page.url }}" class="gosubmit__btn">{{ section.button_text|default(button_page.name) }}</a>
+        {% endif %}
+      {% else %}
+        {{ section.text|raw }}
+      {% endif %}
+    </div>
+  </div>
+  <!-- END BLOCK GO SUBMIT-->
+{% endblock %}

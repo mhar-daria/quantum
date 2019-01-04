@@ -1,0 +1,83 @@
+Layout
+======
+
+.. important::
+
+    Please check our `FAQ <faq.html>`_ , most probabaly there is already an answer to your question.
+    If you didn't find what you need, please contact us at support@codefactory47.com
+
+
+.. toctree::
+    :maxdepth: 2
+
+    header
+    footer
+    property-search
+    breadcrumbs
+
+.. _reference-layout:
+
+Home page sections & sections
+-----------------------------
+
+.. image:: ../img/layout.png
+
+* Header bar ``block``
+* Navbar ``block``
+* Property hero ``section``
+* Property group ``section``
+* Features grid ``section``
+* Agents grid ``section``
+* Blog posts ``section``
+* Counter ``section``
+* Testimonials ``section``
+* Call to action ``section``
+* Partners ``section``
+* Property map ``section``
+* Footer ``block``
+* Footer Column 1 ``block``
+* Footer Column 2 ``block``
+* Footer Column 3 ``block``
+
+    .. image:: ../img/property-map-section.png
+
+* Property slider section
+
+    .. image:: ../img/property-slider-section.png
+
+* Search section
+
+    .. image:: ../img/search-section.png
+
+* Slider revolution
+
+    .. image:: ../img/slider-revolution-section.png
+
+
+
+
+
+Subpage blocks & sections
+-------------------------
+
+#. Currency choose
+#. Area unit
+#. Display language
+#. Header phone
+#. Header Social
+#. Logo
+#. Navabar (Realtyspace Demo)
+#. Breadcrumbs
+#. Main ``block layout``
+#. Sidebar ``zone``
+#. Panel filter
+#. Listing ``block layout``
+#. Pagiantion
+#. Widget
+
+.. image:: ../img/layout--subpage.png
+
+
+.. tips::
+
+    To get more information how setup home page sections go :ref:`here <reference-home-page>`

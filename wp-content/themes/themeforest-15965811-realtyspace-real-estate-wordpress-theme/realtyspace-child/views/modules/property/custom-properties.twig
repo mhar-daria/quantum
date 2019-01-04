@@ -1,0 +1,121 @@
+{# @var page \cf47\theme\realtyspace\module\property\viewmodel\CustomPropertyModel #}
+
+{% extends 'custom-base-archive.twig' %}
+
+{% from 'modules/property/macro.twig' import listing as property_listing, property_table_rows, property_table_headings, show_map %}
+
+{% set property = page %}
+
+{% block content %}
+  <!-- BEGIN LISTING-->
+  <div class="site site--main">
+    <header class="site__header">
+      <h1 class="site__title">
+        {{ property.title }}
+      </h1>
+    </header>
+
+    <form method="get" action="{{ property.url }}" class="form form--filter js-listing-filter">
+      <div class="row">
+        <div class="form-group form-group--sorting ">
+          <label class="control-label" for="cf47rs_listing_header_sort">Sort by</label>
+          <select id="cf47rs_listing_header_sort" name="sort" onchange="this.form.submit()" class="form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+            {% for key, sort in property.sort_bys %}
+              <option value="{{ key }}" {% if property.sort_by == key %}selected{% endif %}>{{ sort }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      
+        <div class="form-group form-group--limit ">
+          <label class="control-label" for="cf47rs_listing_header_limit">Show on page</label>
+          <select id="cf47rs_listing_header_limit" name="limit" onchange="this.form.submit()" class="form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+            {% for limit in property.limits %}
+              <option value="{{ limit }}" {% if property.limit == limit %}selected{% endif %}>{{ limit }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        {% for contract_type in property.query_params('contract_type') %}
+          <input type="hidden" style="display: none !important;" value="{{ contract_type }}" id="contract_type" name="contract_type[]">
+        {% endfor %}
+
+        {% for property_type in property.query_params('property_type') %}
+          <input type="hidden" style="display: none !important;" value="{{ property_type }}" id="property_type" name="property_type[]">
+        {% endfor %}
+
+        {% for location in property.query_params('location') %}
+          <input type="hidden" style="display: none !important;" value="{{ location }}" id="location" name="location[]">
+        {% endfor %}
+
+        {% if property.query_params('area_from') %}
+          <input type="hidden" style="display: none !important;" value="{{ property.query_params('area_from') }}" id="area_from" name="area_from">
+        {% endif %}
+
+        {% if property.query_params('area_to') %}
+          <input type="hidden" style="display: none !important;" value="{{ property.query_params('area_to') }}" id="area_to" name="area_to">
+        {% endif %}
+
+        {% if property.query_params('bedroom') %}
+          <input type="hidden" style="display: none !important;" value="{{ property.query_params('bedroom') }}" id="bedroom" name="bedroom">
+        {% endif %}
+
+        {% if property.query_params('price') %}
+          <input type="hidden" style="display: none !important;" value="{{ property.query_params('price') }}" id="price" name="price">
+        {% endif %}
+      </div>
+    </form>
+
+    <div class="site__main">
+      {% set search_result = page.properties %}
+      {% if search_result is not empty %}
+
+        <div class="listing listing listing--grid  listing--medium properties properties--grid">
+          {% for result in search_result %}
+            {{ property.generate_boxes(result)|raw }}
+          {% endfor %}
+        </div>
+
+      {% else %}
+        {{ include('partials/no-results.twig', {
+          'classes': 'listing__empty--properties',
+          'title': __('The search did not return any results', 'realtyspace'),
+          'headline': __('Please try again with different criteria.', 'realtyspace')
+        }) }}
+      {% endif %}
+    </div>
+
+    <div class="site__footer">
+      <nav class="listing__pagination">
+        <ul class="pagination-custom ">
+          <li {% if property.current_page == 1 %}class="active"{% endif %}>
+            <a href="{{ property.first }}/">
+              <span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span>
+              <span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">First</span>
+            </a>
+          </li>
+          <li {% if property.current_page == 1 %}class="active"{% endif %}>
+            <a href="{{ property.prev }}">
+              <span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          <li {% if property.current_page == property.last_page %}class="active"{% endif %}>
+            <a href="{{ property.next }}">
+              <span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+          <li {% if property.current_page == property.last_page %}class="active"{% endif %}>
+            <a href="{{ property.last }}">
+              <span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span>
+              <span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Last</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!-- END LISTING-->
+{% endblock %}

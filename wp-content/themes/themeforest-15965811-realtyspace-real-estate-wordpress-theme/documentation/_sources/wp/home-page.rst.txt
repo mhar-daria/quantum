@@ -1,0 +1,94 @@
+Home page configuration
+=======================
+
+.. important::
+
+    Please check our `FAQ <faq.html>`_ , most probabaly there is already an answer to your question.
+    If you didn't find what you need, please contact us at support@codefactory47.com
+.. _reference-home-page:
+
+
+Home page sections configuration
+--------------------------------
+
+To edit the home page, open go to **Pages / Front Page / Edit**
+
+.. image:: ../img/home-page-edit.png
+
+You can setup any `Visual Composer` element, or add a custom **Realtyspace** sections. You can:
+
+
+#. Sort sections with Drag&Drop
+#. Edit sections Row Settings
+#. Edit Section Settings
+#. Setup order and visibility of setcion's items
+#. Disable breadcrumbs options
+#. Set a custom template
+
+.. image:: ../img/home-page-composer.png
+
+
+.. tip::
+
+    If you created a new home page, to enable it do to **Customizer / Static Front Page / Front Page Select / Choose yours page / Save Changes**
+
+
+
+Home page installation video
+----------------------------
+
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="//www.youtube.com/embed/n_GbclzcHss" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+    <br>
+
+
+
+Troubleshooting
+---------------
+
+How to center 2 agents on home page?
+++++++++++++++++++++++++++++++++++++
+
+Add code in `Appearance / Customize / Custom CSS&JS / Add css` :
+
+.. code-block:: css
+
+    .listing.worker--index{
+        display: flex;
+        justify-content: center;
+    }
+
+Slider Revolution search box.
+-----------------------------
+
+The search box can be edited from Slider Revolution editor. To do that open Slider Revolution tab, and follow these steps:
+
+#. Click on the "Realtyspace Slider11".
+#. Click "Static/Global Layers".
+#. Open Layers List.
+#. Click on the "pen" to edit layer. Here is placed shortcode: ``[cf47rs_property_search_bar  fields="street, contract_type, property_feature, property_type, price, area"]``.
+#. Update ``field=""`` attribute depending on your needs. Here are fields available for use:
+
+    - sku
+    - agents
+    - area
+    - land_area
+    - bathroom
+    - bedroom
+    - contract_type
+    - description
+    - street
+    - garage
+    - limit
+    - location
+    - mode
+    - price
+    - property_feature
+    - property_type
+    - sort
+    - year_built
+
+.. image:: ../img/slider-revolution-search-box.png

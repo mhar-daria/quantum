@@ -1,0 +1,155 @@
+{% extends 'base-archive.twig' %}
+{% from 'macro.twig' import page_header, widget_header %}
+
+{% if form.featured %}
+  {% form_theme form.featured 'bootstrap_3_layout.html.twig' %}
+{% endif %}
+
+{% block js_controller 'submitForm' %}
+{% block content %}
+  {% set template %}
+    <svg class="property__files-icon" style="width: 120px; height: 120px;">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-doc"></use>
+    </svg>
+  {% endset %}
+  {% do(js_inline_template('dropzone-file-thumb', template)) %}
+  <div class="site site--main">
+    {{ page_header(page) }}
+    <div class="site__main">
+      {{ form_start(form, {'attr': {'class': 'form form--property-add js-submit-form js-parsley'}}) }}
+
+      <section class="widget js-widget widget--main widget--collapse">
+        {{ widget_header(__('Basic information', 'realtyspace'), __('Fields marked with * are required!', 'realtyspace'), 'main') }}
+        <div class="widget__content">
+          <div class="row">
+            {% if form.title %}
+              {{ form_row(form.title, {'row_class': 'form-group--col-12'}) }}
+            {% endif %}
+            {% if form.contract_type %}
+              {{ form_row(form.contract_type) }}
+            {% endif %}
+            {% if form.property_type %}
+              {{ form_row(form.property_type) }}
+            {% endif %}
+            {% if form.area %}
+              {{ form_row(form.area, {'type': 'number'}) }}
+            {% endif %}
+            {% if form.land_area %}
+              {{ form_row(form.land_area, {'type': 'number'}) }}
+            {% endif %}
+            {% if form.location %}
+              {{ form_row(form.location) }}
+            {% endif %}
+            {% if form.sku %}
+              {{ form_row(form.sku) }}
+            {% endif %}
+            {% if form.price %}
+              {{ form_row(form.price, {'type': 'number'}) }}
+            {% endif %}
+            {% if form.price_suffix %}
+              {{ form_row(form.price_suffix) }}
+            {% endif %}
+            {% if form.description %}
+              {{ form_row(form.description, {'row_class': 'form-group--col-12'}) }}
+            {% endif %}
+            {% if form.featured %}
+              {{ form_row(form.featured, {'row_class': 'form-group--col-12'}) }}
+            {% endif %}
+          </div>
+        </div>
+      </section>
+      <section class="widget js-widget widget--main widget--no-margin widget--collapse">
+        {{ widget_header(__('Listing', 'realtyspace'), '', 'main') }}
+        <div class="widget__content">
+          <div class="row">
+            {% if form.rooms %}
+              {{ form_row(form.rooms, {'type': 'number'}) }}
+            {% endif %}
+            {% if form.bathrooms %}
+              {{ form_row(form.bathrooms, {'type': 'number'}) }}
+            {% endif %}
+            {% if form.bedrooms %}
+              {{ form_row(form.bedrooms, {'type': 'number'}) }}
+            {% endif %}
+            {% if form.garages %}
+              {{ form_row(form.garages, {'type': 'number'}) }}
+            {% endif %}
+          </div>
+        </div>
+      </section>
+      <section class="widget js-widget widget--main widget--no-margin widget--collapse">
+        {{ widget_header(__('Amenities', 'realtyspace'), __('You can choose amenities that you have.', 'realtyspace'), 'main') }}
+        <div class="widget__content">
+          <div class="row form__params">
+            {% if form.features %}
+              {{ form_row(form.features, {'row_class': 'form-group--col-12'}) }}
+            {% endif %}
+          </div>
+        </div>
+      </section>
+      <section class="widget js-widget widget--main widget--no-margin widget--collapse">
+        {{ widget_header(__('Tags', 'realtyspace'), __('You can choose tags that you have.', 'realtyspace'), 'main') }}
+        <div class="widget__content">
+          <div class="row form__params">
+            {% if form.tags %}
+              {{ form_row(form.tags, {'row_class': 'form-group--col-12'}) }}
+            {% endif %}
+          </div>
+        </div>
+      </section>
+      <section class="widget js-widget widget--main widget--no-margin widget--collapse">
+        {{ widget_header(__('Special features', 'realtyspace'), '', 'main') }}
+        <div class="widget__content">
+          <div class="row">
+            {% if form.year_built %}
+              {{ form_row(form.year_built, {'type': 'number'}) }}
+            {% endif %}
+            {% if form.video_tour %}
+              {{ form_row(form.video_tour) }}
+            {% endif %}
+            {% if form.agent %}
+              {{ form_row(form.agent) }}
+            {% endif %}
+            {% if form.attachments %}
+              {{ form_row(form.attachments, {'row_class': 'form-group--col-12'}) }}
+            {% endif %}
+          </div>
+        </div>
+      </section>
+      <section class="widget js-widget widget--main widget--no-margin widget--collapse">
+        {{ widget_header(__('Additional details', 'realtyspace'), '', 'main') }}
+        <div class="widget__content">
+          <div class="row">
+            {% if form.additional_details %}
+              {{ form_row(form.additional_details, {'row_class': 'form-group--col-12 form__dynamic'}) }}
+            {% endif %}
+          </div>
+        </div>
+      </section>
+      <section class="widget js-widget widget--main widget--no-margin widget--collapse">
+        {{ widget_header(__('Location', 'realtyspace'), __('Set Google Maps location', 'realtyspace'), 'main') }}
+        <div class="widget__content">
+          {% if form.map_location %}
+            {{ form_widget(form.map_location, {'attr': {'class': 'map--location map--dashboard map--submit'}}) }}
+          {% endif %}
+        </div>
+      </section>
+      <section class="widget js-widget widget--main widget--no-margin widget--collapse">
+        {{ widget_header(__('Photos', 'realtyspace'), __('The first image will be set as property cover', 'realtyspace'), 'main') }}
+        <div class="widget__content">
+          {% if form.images %}
+            {{ form_widget(form.images, {'attr': {'class': ''}}) }}
+          {% endif %}
+        </div>
+      </section>
+
+      {{ form_widget(form, {'attr': {'class': 'row'}}) }}
+      <div class="row form__buttons">
+        <button type="submit" class="form__submit">
+          {{ __('Save', 'realtyspace') }}
+        </button>
+      </div>
+      {{ form_end(form) }}
+    </div>
+  </div>
+{% endblock %}

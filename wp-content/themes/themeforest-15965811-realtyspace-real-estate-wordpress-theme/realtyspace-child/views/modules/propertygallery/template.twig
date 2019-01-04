@@ -1,0 +1,64 @@
+{% extends 'base-archive.twig' %}
+{% from 'modules/property/macro.twig' import grid_item %}
+{% from 'macro.twig' import page_header %}
+
+{% block content %}
+  {# @var page \cf47\theme\realtyspace\module\propertygallery\viewmodel\Template #}
+  <!-- BEGIN LISTING-->
+  <div class="site site--main">
+    {{ page_header(page, false) }}
+    {% if page.type != 'uploaded_images' %}
+      <div class="site__panel"></div>
+      {{ form_start(helper_form, {'attr': {'class':'form form--filter js-listing-filter'}}) }}
+      <div class="row">
+        {{ form_row(helper_form.sort, {'row_class': 'form-group--sorting'}) }}
+        {{ form_row(helper_form.limit, {'row_class': 'form-group--limit'} ) }}
+        {{ form_end(helper_form) }}
+      </div>
+    {% endif %}
+    <div class="site__main">
+      <div class="listing listing--grid listing listing--grid listing--lg-4 js-dapi-gallery">
+        {% if page.type == 'uploaded_images' %}
+          {% for image in page.images %}
+            <div class="listing__item">
+              <div class="properties__item" data-item data-size="{{ image.width }}x{{ image.height }}" data-src="{{ image.src }}" data-caption="{{ image.caption }}">
+                <div class="properties__thumb">
+                  <a href="{{ image.src }}" data-trigger data-index="{{ loop.index0 }}" class="item-photo item-photo--static">
+                    <img data-thumbnail src="{{ image.src|resize(830,540) }}" alt="{{ image.alt }}">
+                    <figure class="item-photo__hover">
+                      <span class="item-photo__more">{{ __('View', 'realtyspace') }}</span>
+                    </figure>
+                  </a>
+                </div>
+                {% if image.caption is not empty or image.description is not empty %}
+                  <div class="properties__info">
+                    <a href="{{ image.src }}" class="properties__address" data-trigger>
+                      {% if image.caption is not empty %}
+                        <span data-caption class="properties__address-street">{{ image.caption }}</span>
+                      {% endif %}
+                      {% if image.description is not empty %}
+                        <span class="properties__address-city">{{ image.description }}</span>
+                      {% endif %}
+                    </a>
+                  </div>
+                  <!-- end of block .properties__info-->
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          {% for property in results %}
+            {{ grid_item(property, {
+              'gallery_mode': true,
+              'hover_params': false,
+              'hover_btn': true,
+              'index': loop.index0
+            }) }}
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <!-- END LISTING-->
+{% endblock %}
+

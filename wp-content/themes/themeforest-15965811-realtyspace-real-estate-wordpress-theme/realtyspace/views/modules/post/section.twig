@@ -1,0 +1,45 @@
+{% from 'macro.twig' import widget_header, thumbnail, no_items_available %}
+{# @var section \cf47\plugin\realtyspace\module\post\section\PostsView #}
+
+{% set module_id = js_module('articleGrid', {
+'animate': true,
+}) %}
+
+{% extends 'section-widget.twig' %}
+
+{% set widget_class='landing article-section' %}
+
+{% block header %}
+  {{ widget_header(section.title, section.subtitle) }}
+{% endblock %}
+
+{% block content %}
+  <div class="listing listing--grid article article--grid">
+    {% for post in section.items %}
+      <div class="listing__item">
+        <div class="article__item">
+          <a href="{{ post.link }}" class="article__photo">
+            {{ thumbnail(post.featured_image, 830, 540, 'article__photo-img') }}
+            <time datetime="{{ post.date('Y-m-d') }}" class="article__time">
+              {{ post.date('M') }}<strong>{{ post.date('d') }}</strong>
+            </time>
+          </a>
+          <div class="article__details">
+            <a href="{{ post.link }}" class="article__item-title">{{ post.title|raw }}</a>
+            <div class="article__intro"> {{ post.preview(25, true, false)|raw }}</div>
+            <a href="{{ post.link }}" class="article__more">{{ __('Read more', 'realtyspace') }}</a>
+          </div>
+        </div>
+        <!-- end of block .article__item-->
+      </div>
+    {% else %}
+      {{ no_items_available() }}
+    {% endfor %}
+  </div>
+  <!-- end of block .article__list-->
+  <div class="widget__footer">
+    <a href="{{ archive_path('post') }}" class="widget__more">
+      {{ __('See more', 'realtyspace') }}
+    </a>
+  </div>
+{% endblock %}

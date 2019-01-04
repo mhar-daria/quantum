@@ -1,0 +1,11 @@
+{% extends 'base.twig' %}
+
+   {% block hero_unit %}
+     {% if page is defined and page.hero_unit.enabled %}
+       {{ include('partials/hero-unit.twig',{
+         'hero_unit': page.hero_unit,
+         'title': page.title,
+         'subtitle': page.subtitle
+       }, with_context = false) }}
+     {% endif %}
+   {% endblock %}

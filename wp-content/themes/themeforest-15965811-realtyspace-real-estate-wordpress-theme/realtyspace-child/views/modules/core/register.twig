@@ -1,0 +1,23 @@
+{% extends 'base.twig' %}
+{# @var page \cf47\theme\realtyspace\module\page\viewmodel\SingleViewModel #}
+{% block container %}
+  <div class="center">
+    <div class="container">
+      <div class="row">
+        <section class="site">
+          <div class="site__main">
+            <div class="widget js-widget widget--main widget--no-border">
+              <div class="widget__content">
+                <div class="auth auth--inline">
+                  <div class="auth__wrap auth__wrap--register">
+                    {% include 'partials/register.twig' with {'type': 'inline'} %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+{% endblock %}

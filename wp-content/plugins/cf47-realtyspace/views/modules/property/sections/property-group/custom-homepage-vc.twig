@@ -1,0 +1,30 @@
+{% from 'modules/property/macro.twig' import grid_item %}
+{% from 'macro.twig' import widget_header, no_items_available %}
+{# @var section \cf47\plugin\realtyspace\module\property\section\group\PropertyGroupVcView #}
+
+{% set module_id = js_module('propertyGroup', {
+'animate': true,
+}) %}
+
+{% extends 'section-widget.twig' %}
+
+{% set widget_class='landing gray properties-section' %}
+
+{% block header %}
+  {{ widget_header(section.title, section.subtitle) }}
+{% endblock %}
+
+{% block content %}
+  {% if section.content.tab_count > 1 %}
+    <div class="tab tab--properties">
+      <ul role="tablist" class="nav tab__nav">
+        {{ section.content.tab_header|raw }}
+      </ul>
+      <div class="tab-content">
+        {{ section.content.tab_content|raw }}
+      </div>
+    </div>
+  {% else %}
+    {{ section.content.tab_content|raw }}
+  {% endif %}
+{% endblock %}

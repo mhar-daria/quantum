@@ -1,0 +1,12 @@
+{% extends 'base.twig' %}
+{% set body_class = body_class ~ ' ' %}
+{% block container %}
+  <div class="center">
+    <div class="container">
+      {{ content() }}
+    </div>
+  </div>
+  {% for section in sections %}
+    {{ include(section.template, {'section': section.view}) }}
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends is_ajax() ? 'base-ajax.twig' : 'base-archive.twig' %}
+
+{% block content %}
+  {# @var page \cf47\theme\realtyspace\module\agent\viewmodel\ArchiveViewModel #}
+  <!-- BEGIN LISTING-->
+  {% if is_ajax() %}
+    {{ include('modules/agent/includes/list.twig') }}
+  {% else %}
+    <div class="site site--main ">
+      {{ macro.page_header(page) }}
+      <div class="site__main">
+        {{ include('modules/agent/includes/list.twig') }}
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

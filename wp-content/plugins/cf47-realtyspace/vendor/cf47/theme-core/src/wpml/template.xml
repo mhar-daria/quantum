@@ -1,0 +1,21 @@
+<wpml-config>
+    <custom-fields>
+        <theme-fields-placeholder/>
+    </custom-fields>
+    <custom-types>
+        <theme-types-placeholder/>
+    </custom-types>
+    <taxonomies>
+        <theme-taxonomy-placeholder/>
+    </taxonomies>
+    <admin-texts>
+        <key name="theme_mods_placeholder">
+            <theme-options-placeholder/>
+        </key>
+        <key name="theme_mods_placeholder-child">
+            <theme-options-placeholder/>
+        </key>
+    </admin-texts>
+</wpml-config>
+
+

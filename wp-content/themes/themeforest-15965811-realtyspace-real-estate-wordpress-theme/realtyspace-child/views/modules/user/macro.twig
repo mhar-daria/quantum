@@ -1,0 +1,11 @@
+{% macro avatar(user_id, size, class) %}
+  {% set avatar = fn('get_avatar', user_id, size, '', '', {'class': class})|raw %}
+  {% if avatar is not empty %}
+    {{ avatar|raw }}
+  {% else %}
+    <img
+        class="{{ class }}"
+        data-src="holder.js/{{ size }}x{{ size }}?auto=yes&text=&font=FontAwesome&size=100"
+    />
+  {% endif %}
+{% endmacro %}

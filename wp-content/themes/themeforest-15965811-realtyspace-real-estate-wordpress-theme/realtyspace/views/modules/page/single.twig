@@ -1,0 +1,38 @@
+{% extends 'base-archive.twig' %}
+{# @var page \cf47\theme\realtyspace\module\page\action\SingleViewModel #}
+{% block content %}
+  <div class="site site--main">
+    {{ macro.page_header(page) }}
+    <div class="site__main">
+      <div class="widget ">
+        <div class="widget__content">
+          <article class="article article--details article--page">
+            <div class="article__body">
+              {% if page.excerpt %}
+                <p>
+                  <strong>{{ page.excerpt }}</strong>
+                </p>
+              {% endif %}
+              {% if page.featured_image %}
+                {{ macro.thumbnail(page.featured_image, 1170) }}
+              {% endif %}
+              {{ content(__('Read more', 'realtyspace')) }}
+            </div>
+            {% if page.social_links|length %}
+              <div class="article__footer">
+                <div class="social social--article">
+                  <span>{{ __('Share this post', 'realtyspace') }}</span>
+                  {% from 'macro.twig' import sharing_links %}
+                  {{ sharing_links(page.social_links) }}
+                </div>
+              </div>
+            {% endif %}
+
+          </article>
+          {{ page.comments|raw }}
+        </div>
+      </div>
+    </div>
+    <!-- END LISTING-->
+  </div>
+{% endblock %}

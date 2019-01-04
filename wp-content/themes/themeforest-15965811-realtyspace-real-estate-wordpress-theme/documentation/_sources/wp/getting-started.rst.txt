@@ -1,0 +1,81 @@
+Getting started
+===============
+
+About
+-----
+
+Realtyspace is designed and developed for Real Estate agents and agencies.
+
+
+.. important::
+
+    Please check our `FAQ <faq.html>`_ , most probabaly there is already an answer to your question.
+    If you didn't find what you need, please contact us at support@codefactory47.com
+
+
+Recommended Hosting
+-------------------
+
+We recommend to use the well-known and reliable `SiteGround <https://www.siteground.com/go/cf47>`_
+hosting provider. For minimal price you will get a well configurated server which meets Realtyspace theme requirements.
+
+Requirements
+------------
+
+.. _theme-requirements:
+
+* Minimal PHP version 5.5, **recommended PHP 7.0** and newer for **major** performance improvements
+* WordPress 4.4 and newer.
+* PHP zip extension installed.
+* PHP's upload_tmp_dir should be readable and writable.
+
+Minimal PHP settings:
+
+* memory_limit = 128MB
+* max_execution_time = 120
+* upload_max_filesize = 32M
+* post_max_size = 32M
+
+Recommended PHP settings:
+
+* memory_limit = 256MB
+* max_execution_time = 300
+* upload_max_filesize = 32M
+* post_max_size = 32M
+
+
+I'm new to WordPress
+--------------------
+
+.. _reference-newwp:
+
+The list of required steps to get fully working site:
+
+#. Get and configure a web hosting.
+
+#. Install latest version of wordpress on web hosting.
+
+#. Install our theme, on clean WP (see :ref:`here <reference-install>` )
+
+#. Import the demo content and stick to it as much as possible.
+
+#. Check out the set up guide and the video guides if you decide to change the demo content :
+
+    * :ref:`Theme settings <reference-configuration>`
+    * :ref:`Customizer options <reference-customizer>`
+    * :ref:`Widgets setup <reference-widgets>`
+
+
+.. note::
+
+    If you are new to WordPress and this is your first site using this platform it is a good idea to learn WordPress prior to working with the theme.
+
+.. tip::
+
+    Here are a few of the best resources for beginners.
+
+    * `WordPress Codex <http://codex.wordpress.org/>`_ - the very first resource for you to try out. This is the official reference by the Core WP team with lots of detailed instructions on basic and advanced questions.
+    * `WP101 <http://www.wp101.com/>`_ - Video tutorials for beginners, lots of free resources (and paid as well) for you to learn the WordPress language in a quick and entertaining way.
+    * `Envato's WP guides <http://wp.envato.com/tutorials-books-screencasts/>`_ - since we are selling exclusively on ThemeForest, we are confident that Envato's team shares the knowledge in a great manner. Be sure you check this link during your first steps.
+    * `WPCandy <http://wpcandy.com/>`_ - Extremely popular and powerful resource for newbies and experts - tutorials, videos, podcast and news - anything you might need to know for WordPress.
+    * `WPBeginner <http://www.wpbeginner.com/>`_ - needless to say, web resource for WordPress beginners.

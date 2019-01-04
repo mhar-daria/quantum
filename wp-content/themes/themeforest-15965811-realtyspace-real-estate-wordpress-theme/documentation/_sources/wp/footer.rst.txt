@@ -1,0 +1,40 @@
+Footer
+======
+
+.. important::
+
+    Please check our `FAQ <faq.html>`_ , most probabaly there is already an answer to your question.
+    If you didn't find what you need, please contact us at support@codefactory47.com
+
+.. _reference-footer:
+
+
+.. image:: ../img/footer.png
+
+Edit footer widgets
++++++++++++++++++++
+
+Widgets can be customized in **Appearance / Widgets** (Footer columns)
+
+.. image:: ../img/footer-edit.png
+
+Change copyright text
++++++++++++++++++++++
+
+Go to Customize / Footer / Copyright text. Copyright section also support HTML tags.
+
+
+Footer background and styles
+++++++++++++++++++++++++++++
+
+Go to Cusomize / Footer / Use custom footer background? (Yes) / Background image
+
+
+Disable scrollup button
++++++++++++++++++++++++
+
+Go to Customize / Layout / Enable scrollup button / Off
+
+
+.. image:: ../img/footer-customize.png
+

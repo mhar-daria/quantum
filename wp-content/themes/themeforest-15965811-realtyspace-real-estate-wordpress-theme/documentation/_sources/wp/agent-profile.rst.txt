@@ -1,0 +1,69 @@
+Agent profile page
+==================
+
+.. important::
+
+    Please check our `FAQ <faq.html>`_ , most probabaly there is already an answer to your question.
+    If you didn't find what you need, please contact us at support@codefactory47.com
+
+
+
+
+.. image:: ../img/agent-page.png
+
+Editing layout
+++++++++++++++
+
+Open one of the agent's page details, go to **Customize / Current page options / Layout**
+
+
+.. image:: ../img/start-customize.png
+
+.. image:: ../img/customize-current.png
+
+
+Here you will find options:
+
+* **Title**
+* **Subtitle**
+* **Panel**
+* **Sidebar position**
+    - As defined in Layout
+    - Left
+    - Right
+    - None
+
+* **Property display mode**
+    - List
+    - Grid
+* **Property grid size**
+    - Small
+    - Medium
+    - Large
+* **Properties per page**
+* **Show agent contact form**
+* **Contact Form 7**
+
+
+
+.. tip::
+    Add one space in title or subtitle field to remove at all text from frontend. Remove default text from panel editor, will hide a green panel!
+
+Agent contact form
+++++++++++++++++++
+
+We recommend to use demo form "Agent post form". In settings for this form in "Mail" tab paste in field "To" ``[_agent_email]`` shortcode.
+
+.. image:: ../img/agent-post-form.png
+
+In this case mail will be sent to required agent.
+
+If you don't need listing information on agent listings, you can hide it with css:
+
+.. image:: ../img/listings-agent-grid.png
+
+.. code-block:: css
+
+    .worker__item .worker__listings {
+      display: none;
+    }

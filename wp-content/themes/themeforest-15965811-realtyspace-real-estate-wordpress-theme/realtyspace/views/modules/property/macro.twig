@@ -1,0 +1,429 @@
+{# @var property \cf47\theme\realtyspace\module\property\Entity #}
+
+{% macro listing(results, mode, submode) %}
+  {% from _self import items %}
+  <div class="listing listing--{{ mode }} {% if submode %} listing--{{ submode }}{% endif %} properties properties--{{ mode }}">
+    {{ items(results, mode) }}
+  </div>
+{% endmacro %}
+
+{% macro grid_item(property, options) %}
+  {% from _self import price, address_link, thumbnail %}
+
+  {% set options = {
+  'gallery_mode': false,
+  'hover_params': true,
+  'hover_btn': false,
+  'index': null
+  }|merge(options|default({})) %}
+
+  <div class="listing__item">
+    <div class="properties__item"
+        {% if options.gallery_mode %}
+          data-item data-size="{{ property.thumbnail.width }}x{{ property.thumbnail.height }}"
+          data-src="{{ property.thumbnail.src }}"
+        {% endif %}
+    >
+      {{ thumbnail(property, options.hover_params, options.hover_btn, true, true, options.gallery_mode, options.index) }}
+      <!-- end of block .properties__thumb-->
+      <div class="properties__info">
+        {{ address_link(property) }}
+        <!-- end of block .properties__param-->
+        <hr class="divider--dotted properties__divider">
+        <div class="properties__offer">
+          <div class="properties__offer-column">
+            <div class="properties__offer-value">
+              {{ price(property, true) }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of block .properties__info-->
+    </div>
+
+    <!-- end of block .properties__item-->
+  </div>
+{% endmacro %}
+
+
+{% macro list_item(property, options) %}
+  {% import 'macro.twig' as macro %}
+  {% from _self import price, address_link, thumbnail %}
+
+  {% set options = {
+  }|merge(options|default({})) %}
+
+  <div class="listing__item">
+    <div class="properties__item">
+      {{ thumbnail(property, true, false, true, true, false) }}
+      <!-- end of block .properties__thumb-->
+      <div class="properties__details">
+        <div class="properties__info">
+          {{ address_link(property) }}
+
+          <div class="properties__offer">
+            <div class="properties__offer-column">
+              <div class="properties__offer-value">
+                {{ price(property, true) }}
+              </div>
+            </div>
+          </div>
+          <hr class="divider--dotted properties__divider">
+
+          <div class="properties__params--mob">
+            <a href="{{ property.link }}" class="properties__more">
+              {{ __('View details', 'realtyspace') }}
+            </a>
+            <span class="properties__params">{{ __('Built-Up', 'realtyspace') }} - {{ property.area|area|default('-')|raw }}</span>
+            <span class="properties__params">{{ __('Land Size', 'realtyspace') }} - {{ property.area|area|default('-')|raw }}</span>
+          </div>
+        </div>
+
+        <div class="properties__intro">
+          <p>{{ property.excerpt|default(property.content|excerpt(100))|raw }}</p>
+        </div>
+
+        <a href="{{ property.link }}" class="properties__more">
+          {{ __('View details', 'realtyspace') }}
+        </a>
+      </div>
+      <!-- end of block .properties__info-->
+    </div>
+  </div>
+  <!-- end of block .properties__item-->
+{% endmacro %}
+
+
+{% macro thumbnail(property, show_params, show_imagebtn, show_ribbon = true, show_link = true, gallery_mode=false, gallery_index) %}
+  {# @var property \cf47\plugin\realtyspace\module\property\Entity #}
+  {% from _self import hover_params as params, ribbon %}
+  {% from 'macro.twig' import thumbnail as thumb %}
+  <div class="properties__thumb">
+    {% set content %}
+      {{ thumb(property.thumbnail.src, 554, 360, null, gallery_mode, property.thumbnail.alt|default(property.title)) }}
+      {% if show_params %}
+        {{ params(property) }}
+      {% endif %}
+      {% if show_imagebtn %}
+        <figure class="item-photo__hover">
+          <span class="item-photo__more">{{ __('View', 'realtyspace') }}</span>
+        </figure>
+      {% endif %}
+    {% endset %}
+    {% if show_link %}
+      <a href="{{ property.link }}" class="item-photo" {% if gallery_mode %} data-index={{ gallery_index }} data-trigger{% endif %}>
+        {{ content }}
+      </a>
+    {% else %}
+      <div class="item-photo">
+        {{ content }}
+      </div>
+    {% endif %}
+    {% if show_ribbon %}
+      {{ ribbon(property) }}
+    {% endif %}
+  </div>
+{% endmacro %}
+
+{% macro hover_params(property) %}
+  {# @var property \cf47\plugin\realtyspace\module\property\Entity #}
+  {% if layout.property_card.hover_style == 'minimal' %}
+    <figure class="item-photo__hover item-photo__hover--params  item-photo__hover--params-columns">
+      {% if  'type' in layout.property_card.hover_fields and  property.type %}
+        <span class="properties__param-type">{{ property.type }}</span>
+      {% endif %}
+
+      <span class="properties__param">
+        {% for field in layout.property_card.hover_fields %}
+          {% if field == 'rooms' and property.rooms %}
+            <span class="properties__param-column">
+                    <span class="properties__param-label">{{ __('Rooms', 'realtyspace') }}:</span>
+                    <span class="properties__param-value">{{ property.rooms|default('-')|raw }}</span>
+                </span>
+          {% elseif field == 'bathrooms' and property.bathrooms %}
+            <span class="properties__param-column">
+                <span class="properties__param-label">{{ __('Bathrooms', 'realtyspace') }}:</span>
+                <span class="properties__param-value">{{ property.bathrooms|raw }}</span>
+            </span>
+          {% elseif field == 'bedrooms' and property.bedrooms %}
+            <span class="properties__param-column">
+                <span class="properties__param-label">{{ __('Bedrooms', 'realtyspace') }}:</span>
+                <span class="properties__param-value">{{ property.bedrooms|raw }}</span>
+            </span>
+          {% elseif field == 'garages' and property.garages %}
+            <span class="properties__param-column">
+                <span class="properties__param-label">{{ __('Garages', 'realtyspace') }}:</span>
+                <span class="properties__param-value">{{ property.garages|raw }}</span>
+            </span>
+          {% elseif field == 'land_area' and property.land_area %}
+            <span class="properties__param-column">
+                <span class="properties__param-label">{{ __('Land Size', 'realtyspace') }}:</span>
+                <span class="properties__param-value">{{ property.land_area|area|default('-')|raw }}</span>
+            </span>
+          {% elseif field == 'area' and property.area %}
+            <span class="properties__param-column">
+                <span class="properties__param-label">{{ __('Built-Up', 'realtyspace') }}:</span>
+                <span class="properties__param-value">{{ property.area|area|default('-')|raw }}</span>
+            </span>
+          {% elseif field == 'contract_type' and property.contract_type %}
+            <span class="properties__param-column">
+                <span class="properties__param-label">{{ __('Contract type', 'realtyspace') }}:</span>
+                <span class="properties__param-value">{{ property.contract_type|raw }}</span>
+            </span>
+          {% elseif field == 'agent' and property.agent %}
+            <span class="properties__param-column">
+                <span class="properties__param-label">{{ __('Agent', 'realtyspace') }}:</span>
+                <span class="properties__param-value">{{ property.agent.name|raw }}</span>
+            </span>
+          {% elseif field == 'sku' and property.sku %}
+            <span class="properties__param-column">
+                <span class="properties__param-label">{{ __('SKU', 'realtyspace') }}:</span>
+                <span class="properties__param-value">{{ property.sku|raw }}</span>
+            </span>
+          {% endif %}
+        {% endfor %}
+      </span>
+    </figure>
+  {% elseif layout.property_card.hover_style == 'detailed' %}
+    <figure class="item-photo__hover item-photo__hover--params">
+      {% for field in layout.property_card.hover_fields %}
+        {% if field == 'rooms' and property.rooms %}
+          <span class="properties__params">{{ __('Rooms', 'realtyspace') }} - {{ property.rooms|raw }}</span>
+        {% elseif field == 'bathrooms' and property.bathrooms %}
+          <span class="properties__params">{{ __('Bathrooms', 'realtyspace') }} - {{ property.bathrooms|raw }}</span>
+        {% elseif field == 'bedrooms' and property.bedrooms %}
+          <span class="properties__params">{{ __('Bedrooms', 'realtyspace') }} - {{ property.bedrooms|raw }}</span>
+        {% elseif field == 'garages' and property.garages %}
+          <span class="properties__params">{{ __('Garages', 'realtyspace') }} - {{ property.garages|raw }}</span>
+        {% elseif field == 'land_area' and property.land_area %}
+          <span class="properties__params">{{ __('Land Size', 'realtyspace') }} - {{ property.land_area|area|raw }}</span>
+        {% elseif field == 'area' and property.area %}
+          <span class="properties__params">{{ __('Built-Up', 'realtyspace') }} - {{ property.area|area|raw }}</span>
+        {% elseif field == 'contract_type' and property.contract_type %}
+          <span class="properties__params">{{ __('Contract type', 'realtyspace') }} - {{ property.contract_type|raw }}</span>
+        {% elseif field == 'type' and property.type %}
+          <span class="properties__params">{{ __('Property type', 'realtyspace') }} - {{ property.type|raw }}</span>
+        {% elseif field == 'agent' and property.agent %}
+          <span class="properties__params">{{ __('Agent', 'realtyspace') }} - {{ property.agent.name|raw }}</span>
+        {% elseif field == 'sku' and property.sku %}
+          <span class="properties__params">{{ __('SKU', 'realtyspace') }} - {{ property.sku }}</span>
+        {% endif %}
+      {% endfor %}
+      {% if layout.property_card.hover_show_desciption %}
+        <span class="properties__intro ">
+          {{ property.preview(layout.property_card.excerpt_length, false, false)|raw }}
+        </span>
+      {% endif %}
+      {% if layout.property_card.hover_show_date %}
+        <span class="properties__time">{{ __('Added date', 'realtyspace') }}: {{ property.date('c')|i18n_time_ago }}</span>
+      {% endif %}
+      <span class="properties__more">{{ __('View details', 'realtyspace') }}</span>
+    </figure>
+  {% endif %}
+{% endmacro %}
+
+{% macro price(property, strong_price = false, show_wrapper = true) %}
+  {% if property.has_price %}
+    {{ strong_price ? '<strong>' }}
+    {{ property.price|price }}
+    {{ strong_price ? '</strong>' }}
+    {% if property.price_suffix %}
+      {% if show_wrapper %}
+        <span class="properties__offer-period">
+                    /{{ property.price_suffix }}
+                </span>
+      {% else %}
+        {{ property.price_suffix }}
+      {% endif %}
+    {% endif %}
+  {% else %}
+    <strong>
+      {{ option.config_propgeneral_property_price_undefined }}
+    </strong>
+  {% endif %}
+{% endmacro %}
+
+
+
+{% macro address_link(property, simple = false, show_link = true) %}
+  {% set content %}
+    <span class="properties__address-street">{{ property.title|raw }}</span>
+    <span class="properties__address-city">{{ property.location|join(', ') }}</span>
+  {% endset %}
+
+  {% if show_link %}
+    <a href="{{ property.link }}" class="properties__address {% if simple %} properties__address--simple{% endif %}">
+      {{ content }}
+    </a>
+  {% else %}
+    <div class="properties__address {% if simple %} properties__address--simple{% endif %}">
+      {{ content }}
+    </div>
+  {% endif %}
+{% endmacro %}
+
+{% macro ribbon(property) %}
+  {% if property.contract_type %}
+    <span class="properties__ribon">{{ property.contract_type }}</span>
+  {% endif %}
+{% endmacro %}
+
+{% macro paypal_btn(property) %}
+  {# @var property \cf47\theme\realtyspace\module\property\Property #}
+  {% if option.config_proppayment_enabled %}
+    <form action="https://www.{{ option.config_proppayment_sandbox ? 'sandbox.' }}paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <input type="hidden" name="notify_url" value="{{ wpurl.url('/', {'AngellEYE_Paypal_Ipn_For_Wordpress': '', 'action': 'ipn_handler'}) }}">
+      <input type="hidden" name="cmd" value="_xclick">
+      <input type="hidden" name="return" value={{ wpurl.current_url({'payment_status': 'success'}) }}>
+      <input type="hidden" name="cancel_return" value="{{ wpurl.current_url({'payment_status': 'error'}) }}">
+      <input type="hidden" name="business" value="{{ option.config_proppayment_email }}">
+      <input type="hidden" name="lc" value="US">
+      <input type="hidden" name="item_name" value="{{ __('Payment for publishing "%s" item', 'realtyspace')|format(property.name) }}">
+      <input type="hidden" name="item_number" value="{{ property.id }}">
+      <input type="hidden" name="amount" value="{{ option.config_proppayment_amount }}">
+      <input type="hidden" name="currency_code" value="{{ option.config_proppayment_currency }}">
+      <input type="hidden" name="button_subtype" value="services">
+      <input type="hidden" name="no_note" value="0">
+      <input type="hidden" name="bn" value="PP-BuyNowBF:btn_paynow_SM.gif:NonHostedGuest">
+      <button name="submit" type="submit" class="properties__pay">{{ __('Pay with PayPal', 'realtyspace') }}</button>
+      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>
+  {% endif %}
+{% endmacro %}
+
+
+
+{% macro short_params(property, wrapper_class, in_half = false) %}
+  {% import _self as macro %}
+<dl {% if wrapper_class %}class="{{ wrapper_class }}"{% endif %}>
+  {% if property.type %}
+    <dt>{{ __('Property type:', 'realtyspace') }}</dt>
+    <dd>{{ property.type }}</dd>
+  {% endif %}
+  {% if property.area %}
+    <dt>{{ __('Area:', 'realtyspace') }}</dt>
+    <dd>{{ property.area|area }}</dd>
+  {% endif %}
+  {% if property.rooms %}
+    <dt>{{ __('Rooms:', 'realtyspace') }}</dt>
+    <dd>{{ property.rooms }}</dd>
+  {% endif %}
+  {% if in_half %}
+    </dl><dl {% if wrapper_class %}class="{{ wrapper_class }}"{% endif %}>
+  {% endif %}
+  {% if property.bathrooms %}
+    <dt>{{ __('Bathrooms:', 'realtyspace') }}
+    <dd>{{ property.bathrooms }}</dd>
+  {% endif %}
+  {% if property.bedrooms %}
+    <dt>{{ __('Bedrooms:', 'realtyspace') }}</dt>
+    <dd>{{ property.bedrooms }}</dd>
+  {% endif %}
+  </dl>
+{% endmacro %}
+
+{% macro items(properties, type) %}
+  {% from _self import grid_item %}
+  {% from _self import list_item %}
+  {% from 'macro.twig' import no_items_available %}
+
+  {% for property in properties %}
+    {% if type == 'grid' %}
+      {{ grid_item(property) }}
+    {% else %}
+      {{ list_item(property) }}
+    {% endif %}
+  {% else %}
+    {{ no_items_available(__('No properties available', 'realtyspace')) }}
+  {% endfor %}
+{% endmacro %}
+
+{% macro property_table_rows(properties, table_columns) %}
+  {% from _self import address_link %}
+  {% from _self import price %}
+  {% for property in properties %}
+    <tr>
+      {% for field in table_columns %}
+        {% if field == 'location' %}
+          <td class="datatable__cell-1">{{ address_link(property, false, true) }}</td>
+        {% elseif field == 'rooms' %}
+          <td class="datatable__cell">{{ property.rooms }}</td>
+        {% elseif field == 'bathrooms' %}
+          <td class="datatable__cell">{{ property.bathrooms }}</td>
+        {% elseif field == 'bedrooms' %}
+          <td class="datatable__cell">{{ property.bedrooms }}</td>
+        {% elseif field == 'garages' %}
+          <td class="datatable__cell">{{ property.garages }}</td>
+        {% elseif field == 'land_area' %}
+          <td class="datatable__cell">{{ property.land_area|area }}</td>
+        {% elseif field == 'area' %}
+          <td class="datatable__cell">{{ property.area|area }}</td>
+        {% elseif field == 'contract_type' %}
+          <td class="datatable__cell">{{ property.contract_type }}</td>
+        {% elseif field == 'type' %}
+          <td class="datatable__cell">{{ property.type }}</td>
+        {% elseif field == 'agent' %}
+          <td class="datatable__cell">{{ property.agent.name }}</td>
+        {% elseif field == 'date' %}
+          <td class="datatable__cell-4">{{ property.date|time_ago }}</td>
+        {% elseif field == 'price' %}
+          <td class="datatable__cell-2">{{ price(property, true, false) }}</td>
+        {% elseif field == 'more_btn' %}
+          <td class="datatable__cell-5">
+            <a href="{{ property.link }}" class="datatable__more">{{ __('More', 'realtyspace') }}</a></td>
+        {% endif %}
+      {% endfor %}
+    </tr>
+  {% endfor %}
+{% endmacro %}
+
+{% macro property_table_headings(table_columns) %}
+  {% for field in table_columns %}
+    {% if field == 'location' %}
+      <th class="datatable__head-1">{{ __('Location Address', 'realtyspace') }}</th>
+    {% elseif field == 'rooms' %}
+      <th class="datatable__head">{{ __('Rooms', 'realtyspace') }}</th>
+    {% elseif field == 'bathrooms' %}
+      <th class="datatable__head">{{ __('Bathrooms', 'realtyspace') }}</th>
+    {% elseif field == 'bedrooms' %}
+      <th class="datatable__head">{{ __('Bedrooms', 'realtyspace') }}</th>
+    {% elseif field == 'garages' %}
+      <th class="datatable__head">{{ __('Garages', 'realtyspace') }}</th>
+    {% elseif field == 'land_area' %}
+      <th class="datatable__head">{{ __('Land Size', 'realtyspace') }}</th>
+    {% elseif field == 'area' %}
+      <th class="datatable__head">{{ __('Built-Up', 'realtyspace') }}</th>
+    {% elseif field == 'contract_type' %}
+      <th class="datatable__head">{{ __('Contract type', 'realtyspace') }}</th>
+    {% elseif field == 'type' %}
+      <th class="datatable__head">{{ __('Property type', 'realtyspace') }}</th>
+    {% elseif field == 'agent' %}
+      <th class="datatable__head">{{ __('Agent', 'realtyspace') }}</th>
+    {% elseif field == 'date' %}
+      <th class="datatable__head">{{ __('Date', 'realtyspace') }}</th>
+    {% elseif field == 'price' %}
+      <th class="datatable__head">{{ __('Price', 'realtyspace') }}</th>
+    {% elseif field == 'more_btn' %}
+      <th class="datatable__head-5">{{ __('Details', 'realtyspace') }}</th>
+    {% endif %}
+  {% endfor %}
+{% endmacro %}
+
+
+{% macro show_map(type) %}
+  {% set tooltip_template_id = js_template('property-map-tooltip', 'modules/property/misc/map-tooltip.twig') %}
+  {% set module_id = js_module('show_map', {
+    'infoboxTemplate': tooltip_template_id,
+    'theme': 'dark',
+    'fullscreen': false
+  }) %}
+
+  <div class="map map--index js-map map--{{ type }}" id="{{ module_id }}">
+    <div class="map__buttons">
+      <button type="button" class="map__change-map js-map-btn">{{ __('Show map', 'realtyspace') }}</button>
+    </div>
+    <div class="map__wrap">
+      <div class="map__view js-map-index-canvas "></div>
+    </div>
+  </div>
+{% endmacro %}

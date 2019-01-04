@@ -1,0 +1,293 @@
+{% extends 'bootstrap_3_layout.html.twig' %}
+
+{%- block form_start -%}
+  {% set attr = attr|merge({class: (attr.class|default(''))|trim}) %}
+  {% set method = method|upper %}
+  {%- if method in ["GET", "POST"] -%}
+    {% set form_method = method %}
+  {%- else -%}
+    {% set form_method = "POST" %}
+  {%- endif -%}
+  <form {% if name %}name="{{ name }}"{% endif %} method="{{ form_method|lower }}" action="{{ action }}"{% for attrname, attrvalue in attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}{% if multipart %} enctype="multipart/form-data"{% endif %}>
+  {%- if form_method != method -%}
+    <input type="hidden" name="_method" value="{{ method }}"/>
+  {%- endif -%}
+{%- endblock form_start -%}
+
+{% block form_label -%}
+  {% set label_attr = label_attr|merge({class: (label_attr.class|default('') ~ ' control-label')|trim}) %}
+
+  {% if label is not same as(false) -%}
+    {% if not compound -%}
+      {% set label_attr = label_attr|merge({'for': id}) %}
+    {%- endif -%}
+    {% if required -%}
+      {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' required')|trim}) %}
+    {%- endif -%}
+    {% if label is empty -%}
+      {%- if label_format is not empty -%}
+        {% set label = label_format|replace({
+        '%name%': name,
+        '%id%': id,
+        }) %}
+      {%- else -%}
+        {% set label = name|humanize %}
+      {%- endif -%}
+    {%- endif -%}
+    <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ label|raw }}</label>
+  {%- endif -%}
+
+  {% if description %}
+    <h5>{{ description }}</h5>
+  {% endif %}
+{%- endblock form_label %}
+
+
+
+{% block form_widget_simple -%}
+  {% if type is not defined or 'file' != type %}
+    {% set attr = attr|merge({class: (attr.class|default(''))|trim}) %}
+  {% endif %}
+  {{- parent() -}}
+{%- endblock form_widget_simple %}
+
+
+{% block radio_label -%}
+  {% set label_attr = label_attr|merge({class: (label_attr.class|default('') ~ ' in-label')|trim}) -%}
+  {% if 'standalone' in label_attr.class %}
+    {% set label_attr = label_attr|merge({class: (label_attr.class|default('') ~ ' control-label')|trim}) -%}
+  {% endif %}
+  {% if label is not same as(false) -%}
+    {% if not compound -%}
+      {% set label_attr = label_attr|merge({'for': id}) %}
+    {%- endif -%}
+    {% if required -%}
+      {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' required')|trim}) %}
+    {%- endif -%}
+    {% if label is empty -%}
+      {%- if label_format is not empty -%}
+        {% set label = label_format|replace({
+        '%name%': name,
+        '%id%': id,
+        }) %}
+      {%- else -%}
+        {% set label = name|humanize %}
+      {%- endif -%}
+    {%- endif -%}
+    <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ translation_domain is same as(false) ? label : label|trans({}, translation_domain) }}</label>
+  {%- endif -%}
+{%- endblock radio_label %}
+
+{% block checkbox_label -%}
+  {#{% if 'standalone' in label_attr.class %}#}
+    {#{{ block('form_label') }}#}
+    {#{% else %}#}
+      {{ block('radio_label') }}
+  {#{% endif %}#}
+
+{%- endblock checkbox_label %}
+
+{% block radio_widget %}
+  {% set attr = attr|merge({class: (attr.class|default('') ~ ' in-radio')|trim}) -%}
+  <input type="radio" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+{% endblock %}
+
+{% block checkbox_widget %}
+  {% set attr = attr|merge({class: (attr.class|default('') ~ ' in-checkbox')|trim}) -%}
+  <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+  {% if 'standalone' in label_attr.class %}
+    {{- form_label(form, null, { widget: parent() }) -}}
+  {% endif %}
+{% endblock %}
+
+
+
+{% macro render_tree(options, arr) %}
+  {% from _self import render_tree as recursive %}
+  <ul class="bonsai region-list js-tree">
+    {% for option in options %}
+      <li>
+        {{ attribute(arr, ('el'~option.term_id)) }}
+        {% if option.children is not empty %}
+          {{ recursive(option.children,arr) }}
+        {% endif %}
+      </li>
+    {% endfor %}
+
+  </ul>
+{% endmacro %}
+
+
+{%- block choice_widget_expanded -%}
+  {% if not as_dropdown %}
+    <div {{ block('widget_container_attributes') }}>
+      {%- for child in form %}
+        <div>
+          {{- form_widget(child) -}}
+          {{- form_label(child) -}}
+        </div>
+      {% endfor -%}
+    </div>
+  {% else %}
+
+
+    {% from _self import render_tree as render_tree %}
+
+    {% set arr = {} %}
+    {%- for child in form %}
+      {% set html %}
+        {{ form_widget(child, { is_choice: true }) }}
+        {{ form_label(child, null, {
+          is_choice: true,
+          label_attr: {
+            class: 'in-label',
+            'data-toggle': 'tooltip',
+            'data-placement': 'top',
+            'title': child.vars.label
+          }
+        }) }}
+      {% endset %}
+      {% set arr = arr|merge({('el'~child.vars.value): html}) %}
+    {% endfor %}
+
+
+    <div class="dropdown dropdown--select" {{ block('widget_container_attributes') }}>
+      <button type="button" data-toggle="dropdown" data-placeholder="{{ __('Any', 'realtyspace') }}"
+              class="dropdown-toggle js-select-checkboxes-btn">
+        {{ __('Any', 'realtyspace') }}
+      </button>
+
+      <div class="dropdown-menu js-dropdown-menu js-select-checkboxes">
+        <div class="dropdown__content">
+          {% if list_indent %}
+
+            <div class="region-select">
+              {{ render_tree(list_indent, arr) }}
+            </div>
+          {% else %}
+            <ul class="dropdown__list">
+              {% for item in arr %}
+                <li>
+                  {{ item }}
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+
+        <div class="dropdown__buttons">
+          <button type="button" class="btn--default btn--default--reset js-select-checkboxes-reset">{{ __('Clear', 'realtyspace') }}</button>
+          <button type="button" class="btn--default js-select-checkboxes-accept">{{ __('Accept', 'realtyspace') }}</button>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{%- endblock choice_widget_expanded -%}
+
+
+{% block textarea_widget -%}
+  {% set attr = attr|merge({class: (attr.class|default(''))|trim}) %}
+  {{- parent() -}}
+{%- endblock textarea_widget %}
+
+{% block honeypot_row %}
+  {{ form_widget(form) }}
+{% endblock %}
+
+{% block form_row -%}
+  <div class="form-group{% if (not compound or force_error|default(false)) and not valid %} has-error{% endif %} {{ row_class|default('') }} {{ required ? 'required' }}">
+    {{ form_label(form) }}
+    {{ form_widget(form) }}
+    {{ form_errors(form) }}
+  </div>
+{%- endblock form_row %}
+
+{% block rangeslider_widget %}
+  <div class="form__mode">
+
+    {% set range  = __('Range', 'realtyspace') %}
+    {% set from = __('From', 'realtyspace') %}
+    {% set to = __('To', 'realtyspace') %}
+
+    <button type="button" data-mode="input" class="form__mode-btn js-input-mode" data-toggle-value="{{ range }}">
+      {{ __('Input', 'realtyspace') }}
+    </button>
+  </div>
+  <div class="form__ranges">
+    {%- set type = type|default('text') -%}
+    {% set class = ' js-form-range form__ranges-in' %}
+    {% set attr = attr|merge({'class': (attr.class|default('') ~ class)|trim}) %}
+    {{ block('form_widget_simple') }}
+  </div>
+  <div class="form__inputs " data-form-ranges>
+    <input type="text" placeholder="{{ from }}" data-form-field data-field-type="from" class="form-control">
+    <input type="text" placeholder="{{ to }}" data-form-field data-field-type="to" class="form-control">
+  </div>
+{% endblock %}
+
+
+{% block dropzone_widget %}
+  {% set attr = attr|merge({
+  class: (attr.class|default('') ~ ' dropzone dropzone--submit form__dropzone')|trim,
+  }) %}
+  {{ block('collection_widget') }}
+{% endblock %}
+
+{% block image_widget %}
+  {{ form_widget(form) }}
+{% endblock %}
+
+{% block map_widget %}
+  {% set attr = attr|merge({
+  class: (attr.class|default('') ~ ' map js-dapi-loc-gmap')|trim,
+  }) %}
+  <div {{ block('widget_container_attributes') }}>
+    {%- if form.parent is empty -%}
+      {{ form_errors(form) }}
+    {%- endif -%}
+    <div class="row map__autocomplete">
+      {{ form_widget(form.address, {'attr': {'class': 'form-control--autocomplete'}}) }}
+
+      {{- block('form_rows') -}}
+      <div class="map__buttons">
+        <button data-map-button type="button" class="map__change-map js-map-btn">{{ __('Address Map', 'realtyspace') }}</button>
+      </div>
+      <button type="button" class="map__geolocation js-geolocate">
+        <svg>
+          <use xlink:href="#icon-geolocation"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="map__wrap">
+      <div data-map data-map-canvas class="map__view map__view--property-form js-map-canvas"></div>
+    </div>
+    {{- form_rest(form) -}}
+  </div>
+
+{% endblock %}
+
+{% block dynamic_row_widget %}
+  {% set attr = attr|merge({class: (attr.class|default('') ~ ' form__dynamic-row js-dapi-dynarow')|trim}) %}
+  {{ block('collection_widget') }}
+{% endblock %}
+
+{% block dynamic_row_name_value_row %}
+  <div class="row" data-row>
+    {% set row_class = 'form__dynamic-group' %}
+    {{ block('form_row') }}
+    {% set total_items = form.parent.children|length %}
+    {% set current_item = form.vars.name + 1 %}
+    <div class="form-group form__dynamic-buttons">
+      <button type="button" data-remove-row class="btn--minus"></button>
+      <button type="button" class="btn--plus" data-add-row
+              {% if current_item != total_items and prototype is not defined %}class="hide"{% endif %}
+      >
+      </button>
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block dynamic_row_name_value_label %}
+{% endblock %}
+

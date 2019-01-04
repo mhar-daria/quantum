@@ -1,0 +1,151 @@
+{% macro thumbnail(src, width, height = null, class = null, gallery_mode = false, alt='') %}
+  <img {% if gallery_mode %} data-thumbnail {% endif %} {% if class %}class="{{ class }}"{% endif %}
+      {% if src %}
+        src="{{ src|resize(width, height, 'center') }}"
+      {% else %}
+        data-src="holder.js/{{ width }}x{{ height }}?auto=yes&text=&font=FontAwesome&size=auto"
+      {% endif %}
+      alt="{{ alt|e('html_attr') }}"
+  />
+{% endmacro %}
+
+{% macro thumbnail_src(src, width, height = null) %}
+  {%- if src -%}
+    {{- src|resize(width, height, 'center') -}}
+  {%- else -%}
+    {{- "holder.js/#{width}x#{height}?auto=yes&text=&font=FontAwesome&size=100" -}}
+  {%- endif -%}
+{% endmacro %}
+
+{% macro widget_header(title, subtitle, modifier, btn) %}
+  <div class="widget__header">
+    {% if title or subtitle or btn %}
+      {% if title %}
+        {% if modifier == 'sidebar' %}
+          <h3 class="widget__title">{{ title|raw }}</h3>
+        {% elseif modifier == 'footer' or modifier == 'main' %}
+          <h4 class="widget__title">{{ title|raw }}</h4>
+        {% else %}
+          <h2 class="widget__title">{{ title|raw }}</h2>
+        {% endif %}
+      {% endif %}
+      {% if subtitle %}
+        <h5 class="widget__headline">{{ subtitle|raw }}</h5>
+      {% endif %}
+    {% endif %}
+  </div>
+
+{% endmacro %}
+
+
+
+    {% macro pagination(pagination, container = null, scroll = true) %}
+      {% if pagination.pages %}
+        <div class="site__footer">
+          <nav class="listing__pagination">
+            <ul class="pagination-custom {% if container %}js-dapi-pagination{% endif %}"
+                {% if container and not scroll %}data-scrolltop="false"{% endif %}
+                {% if container %}data-target="{{ container }}"{% endif %}
+            >
+              {% if pagination.prev %}
+                <li class="{{ not pagination.prev ? 'hide' }}">
+                  <a href="{{ pagination.prev.link|trim('/')|raw }}">
+                    <span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">{{ __('Previous', 'realtyspace') }}</span>
+                  </a>
+                </li>
+              {% endif %}
+              {% for page in pagination.pages %}
+                <li {% if page.current %} class="active" {% endif %}>
+                  <a href="{{ page.link|trim('/')|raw }}">{{ page.title|raw }}</a>
+                </li>
+              {% endfor %}
+              {% if pagination.next %}
+                <li class="{{ not pagination.next ? 'hide' }}">
+                  <a href="{{ pagination.next.link|trim('/')|raw }}">
+                    <span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">{{ __('Next', 'realtyspace') }}</span>
+                  </a>
+                </li>
+              {% endif %}
+            </ul>
+          </nav>
+        </div>
+      {% endif %}
+    {% endmacro %}
+
+
+    {% macro link_more(link, text, js_class, attrs = {}) %}
+      {% import _self as macro %}
+      <a href="{{ link }}" class="properties__btn-more {{ js_class }}" {{ macro.attrs(attrs) }}>
+        {{ text }}
+      </a>
+    {% endmacro %}
+
+    {% macro attrs(attributes) %}
+      {% for attr_name, attr_value in attributes %}
+        {{ attr_name }}="{{ attr_value }}"
+      {% endfor %}
+    {% endmacro %}
+
+{% macro icon(name, classes) %}
+  {% from _self import fa_icon %}
+  {% if name starts with 'fa-' %}
+    {{ fa_icon(name, classes) }}
+  {% elseif name starts with 'icon-' %}
+    <svg class="{{ classes|e('html_attr') }}">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ name|e('html_attr') }}"></use>
+    </svg>
+  {% else %}
+    <i class="{{ name|e('html_attr') }} {{ classes|e('html_attr') }}"></i>
+  {% endif %}
+{% endmacro %}
+
+{% macro fa_icon(name, classes) %}
+  {% if name starts with 'fa-' %}
+    <i class="fa {{ name|e('html_attr') }} {{ classes|e('html_attr') }}"></i>
+  {% else %}
+    <i class="fa fa-{{ name|e('html_attr') }} {{ classes|e('html_attr') }}"></i>
+  {% endif %}
+{% endmacro %}
+
+{% macro page_header(page, show_panel = true) %}
+  <header class="site__header">
+    {% if page.title %}
+      <h1 class="site__title {{ preview_hook('js-archive-title') }}">
+        {{- page.title|raw -}}
+      </h1>
+    {% endif %}
+    {% if page.subtitle %}
+      <h5 class="site__headline {{ preview_hook('js-archive-subtitle') }}">
+        {{- page.subtitle -}}
+      </h5>
+    {% endif %}
+  </header>
+  {% if show_panel %}
+    <div class="site__panel {{ preview_hook('js-archive-panel') }}">
+      {{- page.panel|raw -}}
+    </div>
+  {% endif %}
+{% endmacro %}
+
+{% macro sharing_links(links) %}
+  {% from _self import fa_icon %}
+  {% for icon,link in links %}
+    <a href="{{ link }}" target="_blank" class="social__item">
+      {{ fa_icon(icon) }}
+    </a>
+  {% endfor %}
+{% endmacro %}
+
+
+{% macro no_items_available(text) %}
+  <div class="no-items">
+    <div class="no-items__icon no-items__icon--svg">
+      <svg>
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-noitems"></use>
+      </svg>
+    </div>
+    <span class="no-items__title">{{ text|default(__('No items', 'realtyspace')) }}</span>
+  </div>
+{% endmacro %}

@@ -1,0 +1,10 @@
+{% extends 'base-archive.twig' %}
+
+{% block content %}
+  {# @var page \cf47\theme\realtyspace\module\testimonial\viewmodel\ArchiveViewModel #}
+  <div class="site site--main">
+    {{ macro.page_header(page) }}
+    {{ include('modules/testimonial/includes/list.twig', {archive: page}, with_context = false) }}
+  </div>
+{% endblock %}
+

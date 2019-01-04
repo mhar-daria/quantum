@@ -1,0 +1,42 @@
+{% from 'modules/user/macro.twig' import avatar %}
+{% if current_user %}
+  <div class="worker__item">
+    <h3 class="worker__name">{{ current_user.name }}</h3>
+    <div class="worker__photo">
+      <div class="worker__avatar">
+        {{ avatar(current_user.id, 184) }}
+      </div>
+    </div>
+    <nav class="worker__nav">
+      <ul>
+        {% if layout.my_properties_page_id %}
+          <li>
+            {% set page =  wpurl.page_url_with_name(layout.my_properties_page_id) %}
+            <a href="{{ page.url|e('esc_url') }}">
+              {{ page.name }}
+            </a>
+          </li>
+        {% endif %}
+        {% if layout.submit_property_page_id %}
+          <li>
+            {% set page =  wpurl.page_url_with_name(layout.submit_property_page_id) %}
+            <a href="{{ page.url|e('esc_url') }}">
+              {{ page.name }}
+            </a>
+          </li>
+        {% endif %}
+        <li>
+          <a href="{{ current_user.profile_edit_url }}">
+            {{ __('Profile', 'realtyspace') }}
+          </a>
+        </li>
+        <li>
+          <a href="{{ current_user.logout_url|raw }}">
+            {{ __('Log out', 'realtyspace') }}
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- end of block .worker__nav-->
+  </div>
+{% endif %}

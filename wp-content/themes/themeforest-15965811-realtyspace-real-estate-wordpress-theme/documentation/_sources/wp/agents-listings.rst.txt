@@ -1,0 +1,43 @@
+Agents listings
+===============
+
+.. important::
+
+    Please check our `FAQ <faq.html>`_ , most probabaly there is already an answer to your question.
+    If you didn't find what you need, please contact us at support@codefactory47.com
+
+
+.. image:: ../img/agents-grid.png
+
+Editing layout
+++++++++++++++
+
+Open one of the agent's page details, go to **Customize / Current page options / Layout**
+
+
+.. image:: ../img/start-customize.png
+
+.. image:: ../img/customize-current.png
+
+
+
+Here you will find options:
+
+* **Title**
+* **Subtitle**
+* **Panel** - text displayed in "colored blox" and page title.
+* Sidebar position
+    - As defined in Layout
+    - Left
+    - Right
+    - None
+
+* **Display mode**
+    - List
+    - Grid
+* **Items per page** - change number of items (agents) to be displayed on a page.
+
+
+
+.. tip::
+Add one space in title or subtitle field to remove at all text from frontend. Remove default text from panel editor, will hide a green panel!

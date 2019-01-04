@@ -1,0 +1,169 @@
+{# @var agent \cf47\theme\realtyspace\module\agent\Entity #}
+{% from 'macro.twig' import icon %}
+
+{% macro agent_item(agent, display_mode = 'list') %}
+  {% import _self as am %}
+  <div class="listing__item">
+    <div class="worker__item vcard">
+      {{ am.photo(agent, 245, 245) }}
+      {% if display_mode == 'grid' %}
+        <div class="worker__intro">
+          {{ am.name_and_title(agent) }}
+          {{ am.contact_and_count(agent) }}
+        </div>
+        {{ am.description(agent) }}
+      {% else %}
+        <div class="worker__intro">
+          <div class="worker__intro-head">
+            {{ am.name_and_title(agent) }}
+            {{ am.contact_and_count(agent) }}
+          </div>
+          <div class="worker__intro-row">
+            {{ am.description(agent) }}
+          </div>
+        </div>
+      {% endif %}
+      <a href="{{ agent.link }}" class="worker__more">{{ __('more details', 'realtyspace') }}</a>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro description(agent, limit) %}
+  <div class="worker__descr">
+    <p>
+      {{ agent.excerpt|default(agent.content|truncate(limit|default(80)))|raw }}
+    </p>
+  </div>
+{% endmacro %}
+
+{% macro contacts(agent) %}
+  {% if agent.contact_numbers or agent.email or agent.additional_fields %}
+    <div class="dl-table worker__contacts">
+      {% for contact_number in agent.contact_numbers %}
+        <dl class="tel">
+          <dt class="type">{{ contact_number.type }}</dt>
+          <dd>
+            <a href="tel:{{ contact_number.number|replace({' ': ''}) }}" class="uri value">{{ contact_number.number }}</a>
+          </dd>
+        </dl>
+      {% endfor %}
+      {% if agent.email %}
+        <dl class="email">
+          <dt class="type">{{ __('Email', 'realtyspace') }}</dt>
+          <dd>
+            <a href="mailto:{{ agent.email|antispambot }}" class="uri value">{{ agent.email|antispambot }}</a>
+          </dd>
+        </dl>
+      {% endif %}
+      {% for field in agent.additional_fields %}
+        <dl>
+          <dt class="type">{{ field.label }}</dt>
+          <dd>{{ field.value }}</dd>
+        </dl>
+      {% endfor %}
+
+    </div>
+  {% endif %}
+{% endmacro %}
+
+{% macro social(agent) %}
+  {% from _self import social_item %}
+  {% if agent.social_profiles %}
+    <div class="social social--worker">
+      {% for social_profile in agent.social_profiles %}
+        {{ social_item(social_profile, 'social__item') }}
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endmacro %}
+
+{% macro social_item(item, class) %}
+  {% from 'macro.twig' import icon %}
+  <a target="_blank" href="{{ item.url }}" class="{{ class }}">
+    {{ icon(item.icon|e('html_attr')) }}
+  </a>
+{% endmacro %}
+
+{% macro name_and_title(agent) %}
+  <h3 class="worker__name fn">
+    {% if agent.link %}
+      <a href="{{ agent.link|e('esc_url') }}">{{ agent.name|raw }}</a>
+    {% else %}
+      {{ agent.name|raw }}
+    {% endif %}
+  </h3>
+  {% if agent.job_title %}
+    <div class="worker__post">{{ agent.job_title }}</div>
+  {% endif %}
+{% endmacro %}
+
+{% macro contact_and_count(agent) %}
+  <button type="button" class="worker__show js-unhide">{{ __('Contact agent', 'realtyspace') }}</button>
+  {% if agent.link %}
+    <div class="worker__listings">
+      <i class="worker__favorites worker__favorites--highlight"></i> {{ __('Listings', 'realtyspace') }} -
+      <a href="{{ agent.link }}">
+        {{ _n('1 property', '%s properties', agent.property_count, 'realtyspace')|format(agent.property_count) }}
+      </a>
+    </div>
+  {% endif %}
+{% endmacro %}
+
+{% macro photo(agent, width, height, clickable = true) %}
+  {% import 'macro.twig' as macro %}
+  <div class="worker__photo ">
+    {% if agent.is_user %}
+      {% from 'modules/user/macro.twig' import avatar %}
+    <span class="item-photo item-photo--static">
+      {{ avatar(agent.id, width) }}
+       </span>
+    {% else %}
+      {% if clickable %}
+        <a href="{{ agent.link }}" class="item-photo item-photo--static">
+          {{ macro.thumbnail(agent.featured_image, width, height, 'photo', agent.name) }}
+          <figure class="item-photo__hover">
+            <span class="item-photo__more">{{ __('View Details', 'realtyspace') }}</span>
+          </figure>
+        </a>
+      {% else %}
+        <span class="item-photo item-photo--static">
+                {{ macro.thumbnail(agent.featured_image, width, height, 'photo', agent.name) }}
+            </span>
+      {% endif %}
+    {% endif %}
+  </div>
+{% endmacro %}
+
+
+{% macro agent_item_short(agent) %}
+  {# @var agent \cf47\theme\realtyspace\module\agent\Entity #}
+  <div class="listing__item">
+    <div class="worker__item vcard">
+      <div class="worker__photo">
+        <a href="{{ agent.link }}" class="item-photo">
+          {% set thumb = agent.featured_image|resize(500) %}
+          <img class="photo" src="{{ thumb }}" alt="{{ agent.name }}">
+          <figure class="item-photo__hover">
+            <span class="item-photo__more">{{ __('View', 'realtyspace') }}</span>
+          </figure>
+        </a>
+      </div>
+
+      <h3 class="worker__name fn">{{ agent.name }}</h3>
+
+      {% if agent.job_title %}
+        <div class="worker__contacts">{{ agent.job_title }}</div>
+      {% endif %}
+
+      {% if agent.email %}
+        <div class="worker__contacts">
+          <div class="email">
+            <a href="mailto:{{ agent.email | antispambot }}" class="uri value">{{ agent.email | antispambot |raw }}</a>
+          </div>
+        </div>
+
+      {% endif %}
+
+    </div>
+  </div>
+{% endmacro %}

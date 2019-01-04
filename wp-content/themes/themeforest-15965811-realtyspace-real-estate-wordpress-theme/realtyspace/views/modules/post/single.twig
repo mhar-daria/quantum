@@ -1,0 +1,37 @@
+{% extends 'base-archive.twig' %}
+{% from 'macro.twig' import page_header %}
+{% from 'modules/post/macro.twig' import header, tags, post_preview %}
+{# @var page \cf47\theme\realtyspace\module\post\viewmodel\SingleViewModel #}
+{% block content %}
+  <div class="site site--main">
+    {{ macro.page_header(page) }}
+    <div class="site__main">
+      <div class="widget">
+        <div class="widget__content">
+          <article class="article article--details article--page {{ page.css_classes }}" id="post-{{ page.id }}">
+            {{ header(page.post) }}
+            {{ post_preview(page.post) }}
+            <div class="clearfix"></div>
+            <div class="article__body">
+              {{ content() }}
+            </div>
+            {{ macro.pagination(page.pagination) }}
+            {% if page.social_links|length %}
+              <div class="article__footer">
+                <div class="social social--article">
+                  <span>{{ __('Share this post', 'realtyspace') }}</span>
+                  {% for icon,link in page.social_links %}
+                    <a href="{{ link }}" target="_blank" class="social__item"><i class="fa fa-{{ icon|e('html_attr') }}"></i></a>
+                  {% endfor %}
+                </div>
+                {{ tags(page.post.id) }}
+              </div>
+            {% endif %}
+          </article>
+          {{ page.comments|raw }}
+        </div>
+      </div>
+    </div>
+    <!-- END LISTING-->
+  </div>
+{% endblock %}

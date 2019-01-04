@@ -1,0 +1,45 @@
+{# @var show_navigation #}
+{% import 'macro.twig' as macro %}
+
+{% if comments_open %}
+<div class="comment" id="comments">
+  <h3 class="comment__headline">{{ comments_title }}</h3>
+  <div class="comment__wrap">
+    <ul class="comment__list">
+      {{ comment_list|raw }}
+    </ul>
+    <div class="comment__footer">
+      {% if show_navigation and (previous_page or next_page) %}
+        <!-- BEGIN PAGINATION-->
+        <nav class="listing__pagination">
+          <ul class="pagination-custom">
+            {% if previous_page %}
+              <li>
+                {{ previous_page|raw }}
+              </li>
+            {% endif %}
+            {% if next_page %}
+              <li>
+                {{ next_page|raw }}
+              </li>
+            {% endif %}
+          </ul>
+        </nav>
+        <!-- END PAGINATION-->
+      {% endif %}
+
+      {% if not reply_form %}
+        <div class="no-items">
+          <div class="no-items__icon no-items__icon--svg">
+            <svg>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-noitems"></use>
+            </svg>
+          </div>
+          <span class="no-items__title">{{ __('Comments are closed', 'realtyspace') }}</span>
+        </div>
+      {% endif %}
+      {{ reply_form|raw }}
+    </div>
+  </div>
+</div>
+{% endif %}

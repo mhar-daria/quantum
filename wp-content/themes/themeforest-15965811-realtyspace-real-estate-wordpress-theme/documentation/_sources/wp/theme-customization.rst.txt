@@ -1,0 +1,116 @@
+.. _reference-theme-customization:
+
+Advanced theme customization
+============================
+
+If you customize WordPress themes, you should understand the basic concept of a WordPress child theme. Unfortunately,
+child themes can be confusing if you don’t have much experience with them. It’s important you understand what a
+child theme is and how it works alongside a normal WordPress theme. Why is it so important? Not using a child theme
+for customizations could really come back to haunt you later.
+
+
+What are child themes?
+----------------------
+
+Imagine you have a painting on your wall. You really love the painting, but there is one thing that you just can’t
+stand. The moon is orange. The moon should be white, right? Every time you look at it, it drives you crazy.
+
+You decide you’re going to fix the painting. You get out your brushes, buy the best white paint, and sit down to do
+your work. As you stare at the painting, you can’t help but think “I hope I don’t screw this up”.
+
+
+What if there was a better way? Imagine snapping your fingers and creating an exact duplicate of the painting.
+Wouldn’t that be helpful? Then, you could work on the duplicate, perfecting your white moon. If you screw something
+up, you simply throw it away and snap your fingers again. When you finally do perfect the painting, you can hang it
+on the wall, and keep the original in the closet. If you later decide you want go back to the orange moon, or maybe
+even do a purple moon, just snap your fingers and create a new duplicate to work on.
+
+If you use a WordPress child theme, snapping your fingers is possible! Think of a child theme as a completely new
+theme. When you activate the child theme it actively inherits everything from your original theme (also known as the
+parent theme). In our example, the original painting is the parent theme, and the duplicate painting is the child
+theme.
+
+What do we mean by “actively inherits”? Instead of a static copy, like in our painting example, the duplicate
+painting (child theme) is actively mirroring the original painting (parent theme). If you splashed a streak of white
+across the original painting (parent theme), it would instantly and very magically appear on the duplicate painting
+(child theme).
+
+When you activate the child theme (duplicate painting) you’re effectively “hanging it on the wall”. The parent theme
+(original painting) stays tucked away safely in the closet. If you don’t like the changes, you can always re-activate
+the parent theme (hang up the original painting), throw away the child theme, and start over with a new child theme.
+
+Using a WordPress child theme
+-----------------------------
+
+Here at Codefactory47, we’ve got ready made child themes for all of our WordPress themes. To get your child theme, go
+to `Themeforest Downloads <https://themeforest.net/downloads>`_ page, find the theme, click
+**Download → All files & documentation**. After the archive is downloaded, open it and you will see a file named
+``themename-child.zip``, for example ``realtyspace-child.zip``.
+
+To use a child theme, you install and activate it like any other theme. Like we talked about, it will automatically
+inherit everything from its parent, and look exactly the same when you first activate it. You don’t need to worry
+about breaking your website when you activate a child theme.
+
+Adding CSS to a child theme
+---------------------------
+
+The easiest way to customize your WordPress theme is with CSS, and a child theme makes that even easier. You can
+experiment with CSS in your child theme, and always revert back to the parent theme if you make a mistake.
+
+After activating your child theme, go to **Appearance → Editor** and look at the style.css file. You’ll now see it’s
+(mostly) empty! Why? WordPress child themes automatically inherit everything from the parent theme. Your original
+stylesheet is being loaded directly from the parent theme. This empty stylesheet gets loaded in after the original
+styles.
+
+You might be wondering how the child theme styles are going to override the styles from the parent theme. Remember
+what CSS stands for? Cascading Style Sheets. We’re going to focus on the cascading part. When the browser reads your
+style sheet it reads it from the top down. Rules that appear later always take precedence over rules that appear
+earlier. Imagine in our painting example, you wrote something like this (in CSS):
+
+
+.. code-block:: css
+
+    /* In the parent theme (original painting) */
+    #moon {
+      color: orange;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+
+
+    /* In the child theme (duplicate painting) */
+    #moon { color: white; }
+
+Your moon will be white! The child theme style
+rules will naturally take precedence because they’re loaded after the parent theme style rules. So now, instead of
+editing the existing rules, you’ll copy and paste the specific rules you want to change.
+
+One important thing to notice — we only copied over the color: white; line. Why? That’s all we changed. With CSS, you
+only need to copy over things you actually change, everything else will automatically be inherited from the parent
+style rules.
+
+Save the ``style.css`` file and you should see the changes show up live on your site!
+
+Changing template files in a child theme
+----------------------------------------
+
+Let’s say you need to edit the template to move around some sections in the header.
+
+#. Find the template file in the parent theme that controls the view you want to change. In this case, we are talking about ``wp-content/themes/realtyspace/views/partials/header.twig`` file.
+#. Copy that entire file to your child theme ``wp-content/themes/realtyspace-child/views/partials/header.twig``.
+
+Once that file exists in your child theme, it will be used instead of the original file in
+the parent theme. This is true of any ``*.twig`` file you copy to your child theme.
+
+Now, make the changes to the ``header.twig`` file in your child theme and save them. If the child theme is active, the
+changes will automatically show up on your site. Later, if you want to undo the changes, you can delete the file from
+your child theme and the original ``header.twig`` file in the parent theme will be used instead.
+
+Keep a list of the changes
+--------------------------
+
+Whenever you duplicate a template file into a child theme it’s always a good idea to keep a list of your changes in a
+comment at the top of the file. This will provide a good reference if you ever need to make more changes or even
+revert changes sometime in the future.
+

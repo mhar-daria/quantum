@@ -1,0 +1,63 @@
+{% macro text_field(field, label) %}
+  <p>
+    <label for="{{ field.id }}">{{ label|default(field.label)|capitalize }}:</label>
+    <input class="widefat" id="{{ field.id }}" name="{{ field.name }}" type="text" value="{{ field.value|join(', ') }}">
+  </p>
+{% endmacro %}
+
+{% macro hidden_field(field) %}
+  <input id="{{ field.id }}" name="{{ field.name }}" type="hidden" value="{{ field.value|join(', ') }}">
+{% endmacro %}
+
+{% macro number_field(field, label, min = null) %}
+  <p>
+    <label for="{{ field.id }}">{{ label|default(field.label)|capitalize }}:</label>
+    <input id="{{ field.id }}" name="{{ field.name }}" type="number" value="{{ field.value }}" {% if min is not null %}min="{{ min }}"{% endif %} size="1"/>
+  </p>
+{% endmacro %}
+
+{% macro checkbox_field(field, label) %}
+  <p>
+    <input class="checkbox" type="checkbox" {{ field.value ? 'checked="checked"' }} id="{{ field.id }}" name="{{ field.name }}"/>
+    <label for="{{ field.id }}">{{ label|default(field.label)|capitalize }}</label>
+  </p>
+{% endmacro %}
+
+{% macro checkbox_sort_field(field, label, sort_value) %}
+  <li data-sortable="{{ sort_value }}">
+    <input class="checkbox" type="checkbox" {{ field.value ? 'checked="checked"' }} id="{{ field.id }}" name="{{ field.name }}"/>
+    <label for="{{ field.id }}">{{ label|default(field.label)|capitalize }}</label>
+  </li>
+{% endmacro %}
+
+{% macro select_field(field, label) %}
+  <p>
+    <label for="{{ field.id }}">{{ label|default(field.label)|capitalize }}:</label>
+    <select id="{{ field.id }}" name="{{ field.name }}">
+      {% for option in field.list %}
+        <option
+            {% if option.value is same as(false) %}disabled="disabled" {% else %} value="{{ option.value }}" {% endif %}
+            {% if field.value == option.value %}selected="selected"{% endif %}>
+          {{ option.label }}
+        </option>
+      {% endfor %}
+    </select>
+  </p>
+{% endmacro %}
+
+{% macro textarea_field(field, label) %}
+  <p>
+    <label for="{{ field.id }}">{{ label|default(field.label)|capitalize }}:</label>
+    <textarea class="widefat" rows="16" cols="20" id="{{ field.id }}" name="{{ field.name }}">{{ field.value|join(', ') }}</textarea>
+  </p>
+{% endmacro %}
+
+{% macro media_field(field, label) %}
+  <p>
+    <label for="{{ field.id }}">{{ label|default(field.label)|capitalize }}</label>
+    <br>
+    <img id="{{ field.id }}-thumb" src="{{ field.image_object.src | resize('thumbnail') }}">
+    <input name="{{ field.name }}" id="{{ field.id }}" class="widefat" type="text" size="36" value="{{ field.value }}"/>
+    <input id="{{ field.id }}-btn" style="margin-top: 5px" class="button button-primary" type="button" value="Select"/>
+  </p>
+{% endmacro %}

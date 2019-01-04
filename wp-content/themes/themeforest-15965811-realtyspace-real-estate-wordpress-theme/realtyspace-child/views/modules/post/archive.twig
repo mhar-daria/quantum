@@ -1,0 +1,31 @@
+{% extends is_ajax() ? 'base-ajax.twig' : 'base-archive.twig' %}
+{% from 'modules/post/macro.twig' import header, post_preview %}
+{% from 'macro.twig' import page_header %}
+
+
+{% block content %}
+  {# @var page \cf47\theme\realtyspace\module\post\viewmodel\ArchiveViewModel #}
+  <div class="site site--main">
+    {{ page_header(page) }}
+    <div class="site__main">
+      <div class="listing listing--list article article--list ">
+        {% for post in page.posts %}
+          <div class="listing__item">
+            <article class="article__item {{ post.css_classes }}">
+              {{ header(post) }}
+              {{ post_preview(post) }}
+              <div class="article__intro">{{ content(__('Read more', 'realtyspace')) }}</div>
+            </article>
+          </div>
+        {% else %}
+          {{ include('partials/no-results.twig', {
+            'classes': 'listing__empty--properties',
+            'title': __('The search did not return any results', 'realtyspace'),
+            'headline': __('Please try again with different criteria.', 'realtyspace')
+          }) }}
+        {% endfor %}
+      </div>
+    </div>
+    {{ macro.pagination(page.pagination) }}
+  </div>
+{% endblock %}

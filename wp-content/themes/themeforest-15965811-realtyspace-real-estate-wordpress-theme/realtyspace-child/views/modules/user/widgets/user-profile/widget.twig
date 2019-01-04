@@ -1,0 +1,10 @@
+{% from 'macro.twig' import widget_header %}
+{% extends 'widget.twig' %}
+
+{% block header %}
+  {{ widget_header(title, subtext, widget.modifier) }}
+{% endblock %}
+
+{% block content %}
+  {{ include('modules/user/includes/profile-card.twig') }}
+{% endblock %}

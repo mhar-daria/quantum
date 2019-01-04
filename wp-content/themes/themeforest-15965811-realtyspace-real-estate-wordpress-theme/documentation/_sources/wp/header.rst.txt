@@ -1,0 +1,85 @@
+Header
+======
+
+.. important::
+
+    Please check our `FAQ <faq.html>`_ , most probabaly there is already an answer to your question.
+    If you didn't find what you need, please contact us at support@codefactory47.com
+
+.. _reference-header:
+
+
+.. image:: ../img/header.png
+
+
+Header styles
++++++++++++++
+
+There are 3 styles of header for subpages:
+
+#. Standart
+#. White
+#. Dark
+
+You can select one in `Customize / Header / Theme`
+
+
+.. image:: ../img/header-edit.png
+
+.. note::
+  On homepage we have special option for header bar style:
+
+    #. Standard
+    #. Style 1
+    #. Style 2
+
+  Open your home page in backend, and choose one from sidebar widget **Force header style**, this option will overide global header style.
+
+.. image:: ../img/header-homepage.png
+
+Currency setup
+++++++++++++++
+
+You can change it in Appearance -> Customize -> Theme settings -> Property / General settings. Select Main currency and currency symbol.
+
+.. image:: ../img/currency.png
+
+If you want to use a few currencies, you can add them in Appearance -> Customize -> Header Bar -> Secondary currencies choices.
+
+.. image:: ../img/currency-new.png
+
+Navbar
+++++++
+
+In Customize / Navbar there are next options:
+
+* Use custom navbar background?
+* Use custom navbar color?
+* Display breadcrumbs
+* Display fixed menu
+* Fixed menu display offset
+
+Logo
+++++
+
+In Customize / Logo you can choose logo type - `Use logo type?` :
+
+* Image
+* SVG
+* Text logo
+
+And set logo postion `Logo position`:
+
+* Left
+* Center
+* Right
+
+How can I set 2 logos same as on demo website?
+++++++++++++++++++++++++++++++++++++++++++++++
+
+
+In logo settings you can find "Add hero logo" option. This logo will be displayed above hero section on main page. Enable this option and upload logo for hero section.
+
+.. image:: ../img/hero-logo.png
+
+

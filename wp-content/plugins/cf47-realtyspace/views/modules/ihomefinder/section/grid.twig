@@ -1,0 +1,15 @@
+{# @var section \cf47\plugin\realtyspace\module\ihomefinder\section\grid\GridView #}
+{% from 'macro.twig' import widget_header %}
+{% extends 'section-widget.twig' %}
+
+{% block header %}
+  {{ widget_header(section.title, section.subtitle) }}
+{% endblock %}
+
+{% set widget_class = 'landing ihomefinder-group' %}
+
+{% block content %}
+  {{ '[optima_express_featured displayType="grid" resultsPerPage="6" header="false" includeMap="false"]'|shortcodes|raw }}
+{% endblock %}
+
+

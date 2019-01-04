@@ -1,0 +1,61 @@
+iHomefinder
+===========
+
+.. important::
+
+    Please check our `FAQ <faq.html>`_ , most probabaly there is already an answer to your question.
+    If you didn't find what you need, please contact us at support@codefactory47.com
+
+
+
+iHomefinder integration
+-----------------------
+
+
+To create a section like here
+
+.. image:: ../img/ihf-hero.png
+
+Add a property hero section
+
+.. image:: ../img/property-hero-vc.png
+
+check "Show custom shortcode" and insert the following shortcode
+``[optima_express_quick_search style="vertical" showPropertyType="true"]``
+
+
+To create this section
+
+.. image:: ../img/ihf-grid.png
+
+Select  Ihomefinder grid section
+
+.. image:: ../img/ihf-grid-vc.png
+
+
+.. note::
+
+    To create sections with a map like here http://ihf.realtyspace.codefactory47.com/home/ or here http://ihf.realtyspace.codefactory47.com/home-mapsearch/
+    select ``iHomefinder Map section`` or ``iHomeFidner MapSearch section``.
+
+
+Ihomefinder widgets available at **Appearance / Widgets**
+
+.. image:: ../img/ihf-widgets.png
+
+
+Other IHomefidner pages available here ``http://your-domain/wp/wp-admin/admin.php?page=ihf-option-pages``
+
+.. image:: ../img/ihf-pages.png
+
+Uncollapse the section by clicking on it , copy the url and add is as custom url in your menu in **Appearance / Menu**.
+
+
+iHomefinder integration video
+-----------------------------
+
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="//www.youtube.com/embed/NoqKcaFVVNw" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>

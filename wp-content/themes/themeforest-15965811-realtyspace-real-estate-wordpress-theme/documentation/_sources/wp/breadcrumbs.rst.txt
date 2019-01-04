@@ -1,0 +1,29 @@
+Breadcrumbs
+===========
+
+.. important::
+
+    Please check our `FAQ <faq.html>`_ , most probabaly there is already an answer to your question.
+    If you didn't find what you need, please contact us at support@codefactory47.com
+
+.. _reference-breadcrumbs:
+
+
+How can I get rid of breadcrumb in homepage ?
++++++++++++++++++++++++++++++++++++++++++++++
+
+Open your Home page in backend and enable "Show breadcrumbs". Make sure that Breadcrumb NavXT plugin is enabled.
+
+.. image:: ../img/breadcrumbs-homepage.png
+
+
+In the Breadcrumb, I want to get rid of the website's title which is always present. How to do it ?
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. image:: ../img/breadcrumbs.png
+
+
+You can to change it in plugin settings (Settings -> Breadcrumb NavXT)
+
+
+.. image:: ../img/breadcrumbs-settings.png

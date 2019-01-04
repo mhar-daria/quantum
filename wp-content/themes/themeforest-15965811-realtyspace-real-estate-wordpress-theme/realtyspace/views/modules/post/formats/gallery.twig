@@ -1,0 +1,45 @@
+{# @var page \cf47\theme\realtyspace\module\post\viewmodel\SingleViewModel #}
+{% from 'macro.twig' import thumbnail_src, thumbnail %}
+{{ theme.link }}
+{% if post.gallery_items %}
+  <div class="article__preview">
+    <div class="slider slider--small js-dapi-slickslider  js-dapi-gallery">
+      {% for image in  post.gallery_items %}
+        <div data-caption="{{ image.caption }}" data-size="1740x960" data-item data-src="{{ thumbnail_src(image.src, 1740, 960) }}"></div>
+      {% endfor %}
+      <div class="slider__block" data-slick>
+        {% for image in  post.gallery_items %}
+          <div class="slider__item">
+            <a href="{{ thumbnail_src(image.src, 1740, 960) }}" data-index='{{ loop.index0 }}' data-trigger class="slider__img">
+              <img data-lazy="{{ thumbnail_src(image.src, 1170, 600) }}" src="{{ config.theme.assets.uri }}/img/lazy-image.jpg" alt="" data-thumbnail>
+              {% if image.caption %}
+                <span class="slider__description">{{ image.caption }}</span>
+              {% endif %}
+            </a>
+          </div>
+        {% else %}
+          <div class="slider__item">
+            <div class="slider__img">{{ thumbnail(null, 1170, 600) }} </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="slider__controls">
+        <button type="button" class="slider__control slider__control--prev" data-prev>
+          <svg class="slider__control-icon">
+            <use xlink:href="#icon-arrow-left"></use>
+          </svg>
+        </button>
+            <span class="slider__current">
+                <span data-current>1</span> /</span>
+        <span class="slider__total" data-total>{{ post.gallery_items|length }}</span>
+        <button type="button" class="slider__control slider__control--next" data-next>
+          <svg class="slider__control-icon">
+            <use xlink:href="#icon-arrow-right"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+{% else %}
+  {% include 'modules/post/formats/default.twig' %}
+{% endif %}

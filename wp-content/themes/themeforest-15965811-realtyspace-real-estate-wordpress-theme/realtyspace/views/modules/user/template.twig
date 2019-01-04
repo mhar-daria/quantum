@@ -1,0 +1,83 @@
+{% extends 'base-archive.twig' %}
+{% from 'macro.twig' import widget_header %}
+{# @var page \cf47\themecore\user\viewmodel\TemplateViewmodel #}
+
+{% block content %}
+  <div class="site site--main">
+    {{ macro.page_header(page) }}
+    <div class="site__main">
+
+      {{ form_start(form, {'attr': {'class': 'form form--property-add js-submit-form js-parsley'}}) }}
+
+      <section class="widget js-widget widget--main widget--collapse">
+        {{ widget_header(__('Contact', 'realtyspace'), null, 'main') }}
+        <div class="widget__content">
+          <div class="row">
+            {% if form.first_name %}
+              {{ form_row(form.first_name) }}
+            {% endif %}
+            {% if form.last_name %}
+              {{ form_row(form.last_name) }}
+            {% endif %}
+            {% if form.nickname %}
+              {{ form_row(form.nickname) }}
+            {% endif %}
+            {% if form.user_email %}
+              {{ form_row(form.user_email, {'type': 'email'}) }}
+            {% endif %}
+            {% if form.phone %}
+              {{ form_row(form.phone, {'type': 'tel'}) }}
+            {% endif %}
+            {% if form.user_url %}
+              {{ form_row(form.user_url, {'type': 'url'}) }}
+            {% endif %}
+          </div>
+        </div>
+      </section>
+
+      <section class="widget js-widget widget--main widget--collapse">
+        {{ widget_header(__('About me', 'realtyspace'), null, 'main') }}
+        <div class="widget__content">
+          <div class="row">
+            {% if form.description %}
+              {{ form_row(form.description, {'row_class': 'form-group--col-12'}) }}
+            {% endif %}
+
+          </div>
+        </div>
+      </section>
+      <section class="widget js-widget widget--main widget--collapse">
+        {{ widget_header(__('Change your password', 'realtyspace'), null, 'main') }}
+        <div class="widget__content">
+          <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4">
+              <div class="row">
+                {% if form.user_pass %}
+                  {{ form_row(form.user_pass.first, {'row_class': 'form-group--col-12'}) }}
+                {% endif %}
+              </div>
+              <div class="row">
+                {% if form.user_pass %}
+                  {{ form_row(form.user_pass.second, {'row_class': 'form-group--col-12'}) }}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {{ form_widget(form, {'attr': {'class': 'row'}}) }}
+      <div class="row form__buttons">
+        <button type="submit" class="form__submit">
+          {{ __('Save', 'realtyspace') }}
+        </button>
+      </div>
+      {{ form_end(form) }}
+
+    </div>
+    <!-- END LISTING-->
+  </div>
+{% endblock %}
+
+
+

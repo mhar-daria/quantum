@@ -1,0 +1,30 @@
+Our services
+============
+
+We are Codefactory47, a team of senior developers and designers based in Europe, that specialize
+in building products and solutions of any complexity for our clients.
+
+Wordpress Theme services
+------------------------
+
+* Logo design
+* Redesign and/or small design changes
+* Theme installation & configuration
+* Theme customization to meet your requirements
+* Data migration
+* And many other services, contact us at office@codefactory47.com for more information
+
+Hire us for your project
+------------------------
+
+Area of expertise:
+
+* Developing products for real estate business and realty agencies
+* Web Design
+* Work experience with PHP frameworks: Symfony 2/3, Laravel and FuelPHP
+* Building JavaScript apps using Backbone, Angular, Koa, ExpressJS, etc.
+* Wordpress Theme and Plugin Development
+* CRM’s, SPA’s, e-commerce, etc.
+
+Contact us at office@codefactory47.com
+

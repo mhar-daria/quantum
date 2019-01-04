@@ -1,0 +1,132 @@
+{% extends 'base-archive.twig' %}
+{% from 'macro.twig' import page_header as header %}
+{% from 'modules/property/macro.twig' import listing as property_listing, property_table_rows, property_table_headings, show_map %}
+{# @var page \cf47\theme\realtyspace\module\property\viewmodel\ArchiveViewModel #}
+
+{% block hero_unit %}
+    {{ parent() }}
+    {% if page.show_map_mode == 'hero' %}
+      {{ show_map('hero') }}
+    {% endif %}
+{% endblock %}
+
+
+{% block content %}
+  <!-- BEGIN LISTING-->p
+  <div class="site site--main">
+    {{ header(page) }}
+    {% if page.show_toolbar and (page.show_view or page.show_limit or page.show_sorting) %}
+      {% set helper_form = page.helper_form %}
+      {{ form_start(helper_form, {'attr': {'class':'form form--filter js-listing-filter'}}) }}
+      <div class="row">
+        {% if page.show_sorting %}
+          {{ form_row(helper_form.sort, {'row_class': 'form-group--sorting'}) }}
+        {% endif %}
+
+        {% if page.show_limit %}
+          {{ form_row(helper_form.limit, {'row_class': 'form-group--limit'} ) }}
+        {% endif %}
+
+        {% if page.show_view and (page.show_grid_view or page.show_list_view or page.show_table_view or page.show_map_view) %}
+          <div class="form-group form-group--view">
+            <span class="control-label">{{ __('View:', 'realtyspace')|format() }}</span>
+            {% if page.show_grid_view %}
+              <a href="{{ se_url('mode', 'grid') }}"
+                 class="btn--white {{ page.params.mode == 'grid' or not page.params.mode ? 'active' }}">
+                <span class="fa fa-th-large"></span>
+              </a>
+            {% endif %}
+            {% if page.show_list_view %}
+              <a href="{{ se_url('mode', 'list') }}"
+                 class="btn--white {{ page.params.mode == 'list' ? 'active' }}">
+                <i class="fa fa-bars"></i>
+              </a>
+            {% endif %}
+            {% if page.show_table_view %}
+              <a href="{{ se_url('mode', 'table') }}"
+                 class="btn--white {{ page.params.mode == 'table' ? 'active' }}">
+                <i class="fa fa-table"></i>
+              </a>
+            {% endif %}
+            {% if page.show_map_view %}
+              <a href="{{ se_url('mode', 'map') }}"
+                 class="btn--white {{ page.params.mode == 'map' ? 'active' }}">
+                <i class="fa fa-map-marker"></i>
+              </a>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% for collection in helper_form %}
+          {% for collection_item in collection %}
+            {{ form_widget(collection_item) }}
+          {% endfor %}
+        {% endfor %}
+
+      </div>
+      {{ form_end(helper_form) }}
+
+    {% endif %}
+    {% if page.show_facets and page.facets %}
+      <div class="listing__param">
+        {% for facet in page.facets %}
+          <span class="listing__param-item">
+            <a href="{{ facet.link }}" class="listing__param-delete"></a>
+            {{ facet.label|striptags('<sup>')|raw }}
+          </span>
+        {% endfor %}
+        {% if page.facets %}
+          <span class="listing__param-item">
+              <a href="{{ page.facet_reset_url }}" class="listing__param-delete"></a>
+              {{__('Clear', 'realtyspace')}}
+          </span>
+        {% endif %}
+      </div>
+
+      <!--end of block .listing__param-->
+    {% endif %}
+    <div class="site__main">
+      {% set search_result = page.results %}
+      {% if search_result is not empty %}
+        {% if page.show_map_mode == 'search_results' and page.params.mode != 'map' %}
+            {{ show_map('search_results') }}
+        {% endif %}
+
+        {% if page.params.mode == 'table' %}
+          <div class="widget js-widget widget--main">
+            <div class="widget__content">
+              <div class="datatable datatable--properties">
+                <div class="datatable__wrap">
+                  <table class="datatable__table">
+                    <thead>
+                    <tr>
+                      {{ property_table_headings(page.table_columns) }}
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{ property_table_rows(search_result, page.table_columns) }}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% elseif page.params.mode == 'map' %}
+            {{ show_map('search_results') }}
+        {% else %}
+          {{ property_listing(search_result, page.params.mode, page.grid_size) }}
+        {% endif %}
+      {% else %}
+        {{ include('partials/no-results.twig', {
+          'classes': 'listing__empty--properties',
+          'title': __('The search did not return any results', 'realtyspace'),
+          'headline': __('Please try again with different criteria.', 'realtyspace')
+        }) }}
+      {% endif %}
+    </div>
+  {% if page.params.mode != 'map' %}
+    {{ macro.pagination(page.pagination) }}
+  {% endif %}
+  </div>
+  <!-- END LISTING-->
+{% endblock %}

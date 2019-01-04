@@ -1,0 +1,14 @@
+<head>
+  <meta charset="{{ site.charset }}"/>
+  <meta name="description" content="{{ site.description }}">
+  <!--[if IE]>
+  <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+  <![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  {% if site.pingback_url %}
+    <link rel="pingback" href="{{ site.pingback_url }}"/>
+  {% endif %}
+  {{ function('wp_head')|raw }}
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ feed_link }}">
+</head>

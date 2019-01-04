@@ -1,0 +1,3713 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Realtyspace\n"
+"POT-Creation-Date: 2017-05-12 14:58+0300\n"
+"PO-Revision-Date: 2016-06-10 14:40+0300\n"
+"Last-Translator: \n"
+"Language-Team: Codefactory47 <contact@codefactory47.com>\n"
+"Report-Msgid-Bugs-To: Codefactory47 <contact@codefactory47.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Textdomain-Support: yesX-Generator: Poedit 1.6.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
+"_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,"
+"_nc:4c,1,2\n"
+"X-Poedit-Basepath: ../../..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-SearchPath-0: themes/realtyspace\n"
+"X-Poedit-SearchPath-1: plugins/cf47-realtyspace/vendor/cf47/theme-core\n"
+"X-Poedit-SearchPath-2: plugins/cf47-realtyspace/lib\n"
+"X-Poedit-SearchPath-3: plugins/cf47-realtyspace/views\n"
+"X-Poedit-SearchPathExcluded-0: themes/realtyspace/assets\n"
+"X-Poedit-SearchPathExcluded-1: themes/realtyspace/public\n"
+"X-Poedit-SearchPathExcluded-2: themes/realtyspace/lib/vendor\n"
+"X-Poedit-SearchPathExcluded-3: themes/realtyspace/plugins/class-tgm-plugin-"
+"activation.php\n"
+"X-Poedit-SearchPathExcluded-4: plugins/cf47-realtyspace/vendor/cf47/theme-"
+"core/src/feature/demoimporter/vendor/CustomizeImporter.php\n"
+"X-Poedit-SearchPathExcluded-5: plugins/cf47-realtyspace/vendor/cf47/theme-"
+"core/src/feature/demoimporter/vendor/Option.php\n"
+"X-Poedit-SearchPathExcluded-6: plugins/cf47-realtyspace/vendor/cf47/theme-"
+"core/src/feature/demoimporter/vendor/parsers.php\n"
+"X-Poedit-SearchPathExcluded-7: plugins/cf47-realtyspace/vendor/cf47/theme-"
+"core/src/feature/demoimporter/vendor/wordpress-importer.php\n"
+
+#: plugins/cf47-realtyspace/lib/bootstrap.php:20
+msgid "Realtyspace"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/agent/Init.php:90
+#: plugins/cf47-realtyspace/lib/module/agent/Init.php:94
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/AgentPostType.php:72
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/AgentPostType.php:80
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:306
+#: themes/realtyspace/lib/module/property/submit/formfield/Agent.php:34
+#: themes/realtyspace/views/modules/property/macro.twig:175
+#: themes/realtyspace/views/modules/property/macro.twig:207
+#: themes/realtyspace/views/modules/property/macro.twig:402
+msgid "Agent"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/agent/Mailer.php:71
+#: plugins/cf47-realtyspace/lib/module/agent/Mailer.php:100
+msgid "Message from "
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/dsidxpress/section/grid/GridVcConfig.php:34
+msgid "dsIDXPress Grid section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/faq/Init.php:95
+msgid "FAQ list"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/faq/Init.php:100
+msgid "Filter by"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/faq/Init.php:104
+msgid "Category ID`s"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/faq/Init.php:105
+msgid "Post ID`s"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/faq/Init.php:109
+msgid "ID`s"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/faq/Init.php:112
+msgid ""
+"Please separate ID`s with commas, for example: 1,2,3. If left empty, will "
+"display all existing entries."
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/faq/Init.php:115
+msgid "Show category header"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/faq/Init.php:118
+msgid "Only applicable when filtering by category"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/ihomefinder/section/grid/GridVcConfig.php:34
+msgid "iHomeFinder Grid section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/ihomefinder/section/map/MapVcConfig.php:33
+msgid "iHomeFinder Map section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/ihomefinder/section/mapsearch/MapSearchVcConfig.php:33
+msgid "iHomeFinder MapSearch section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/counter/CounterConfig.php:46
+msgid "Counter Section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/counter/CounterConfig.php:53
+#: plugins/cf47-realtyspace/lib/module/other/section/features/FeaturesConfig.php:67
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/BlogPostType.php:117
+msgid "Items"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/counter/CounterConfig.php:62
+#: plugins/cf47-realtyspace/lib/module/other/section/features/FeaturesConfig.php:74
+msgid "Item icon"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/counter/CounterConfig.php:65
+#: plugins/cf47-realtyspace/lib/module/other/section/features/FeaturesConfig.php:77
+#: themes/realtyspace/lib/module/social/customizer/ProfileSettings.php:69
+msgid ""
+"Specify an icon name from FontAwesome or any other included font library "
+"of your choice"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/counter/CounterConfig.php:74
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/AgentPostType.php:102
+msgid "Number"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/counter/CounterConfig.php:79
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/AgentPostType.php:107
+msgid "Label"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/counter/CounterConfig.php:86
+#: plugins/cf47-realtyspace/lib/module/partner/section/PartnersConfig.php:85
+#: plugins/cf47-realtyspace/lib/module/post/section/PostsConfig.php:91
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/HeroUnitMeta.php:122
+#: plugins/cf47-realtyspace/lib/module/property/section/calltoaction/CallToActionConfig.php:73
+#: plugins/cf47-realtyspace/lib/module/property/section/group/PropertyGroupConfig.php:86
+#: plugins/cf47-realtyspace/lib/module/testimonial/section/TestimonialConfig.php:90
+#: themes/realtyspace/lib/module/agent/section/AgentsConfig.php:78
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:147
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:490
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:550
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:927
+msgid "Background image"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/counter/CounterConfig.php:98
+#: plugins/cf47-realtyspace/lib/module/other/section/features/FeaturesConfig.php:111
+#: plugins/cf47-realtyspace/lib/module/other/vcelements/button/ButtonConfig.php:39
+#: plugins/cf47-realtyspace/lib/module/partner/section/PartnersConfig.php:97
+#: plugins/cf47-realtyspace/lib/module/post/section/PostsConfig.php:103
+#: plugins/cf47-realtyspace/lib/module/property/section/calltoaction/CallToActionConfig.php:85
+#: plugins/cf47-realtyspace/lib/module/property/section/group/PropertyGroupConfig.php:98
+#: plugins/cf47-realtyspace/lib/module/testimonial/section/TestimonialConfig.php:102
+#: themes/realtyspace/lib/module/agent/section/AgentsConfig.php:90
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:167
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:470
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:946
+msgid "Background color"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/counter/CounterConfig.php:132
+#: plugins/cf47-realtyspace/lib/module/other/section/counter/CounterVcConfig.php:31
+#: plugins/cf47-realtyspace/lib/module/other/section/counter/item/CounterItemVcConfig.php:73
+msgid "Counter section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/counter/item/CounterItemVcConfig.php:27
+msgid "Count up to"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/counter/item/CounterItemVcConfig.php:28
+msgid "Counter label"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/counter/item/CounterItemVcConfig.php:31
+msgid "Counter separator"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/counter/item/CounterItemVcConfig.php:35
+msgid ""
+"Get more <a href=\"https://inorganik.github.io/countUp.js/\" target="
+"\"_blank\">info.</a>"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/counter/item/CounterItemVcConfig.php:48
+msgid "Counter decimal"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/counter/item/CounterItemVcConfig.php:53
+msgid "Counter prefix"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/counter/item/CounterItemVcConfig.php:58
+msgid "Counter suffix"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/counter/item/CounterItemVcConfig.php:63
+msgid "Counter duration"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/features/FeaturesConfig.php:46
+msgid "Features Section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/features/FeaturesConfig.php:53
+#: plugins/cf47-realtyspace/lib/module/partner/section/PartnersConfig.php:64
+#: plugins/cf47-realtyspace/lib/module/property/section/group/PropertyGroupConfig.php:48
+#: plugins/cf47-realtyspace/lib/module/property/section/search/SearchConfig.php:57
+#: plugins/cf47-realtyspace/lib/module/property/submit/FieldConfig.php:35
+#: plugins/cf47-realtyspace/lib/module/testimonial/section/TestimonialConfig.php:56
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:278
+#: themes/realtyspace/lib/module/agent/section/AgentsConfig.php:57
+#: themes/realtyspace/views/modules/agent/widgets/single-agent/form.twig:3
+msgid "Title"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/features/FeaturesConfig.php:56
+msgid "Our mission"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/features/FeaturesConfig.php:60
+#: plugins/cf47-realtyspace/lib/module/partner/section/PartnersConfig.php:71
+#: plugins/cf47-realtyspace/lib/module/property/section/group/PropertyGroupConfig.php:55
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroConfig.php:96
+#: plugins/cf47-realtyspace/lib/module/property/section/search/SearchConfig.php:64
+#: plugins/cf47-realtyspace/lib/module/testimonial/section/TestimonialConfig.php:63
+#: themes/realtyspace/lib/module/agent/section/AgentsConfig.php:64
+#: themes/realtyspace/views/modules/agent/widgets/single-agent/form.twig:4
+msgid "Subtext"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/features/FeaturesConfig.php:86
+msgid "Item title"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/features/FeaturesConfig.php:91
+msgid "Item text"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/features/FeaturesConfig.php:98
+#: plugins/cf47-realtyspace/lib/module/other/section/features/FeaturesVcConfig.php:28
+msgid "Side image"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/features/FeaturesConfig.php:124
+msgid "About title"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/features/FeaturesConfig.php:142
+msgid "Save money"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/features/FeaturesConfig.php:143
+msgid ""
+"It starts with our living database of more than 110 million U.S.\n"
+"                homes – including homes for sale, homes for rent and homes "
+"not currently on the market."
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/features/FeaturesConfig.php:149
+msgid "Good sales & marketing"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/features/FeaturesConfig.php:150
+msgid ""
+"In addition, RealtySpace operates the largest real estate and rental \n"
+"                advertising networks in the U.S. in partnership with "
+"Livemile Homes!"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/features/FeaturesConfig.php:156
+msgid "Comfort"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/features/FeaturesConfig.php:157
+msgid ""
+"We are transforming the way consumers make home-related \n"
+"                decisions and connect with professionals."
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/features/FeaturesConfig.php:163
+msgid "Easy to find"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/features/FeaturesConfig.php:164
+msgid ""
+"It starts with our living database of more than 110 million U.S. homes – \n"
+"                including homes for sale, homes for rent and homes not "
+"currently on the market."
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/features/FeaturesConfig.php:191
+msgid "Features Grid section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/features/FeaturesVcConfig.php:33
+msgid "Features section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/features/item/FeaturesItemVcConfig.php:27
+msgid "Features label"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/features/item/FeaturesItemVcConfig.php:28
+msgid "Text"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/section/features/item/FeaturesItemVcConfig.php:33
+msgid "Features section item"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/vcelements/button/ButtonConfig.php:20
+#: plugins/cf47-realtyspace/lib/module/property/section/calltoaction/CallToActionConfig.php:60
+msgid "Button text"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/vcelements/button/ButtonConfig.php:22
+msgid "Text on the button"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/vcelements/button/ButtonConfig.php:25
+msgid "URL (Link)"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/vcelements/button/ButtonConfig.php:27
+#: plugins/cf47-realtyspace/lib/module/other/vcelements/button/ButtonConfig.php:32
+msgid "Add link to button."
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/vcelements/button/ButtonConfig.php:30
+msgid "Style"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/vcelements/button/ButtonConfig.php:34
+msgid "Simple"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/vcelements/button/ButtonConfig.php:35
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/PostSideMeta.php:55
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:457
+msgid "Standard"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/vcelements/button/ButtonConfig.php:40
+msgid "Text color"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/vcelements/button/ButtonConfig.php:41
+msgid "Button extra class"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/other/vcelements/button/ButtonConfig.php:46
+msgid "Button"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/partner/section/PartnersConfig.php:56
+msgid "Partners Section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/partner/section/PartnersConfig.php:67
+#: plugins/cf47-realtyspace/lib/module/partner/section/PartnersConfig.php:78
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PartnerPostType.php:44
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PartnerPostType.php:71
+#: themes/realtyspace/lib/module/partner/Widget.php:11
+msgid "Partners"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/partner/section/PartnersConfig.php:137
+#: plugins/cf47-realtyspace/lib/module/partner/section/PartnersVcConfig.php:53
+msgid "Partner section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/partner/section/PartnersVcConfig.php:41
+msgid "Slide to show"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/post/section/PostsConfig.php:49
+msgid "Blog Post Section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/post/section/PostsConfig.php:56
+msgid "Section title"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/post/section/PostsConfig.php:58
+msgid "News and Blog"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/post/section/PostsConfig.php:63
+msgid "Section subtext"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/post/section/PostsConfig.php:71
+msgid "Post type"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/post/section/PostsConfig.php:75
+msgid "Recent post"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/post/section/PostsConfig.php:80
+#: plugins/cf47-realtyspace/lib/module/testimonial/section/TestimonialConfig.php:80
+msgid "Number display posts"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/post/section/PostsConfig.php:138
+msgid "Blog posts section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/post/section/PostsVcConfig.php:45
+msgid "Posts section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/ContactTemplateMeta.php:47
+#: themes/realtyspace/lib/module/contact/AddressWidget.php:10
+#: themes/realtyspace/views/modules/user/template.twig:13
+msgid "Contact"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/ContactTemplateMeta.php:74
+msgid "Contact sections"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/ContactTemplateMeta.php:82
+msgid "Section group name"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/ContactTemplateMeta.php:84
+msgid "Address"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/ContactTemplateMeta.php:87
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/user/FrontendFormManager.php:35
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/user/Init.php:52
+msgid "Phone"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/ContactTemplateMeta.php:91
+msgid "Fax"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/ContactTemplateMeta.php:95
+msgid "Emails"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/ContactTemplateMeta.php:97
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/AgentPostType.php:95
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/user/FrontendFormManager.php:29
+#: themes/realtyspace/views/modules/agent/macro.twig:52
+msgid "Email"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/ContactTemplateMeta.php:99
+#: themes/realtyspace/views/modules/contact/template.twig:54
+msgid "Working hours"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/ContactTemplateMeta.php:107
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/AgentPostType.php:110
+#: themes/realtyspace/lib/module/social/customizer/ProfileSettings.php:34
+msgid "Social profiles"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/ContactTemplateMeta.php:110
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/AgentPostType.php:113
+#: themes/realtyspace/lib/module/social/customizer/ProfileSettings.php:66
+msgid "Profile icon"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/ContactTemplateMeta.php:112
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/AgentPostType.php:115
+msgid "For example: facebook"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/ContactTemplateMeta.php:116
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/AgentPostType.php:119
+#, php-format
+msgid "Look up the icon name <a href=\"%s\" target=\"_blank\">here</a>"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/ContactTemplateMeta.php:126
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/AgentPostType.php:129
+msgid "Profile URL"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/ContactTemplateMeta.php:133
+msgid "Contact form 7"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/ContactTemplateMeta.php:148
+msgid ""
+"If the list below is empty, dont forget to create a contact form first!"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/GalleryTemplateMeta.php:30
+msgid "Gallery settings"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/GalleryTemplateMeta.php:46
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/AgentPostType.php:98
+#: themes/realtyspace/views/modules/property/misc/map-tooltip.twig:10
+msgid "Type"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/GalleryTemplateMeta.php:48
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:104
+msgid "Properties"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/GalleryTemplateMeta.php:49
+msgid "Uploaded images"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/GalleryTemplateMeta.php:54
+msgid "Images"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/GalleryTemplateMeta.php:66
+msgid "Show search panel"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/GalleryTemplateMeta.php:79
+msgid "Show sort field"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/HeroUnitMeta.php:32
+msgid "Hero unit"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/HeroUnitMeta.php:37
+msgid "Enable"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/HeroUnitMeta.php:38
+msgid "Content type"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/HeroUnitMeta.php:40
+msgid "map"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/HeroUnitMeta.php:41
+msgid "image"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/HeroUnitMeta.php:54
+msgid "Show original title & subheading"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/HeroUnitMeta.php:74
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/herounit/CustomizerOptionBuilder.php:56
+msgid "Custom banner title"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/HeroUnitMeta.php:98
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/herounit/CustomizerOptionBuilder.php:69
+msgid "Custom banner subtitle"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/HeroUnitMeta.php:140
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:153
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:165
+#: themes/realtyspace/views/modules/property/single.twig:310
+msgid "Map"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/HeroUnitMeta.php:157
+#: themes/realtyspace/lib/module/property/customizer/SingleOptions.php:73
+msgid "Map zoom"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/HeroUnitMeta.php:173
+msgid "Map infobox text"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/PostSideMeta.php:31
+msgid "Extra options"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/PostSideMeta.php:37
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:69
+msgid "Sidebar position"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/PostSideMeta.php:40
+msgid "As defined in Layout"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/PostSideMeta.php:41
+#: plugins/cf47-realtyspace/lib/module/property/section/map/MapConfig.php:88
+#: plugins/cf47-realtyspace/lib/module/property/section/map/MapVcConfig.php:46
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:74
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:904
+msgid "Left"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/PostSideMeta.php:42
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:73
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:906
+msgid "Right"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/PostSideMeta.php:43
+#: plugins/cf47-realtyspace/lib/module/revslider/section/RevsliderConfig.php:71
+#: themes/realtyspace/lib/inc/class-cf47rs-fallback.php:96
+#: themes/realtyspace/lib/module/agent/customizer/SingleOptions.php:57
+#: themes/realtyspace/lib/module/agent/widget/SingleAgent.php:43
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:75
+#: themes/realtyspace/lib/module/property/customizer/SingleOptions.php:58
+#: themes/realtyspace/lib/module/property/submit/formfield/ContractType.php:25
+#: themes/realtyspace/lib/module/property/submit/formfield/PropertyType.php:27
+#: themes/realtyspace/views/modules/post/macro.twig:23
+#: themes/realtyspace/views/modules/post/macro.twig:29
+msgid "None"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/PostSideMeta.php:48
+msgid "Show breadcrumbs"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/PostSideMeta.php:50
+msgid "Make sure the Breadcrumb NavXT plugin is enabled"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/PostSideMeta.php:52
+msgid "Force header style"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/PostSideMeta.php:56
+msgid "Style 1"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/PostSideMeta.php:57
+msgid "Style 2"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/miscmeta/PostSideMeta.php:61
+msgid ""
+"Warning! This option are designed to look good with specific sections\n"
+"                in the first position and may not look well in all cases. "
+"They are usually enabled automatically.\n"
+"                "
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/AgentPostType.php:42
+#: themes/realtyspace/lib/module/agent/section/AgentsConfig.php:71
+msgid "Agents"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/AgentPostType.php:45
+msgctxt "slug"
+msgid "agents"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/AgentPostType.php:94
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/TestimonialPostType.php:95
+msgid "Job title"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/AgentPostType.php:96
+msgid "Contact numbers"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/AgentPostType.php:100
+msgid "For example \"Office number\" or \"Mobile number\""
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/AgentPostType.php:105
+msgid "Additional fields"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/AgentPostType.php:108
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:252
+msgid "Value"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/BlogPostType.php:37
+msgid "Video"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/BlogPostType.php:41
+msgid "Image Cover"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/BlogPostType.php:47
+msgid "Video sources"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/BlogPostType.php:54
+msgid "Local video file"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/BlogPostType.php:59
+msgid "Video file"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/BlogPostType.php:68
+msgid "Remote video"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/BlogPostType.php:73
+msgid "Remote video link"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/BlogPostType.php:113
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:244
+msgid "Gallery"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/FaqPostType.php:35
+msgctxt "slug"
+msgid "faqs"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/FaqPostType.php:49
+msgid "FAQ Category"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/FaqPostType.php:50
+msgid "FAQ Categories"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/FaqPostType.php:51
+msgid "faqcat"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/FaqPostType.php:66
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/FaqPostType.php:71
+msgid "FAQ"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PartnerPostType.php:43
+msgid "Partner"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PartnerPostType.php:47
+msgctxt "slug"
+msgid "partners"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PartnerPostType.php:84
+msgid "Url"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PartnerPostType.php:85
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:646
+msgid "Image"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:71
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:211
+msgid "Property"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:107
+msgctxt "slug"
+msgid "properties"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:133
+msgid "Property Type"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:134
+msgid "Property Types"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:135
+msgid "property_type"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:145
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:146
+msgid "Property Amenities"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:147
+msgid "property_amenity"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:157
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:297
+msgid "Property Location"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:158
+msgid "Property Locations"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:159
+msgid "property_location"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:169
+msgid "Property Status"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:170
+msgid "Property Statuses"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:171
+msgid "property_contract"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:181
+msgid "Property Tag"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:182
+msgid "Property Tags"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:183
+msgid "property_tag"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:224
+#: plugins/cf47-realtyspace/lib/module/property/customizer/PropertyCardOptions.php:55
+#: themes/realtyspace/views/modules/property/macro.twig:180
+#: themes/realtyspace/views/modules/property/macro.twig:209
+#: themes/realtyspace/views/modules/property/single.twig:130
+msgid "SKU"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:225
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:187
+#: themes/realtyspace/views/modules/property/macro.twig:406
+msgid "Price"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:226
+msgid "Only number"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:227
+#: themes/realtyspace/lib/module/property/submit/formfield/YearBuilt.php:17
+msgid "Year built"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:228
+#: themes/realtyspace/lib/module/property/submit/formfield/PriceSuffix.php:17
+msgid "Price suffix"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:229
+#: plugins/cf47-realtyspace/lib/module/property/customizer/PropertyCardOptions.php:46
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:178
+#: themes/realtyspace/lib/module/property/submit/formfield/Rooms.php:17
+#: themes/realtyspace/views/modules/property/macro.twig:140
+#: themes/realtyspace/views/modules/property/macro.twig:191
+#: themes/realtyspace/views/modules/property/macro.twig:386
+#: themes/realtyspace/views/modules/property/single.twig:160
+msgid "Rooms"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:230
+#: plugins/cf47-realtyspace/lib/module/property/customizer/PropertyCardOptions.php:47
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:179
+#: themes/realtyspace/lib/module/property/submit/formfield/Bathrooms.php:17
+#: themes/realtyspace/views/modules/property/macro.twig:145
+#: themes/realtyspace/views/modules/property/macro.twig:193
+#: themes/realtyspace/views/modules/property/macro.twig:388
+#: themes/realtyspace/views/modules/property/single.twig:171
+msgid "Bathrooms"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:231
+#: plugins/cf47-realtyspace/lib/module/property/customizer/PropertyCardOptions.php:48
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:180
+#: themes/realtyspace/lib/module/property/submit/formfield/Bedrooms.php:17
+#: themes/realtyspace/views/modules/property/macro.twig:150
+#: themes/realtyspace/views/modules/property/macro.twig:195
+#: themes/realtyspace/views/modules/property/macro.twig:390
+#: themes/realtyspace/views/modules/property/misc/map-tooltip.twig:22
+#: themes/realtyspace/views/modules/property/single.twig:182
+msgid "Bedrooms"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:232
+#: plugins/cf47-realtyspace/lib/module/property/customizer/PropertyCardOptions.php:49
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:181
+#: themes/realtyspace/lib/module/property/submit/formfield/Garages.php:17
+#: themes/realtyspace/views/modules/property/macro.twig:155
+#: themes/realtyspace/views/modules/property/macro.twig:197
+#: themes/realtyspace/views/modules/property/macro.twig:392
+#: themes/realtyspace/views/modules/property/single.twig:193
+msgid "Garages"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:233
+msgid "Built-up area"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:234
+#: plugins/cf47-realtyspace/lib/module/property/customizer/PropertyCardOptions.php:51
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:183
+msgid "Land area"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:235
+msgid "Is featured"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:236
+msgid "Add to gallery"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:238
+msgid "Map location"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:248
+#: themes/realtyspace/views/modules/property/single.twig:279
+msgid "Video tour"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:249
+#: themes/realtyspace/views/modules/property/submit.twig:120
+msgid "Additional details"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:251
+msgid "Name"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:255
+#: themes/realtyspace/lib/module/property/submit/formfield/Attachments.php:29
+#: themes/realtyspace/views/modules/property/single.twig:259
+msgid "Attachments"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:257
+msgid "Attachment"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:268
+msgid "Extra"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:280
+msgid "Property Contract type"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:288
+#: plugins/cf47-realtyspace/lib/module/property/customizer/PropertyCardOptions.php:53
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:185
+#: themes/realtyspace/lib/module/property/submit/formfield/PropertyType.php:25
+#: themes/realtyspace/views/modules/property/macro.twig:205
+#: themes/realtyspace/views/modules/property/macro.twig:400
+#: themes/realtyspace/views/modules/property/single.twig:134
+msgid "Property type"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:321
+msgid "Front end submit form"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/PropertyPostType.php:334
+msgid "Form fields"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/TestimonialPostType.php:43
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/TestimonialPostType.php:81
+#: plugins/cf47-realtyspace/lib/module/testimonial/section/TestimonialConfig.php:59
+msgid "Testimonials"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/TestimonialPostType.php:46
+msgctxt "slug"
+msgid "testimonials"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/postconfig/type/TestimonialPostType.php:73
+msgid "Testimonial"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:51
+msgid "Property / General settings"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:57
+msgid "Main currency"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:66
+msgid "Currency symbol"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:72
+msgid "Currency sign position"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:75
+msgid "Before"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:76
+msgid "After"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:82
+msgid "Include a space between currency sign and price"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:84
+msgid "e.g. $1000 -> $ 1000"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:89
+msgid "Thousand separator"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:92
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:109
+msgid "Space"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:93
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:110
+msgid "Dot"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:94
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:111
+msgid "Comma"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:100
+msgid "Show decimals?"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:106
+msgid "Decimal separator"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:117
+msgid "Text to show when the price is not set"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:119
+msgid "Contact us for pricing"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:124
+msgid "Area unit"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:126
+#: plugins/cf47-realtyspace/lib/module/property/area/Manager.php:29
+msgid "Sq Ft"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:127
+msgid "m2"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:141
+msgid "Property / Map settings"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:149
+msgid "Default latitude (DD format)"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:152
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:170
+msgid ""
+"You can find your coordinates <a target=\"_blank\" href=\"http://www.gps-"
+"coordinates.net/\">here</a>"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:166
+msgid "Default longitude (DD format)"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:184
+msgid "Google Maps API key"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:189
+#, php-format
+msgid ""
+"MAKE SURE TO GENERATE YOUR OWN KEY, THE DEMO KEY WILL WORK LIMITED TIME "
+"ONLY! \n"
+"                            See <a target=\"_blank\" href=\"%s\">here</a> "
+"on how to create an API key"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:206
+msgid "Default map zoom"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:212
+msgid "Use custom map marker?"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:219
+msgid "Marker width"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:233
+msgid "Marker height"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:247
+msgid "Marker Icon"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:259
+msgid "Autocomplete region"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:277
+msgid "Worldwide"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:286
+msgid "Property / Search settings"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:302
+msgid "Price minimum value (range slider)"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:308
+msgid "Price maximum value (range slider)"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:314
+msgid "Price range (dropdown)"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:320
+msgid "Bedroom minimum value"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:326
+msgid "Bedroom maximum value"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:332
+msgid "Bedroom number range (dropdown)"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:338
+msgid "Area minimum value"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:344
+msgid "Area maximum value"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:350
+msgid "Area range (dropdown)"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:356
+msgid "Bathroom minimum value"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:362
+msgid "Bathroom maximum value"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:368
+msgid "Rooms minimum value"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:374
+msgid "Room maximum value"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:380
+msgid "Year minimum value"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:386
+msgid "Year maximum value"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:392
+msgid "Garage minimum value"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:398
+msgid "Garage maximum value"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:404
+msgid "Sort options"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:407
+msgid "The first option will be used as default."
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:412
+msgid "Limit options"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:415
+msgid ""
+"Separate new options with ,(comma). The first option will be used as "
+"default."
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:422
+msgid "Replace checkbox dropdowns with autocomplete"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:428
+msgid "Use numeric abbreviations"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:434
+msgid "Search input style"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:437
+msgid "Range Slider"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:438
+msgid "Text input"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:451
+msgid "Property / Front-end submit"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:457
+msgid ""
+"To allow users to submit properties, you have to allow registration "
+"first!\n"
+"                    Go to Settings/General and check the \"Membership: "
+"Anyone can register\" option."
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:467
+msgid "Front-end submit"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:469
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:549
+msgid "Off"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:470
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:550
+msgid "On"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:477
+msgid "Submitted Listing page"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:492
+msgid "Submit form page"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:507
+msgid "Review by admin before publishing"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:531
+msgid ""
+"The plugin <a target=\"_blank\" href=\"https://wordpress.org/plugins/"
+"paypal-ipn/\">PayPal IPN</a> \n"
+"                        has to be installed for this options to work!"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:547
+msgid "Paypal Payments"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:564
+msgid "PayPal Merchant Account ID or Email"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:582
+msgid "Use Sandbox"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:584
+msgid "Enable PayPal Sandbox for testing"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:601
+msgid "Submission price"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:619
+msgid "Currency code"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:624
+#, php-format
+msgid "See <a href=\"%s\">this</a> for more available codes"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:651
+msgid "Property / Search labels"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:655
+msgid "Street"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:661
+#: plugins/cf47-realtyspace/lib/module/property/customizer/PropertyCardOptions.php:52
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:184
+#: themes/realtyspace/lib/module/property/submit/formfield/ContractType.php:27
+#: themes/realtyspace/views/modules/property/macro.twig:170
+#: themes/realtyspace/views/modules/property/macro.twig:203
+#: themes/realtyspace/views/modules/property/macro.twig:398
+msgid "Contract type"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:662
+#: plugins/cf47-realtyspace/lib/module/property/submit/FieldConfig.php:36
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/user/FrontendFormManager.php:34
+#: themes/realtyspace/lib/module/property/submit/formfield/Description.php:16
+#: themes/realtyspace/views/modules/property/single.twig:244
+msgid "Description"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:665
+msgid "Show on page"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:667
+#: themes/realtyspace/views/modules/agent/macro.twig:147
+#: themes/realtyspace/views/modules/property/macro.twig:109
+#: themes/realtyspace/views/modules/propertygallery/template.twig:29
+msgid "View"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:668
+msgid "Property feature"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:669
+#: plugins/cf47-realtyspace/lib/module/property/submit/FieldConfig.php:48
+#: themes/realtyspace/lib/inc/class-cf47rs-fallback.php:93
+#: themes/realtyspace/views/modules/post/macro.twig:28
+#: themes/realtyspace/views/modules/property/single.twig:389
+#: themes/realtyspace/views/modules/property/submit.twig:91
+msgid "Tags"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:670
+msgid "Sort by"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:694
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:695
+msgid "Area from"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:701
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:702
+msgid "Area to"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:715
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:716
+msgid "Bedrooms from"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:722
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:723
+msgid "Bedrooms to"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:799
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:800
+msgid "Price from"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:806
+#: plugins/cf47-realtyspace/lib/module/property/Configuration.php:807
+msgid "Price to"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Init.php:18
+msgid "Newest first"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Init.php:19
+msgid "Oldest first"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Init.php:20
+msgid "Price: Lowest first"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Init.php:21
+msgid "Price: Highest first"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Init.php:22
+msgid "Area: Lowest first"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/Init.php:23
+msgid "Area: Highest first"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/area/Manager.php:30
+msgid "M <sup>2</sup>"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/currency/Init.php:118
+msgid "Currency"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/customizer/PropertyCardOptions.php:23
+msgid "Property card"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/customizer/PropertyCardOptions.php:27
+msgid "Hover style"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/customizer/PropertyCardOptions.php:31
+msgid "Minimal"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/customizer/PropertyCardOptions.php:32
+msgid "Detailed"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/customizer/PropertyCardOptions.php:38
+msgid "Hover data fields "
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/customizer/PropertyCardOptions.php:50
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:182
+#: themes/realtyspace/views/modules/property/misc/map-tooltip.twig:16
+#: themes/realtyspace/views/modules/property/single.twig:149
+msgid "Area"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/customizer/PropertyCardOptions.php:54
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:186
+msgid "Agent name"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/customizer/PropertyCardOptions.php:57
+msgid "For best results please set no more than 3 options"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/customizer/PropertyCardOptions.php:61
+msgid "Show hover description"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/customizer/PropertyCardOptions.php:75
+msgid "Description excerpt limit"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/customizer/PropertyCardOptions.php:80
+msgid "Show hover added date"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/search/field/Featured.php:25
+#: plugins/cf47-realtyspace/lib/module/property/section/group/PropertyGroupConfig.php:70
+#: plugins/cf47-realtyspace/lib/module/property/section/group/PropertyGroupView.php:17
+#: plugins/cf47-realtyspace/lib/module/property/section/slider/SliderConfig.php:68
+#: themes/realtyspace/lib/module/property/widget/Listing.php:30
+msgid "Featured"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/search/field/LandArea.php:24
+#: themes/realtyspace/lib/module/property/submit/formfield/LandArea.php:22
+msgid "ac"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/search/field/basetype/Choice.php:55
+#: plugins/cf47-realtyspace/lib/module/property/search/field/basetype/Choice.php:59
+#: themes/realtyspace/views/modules/core/form-themes/global.twig:157
+msgid "Any"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/FeaturedParamTrait.php:17
+msgid "Featured items"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/calltoaction/CallToActionConfig.php:41
+#: plugins/cf47-realtyspace/lib/module/property/section/calltoaction/CallToActionConfig.php:120
+msgid "Call To Action"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/calltoaction/CallToActionConfig.php:48
+#: plugins/cf47-realtyspace/lib/module/property/section/calltoaction/CallToActionVcConfig.php:27
+msgid "HTML text"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/calltoaction/CallToActionConfig.php:56
+msgid "Looking to sell or rent your property?"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/calltoaction/CallToActionConfig.php:63
+msgid "Submit now"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/calltoaction/CallToActionConfig.php:67
+msgid "Button link"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/calltoaction/CallToActionVcConfig.php:36
+msgid "Call To Action section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/group/PropertyGroupConfig.php:41
+msgid "Property Grid Section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/group/PropertyGroupConfig.php:51
+msgid "Real estates"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/group/PropertyGroupConfig.php:58
+msgid ""
+"With over 700,000 active listings, Realtyspace has the largest inventory "
+"of apartments in the United States."
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/group/PropertyGroupConfig.php:62
+msgid "Property criteria"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/group/PropertyGroupConfig.php:69
+#: plugins/cf47-realtyspace/lib/module/property/section/group/PropertyGroupView.php:16
+#: plugins/cf47-realtyspace/lib/module/property/section/slider/SliderConfig.php:67
+#: themes/realtyspace/lib/module/property/widget/Listing.php:26
+msgid "Recent"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/group/PropertyGroupConfig.php:75
+msgid "Number of properties"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/group/PropertyGroupConfig.php:134
+#: plugins/cf47-realtyspace/lib/module/property/section/group/PropertyGroupVcConfig.php:36
+msgid "Property Group section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/group/tab/PropertyGroupTabVcConfig.php:45
+msgid "Property Group Tab"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroConfig.php:50
+msgid "Hero Section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroConfig.php:66
+#: plugins/cf47-realtyspace/lib/module/property/section/slider/SliderConfig.php:51
+#: plugins/cf47-realtyspace/lib/module/revslider/section/RevsliderConfig.php:105
+msgid "Show custom header"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroConfig.php:68
+#: plugins/cf47-realtyspace/lib/module/property/section/slider/SliderConfig.php:53
+#: plugins/cf47-realtyspace/lib/module/revslider/section/RevsliderConfig.php:107
+msgid "Yes"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroConfig.php:69
+#: plugins/cf47-realtyspace/lib/module/property/section/slider/SliderConfig.php:54
+#: plugins/cf47-realtyspace/lib/module/revslider/section/RevsliderConfig.php:108
+msgid "No"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroConfig.php:72
+#: plugins/cf47-realtyspace/lib/module/property/section/slider/SliderConfig.php:57
+#: plugins/cf47-realtyspace/lib/module/revslider/section/RevsliderConfig.php:111
+msgid ""
+"Attention! For this options to work,\n"
+"                you have to place it first in the section list!"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroConfig.php:78
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/herounit/CustomizerOptionBuilder.php:45
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:171
+msgid "Background Image"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroConfig.php:89
+msgid "Hero title"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroConfig.php:92
+msgid "The best way to find your home"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroConfig.php:99
+msgid ""
+"With over 700,000 active listings, Realtyspace has the largest \n"
+"                inventory of apartments in the United States."
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroConfig.php:104
+msgid "Action text"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroConfig.php:107
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroVcConfig.php:30
+msgid "Get started"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroConfig.php:112
+#: plugins/cf47-realtyspace/lib/module/property/section/map/MapConfig.php:57
+#: plugins/cf47-realtyspace/lib/module/property/section/search/SearchConfig.php:75
+msgid "Search fields"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroConfig.php:118
+#: plugins/cf47-realtyspace/lib/module/property/section/map/MapConfig.php:93
+#: plugins/cf47-realtyspace/lib/module/property/section/map/MapVcConfig.php:51
+msgid "Fullscreen"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroConfig.php:126
+msgid "Enable map"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroConfig.php:130
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroVcConfig.php:35
+#: plugins/cf47-realtyspace/lib/module/property/section/map/MapConfig.php:63
+#: plugins/cf47-realtyspace/lib/module/property/section/map/MapVcConfig.php:35
+msgid "Infobox theme"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroConfig.php:135
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroVcConfig.php:38
+#: plugins/cf47-realtyspace/lib/module/property/section/map/MapConfig.php:68
+#: plugins/cf47-realtyspace/lib/module/property/section/map/MapConfig.php:78
+#: plugins/cf47-realtyspace/lib/module/property/section/map/MapVcConfig.php:31
+#: plugins/cf47-realtyspace/lib/module/property/section/map/MapVcConfig.php:38
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:458
+msgid "Dark"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroConfig.php:136
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroVcConfig.php:39
+#: plugins/cf47-realtyspace/lib/module/property/section/map/MapConfig.php:69
+#: plugins/cf47-realtyspace/lib/module/property/section/map/MapConfig.php:79
+#: plugins/cf47-realtyspace/lib/module/property/section/map/MapVcConfig.php:30
+#: plugins/cf47-realtyspace/lib/module/property/section/map/MapVcConfig.php:39
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:459
+msgid "White"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroConfig.php:168
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroVcConfig.php:57
+msgid "Property Hero section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroVcConfig.php:28
+msgid "Arrow text"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroVcConfig.php:33
+msgid "Map enabled?"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroVcConfig.php:34
+msgid "Animation disabled?"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroVcConfig.php:43
+msgid "Show custom shortcode"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroVcConfig.php:44
+msgid "Custom shortcode"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/hero/HeroVcConfig.php:52
+msgid "Scroll text"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/map/MapConfig.php:73
+#: plugins/cf47-realtyspace/lib/module/property/section/map/MapVcConfig.php:27
+msgid "Panel theme"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/map/MapConfig.php:83
+#: plugins/cf47-realtyspace/lib/module/property/section/map/MapVcConfig.php:43
+msgid "Panel position"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/map/MapConfig.php:89
+#: plugins/cf47-realtyspace/lib/module/property/section/map/MapVcConfig.php:47
+msgid "Bottom"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/map/MapConfig.php:102
+#: plugins/cf47-realtyspace/lib/module/property/section/map/MapVcConfig.php:56
+msgid "Property Map section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/search/SearchConfig.php:50
+msgid "Plain Search Section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/search/SearchConfig.php:60
+msgid "Search Properties"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/search/SearchConfig.php:67
+msgid ""
+"FIND YOUR APARTMENT OR HOUSE ON THE EXACT KEY PARAMETERS. ADJUST THEM SO "
+"TO FIND EXACTLY WHAT YOU NEED."
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/search/SearchConfig.php:103
+#: plugins/cf47-realtyspace/lib/module/property/section/search/SearchVcConfig.php:32
+msgid "Property Search section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/slider/SliderConfig.php:63
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:205
+msgid "Data type"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/slider/SliderConfig.php:73
+msgid "Property limit"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/slider/SliderConfig.php:85
+msgid "Property Slider"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/slider/SliderVcConfig.php:36
+msgid "Use paralax effect"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/slider/SliderVcConfig.php:37
+msgid "Slider speed"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/slider/SliderVcConfig.php:42
+msgid "Disable autoplay"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/slider/SliderVcConfig.php:43
+msgid "Slider autoplay speed"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/section/slider/SliderVcConfig.php:59
+msgid "Property Slider section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/shortcode/vc/FieldVcConfig.php:42
+msgid "Field Name"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/shortcode/vc/FieldVcConfig.php:51
+msgid "Search field"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/property/submit/FieldConfig.php:41
+msgid "Features"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/revslider/section/RevsliderConfig.php:55
+#: plugins/cf47-realtyspace/lib/module/revslider/section/RevsliderConfig.php:76
+msgid "Slider Revolution"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/revslider/section/RevsliderConfig.php:84
+msgid ""
+"The Slider Revolution plugin has to be installed and activated\n"
+"                        for this option to work!"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/revslider/section/RevsliderConfig.php:97
+msgid "Choose a slider"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/testimonial/section/TestimonialConfig.php:49
+msgid "Testimonials Section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/testimonial/section/TestimonialConfig.php:71
+msgid "Testomonial type"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/testimonial/section/TestimonialConfig.php:75
+msgid "Recently added"
+msgstr ""
+
+#: plugins/cf47-realtyspace/lib/module/testimonial/section/TestimonialConfig.php:137
+#: plugins/cf47-realtyspace/lib/module/testimonial/section/TestimonialsVcConfig.php:45
+msgid "Testimonials section"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:13
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:14
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:42
+#, php-format
+msgid "All %s"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:15
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:43
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:16
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:44
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:98
+#, php-format
+msgid "View %s"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:17
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:45
+#, php-format
+msgid "Update %s"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:18
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:46
+#, php-format
+msgid "Add New %s"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:19
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:47
+#, php-format
+msgid "New %s Name"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:20
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:48
+#, php-format
+msgid "Parent %s"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:21
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:49
+#, php-format
+msgid "Parent %s:"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:22
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:50
+#, php-format
+msgid "Search %s"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:23
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:51
+#, php-format
+msgid "Popular %s"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:24
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:52
+#, php-format
+msgid "Seperate %s with commas"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:25
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:53
+#, php-format
+msgid "Add or remove %s"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:26
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:54
+#, php-format
+msgid "Choose from most used %s"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:27
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:55
+#, php-format
+msgid "No %s found"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:69
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:72
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:81
+#, php-format
+msgid "%s updated."
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:70
+msgid "Custom field updated."
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:71
+msgid "Custom field deleted."
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:75
+#, php-format
+msgid "%2$s restored to revision from %1$s"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:82
+#, php-format
+msgid "%s saved."
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:83
+#, php-format
+msgid "%s submitted."
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:85
+#, php-format
+msgid "%2$s scheduled for: <strong>%1$s</strong>."
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:86
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:89
+#, php-format
+msgid "%s draft updated."
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/CptBuilder.php:108
+#, php-format
+msgid "Preview %s"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/auth/Init.php:37
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/auth/Init.php:59
+msgid "You are already logged, please refresh the page."
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/auth/Init.php:44
+msgid "An error occured. Please contact website administrator"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/auth/Init.php:48
+#: themes/realtyspace/views/partials/register.twig:27
+msgid "Registration complete. Please check your email."
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/auth/Init.php:66
+msgid "Wrong username or password"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/auth/Init.php:83
+msgid "Successful login!"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/configuration/PanelBuilder.php:28
+msgid "Theme Settings"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/feature/customcode/CustomCode.php:41
+msgid "Custom CSS & JS"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/feature/customcode/CustomCode.php:44
+msgid "Custom css"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/feature/customcode/CustomCode.php:50
+msgid "Add CSS"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/feature/customcode/CustomCode.php:55
+msgid "Custom js"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/feature/customcode/CustomCode.php:61
+msgid "Add JS"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/helper/PluginChecker.php:18
+#, php-format
+msgid ""
+"Please install & activate the %s plugin to make this option available!"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/helper/Util.php:354
+msgid "k"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/helper/Util.php:355
+msgid "m"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/helper/Util.php:356
+msgid "b"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/helper/Util.php:357
+msgid "t"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/helper/Util.php:403
+msgid "All"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/herounit/CustomizerOptionBuilder.php:31
+msgid "Hero Unit"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/herounit/CustomizerOptionBuilder.php:39
+msgid "Show hero header"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/herounit/CustomizerOptionBuilder.php:50
+msgid "Show page's title & subheading"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/herounit/CustomizerOptionBuilder.php:82
+msgid "Title font"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/herounit/CustomizerOptionBuilder.php:98
+msgid "Subtitle font"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/option/PanelBuilder.php:26
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/section/PanelBuilder.php:27
+msgid "Current page options"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/section/GeneralSectionBulder.php:33
+msgid "CONFIGURATION"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/section/GeneralSectionBulder.php:48
+msgid "Section order"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/timber/WpHelperExtension.php:127
+#, php-format
+msgid "%s ago"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/timber/WpHelperExtension.php:131
+#, php-format
+msgid "%s from now"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/user/FrontendFormManager.php:30
+msgid "First name"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/user/FrontendFormManager.php:31
+msgid "Last name"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/user/FrontendFormManager.php:32
+msgid "Nickname name"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/user/FrontendFormManager.php:33
+#: themes/realtyspace/lib/module/agent/viewmodel/UserViewModel.php:75
+msgid "Website"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/user/FrontendFormManager.php:39
+#: themes/realtyspace/views/partials/login.twig:14
+msgid "Password"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/user/FrontendFormManager.php:40
+msgid "Repeat Password"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/user/Init.php:49
+msgid "Extra profile information"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/user/Init.php:56
+msgid "Please enter your phone."
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:20
+msgid "Heading"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:79
+msgid "Subheading"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:86
+msgid "Add icon?"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:127
+msgid "Icon"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:140
+msgid "Realtyspace icons"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:170
+msgid "Background Color"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:192
+msgid "CSS box"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:194
+msgid "Design Options"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:203
+msgid "Data"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:208
+msgid "All items"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:209
+msgid "Specific items"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:218
+msgid "Include only"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:221
+msgid "Add items by title."
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:243
+msgid "Narrow data source"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:261
+msgid "Enter categories, tags or custom taxonomies."
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:272
+msgid "Order by"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:275
+#: themes/realtyspace/views/modules/property/macro.twig:404
+msgid "Date"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:276
+msgid "Order by post ID"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:277
+msgid "Author"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:279
+msgid "Last modified date"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:280
+msgid "Post/page parent ID"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:281
+msgid "Random order"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:283
+msgid ""
+"Select order type. If \"Meta value\" or \"Meta value Number\" is chosen "
+"then meta key is required."
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:292
+msgid "Sort order"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:296
+msgid "Descending"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:297
+msgid "Ascending"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:299
+msgid "Select sorting order."
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:307
+msgid "Total items"
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/vc/ParamBuilder.php:310
+msgid ""
+"Set max limit for items in grid or enter -1 to display all (limited to "
+"1000)."
+msgstr ""
+
+#: plugins/cf47-realtyspace/vendor/cf47/theme-core/src/wpml/Init.php:62
+msgid "Languages"
+msgstr ""
+
+#: themes/realtyspace/comments.php:38
+#: themes/realtyspace/views/modules/comments/comments.twig:38
+msgid "Comments are closed"
+msgstr ""
+
+#: themes/realtyspace/fallback/404.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: themes/realtyspace/fallback/template-parts/no-results.php:5
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: themes/realtyspace/footer.php:33
+#, php-format
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: themes/realtyspace/lib/Theme.php:28
+msgid "Header Menu / Logged In"
+msgstr ""
+
+#: themes/realtyspace/lib/Theme.php:29
+msgid "Header Menu / Logged Out"
+msgstr ""
+
+#: themes/realtyspace/lib/Theme.php:38
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1025
+msgid "Sidebar"
+msgstr ""
+
+#: themes/realtyspace/lib/Theme.php:50
+msgid "Footer column 1"
+msgstr ""
+
+#: themes/realtyspace/lib/Theme.php:62
+msgid "Footer column 2"
+msgstr ""
+
+#: themes/realtyspace/lib/Theme.php:74
+msgid "Footer column 3"
+msgstr ""
+
+#: themes/realtyspace/lib/Theme.php:176
+msgctxt "Google font: on or off"
+msgid "on"
+msgstr ""
+
+#: themes/realtyspace/lib/Theme.php:190
+#: themes/realtyspace/views/modules/property/submit-list.twig:68
+msgid "Show"
+msgstr ""
+
+#: themes/realtyspace/lib/Theme.php:200
+msgid "Widget"
+msgstr ""
+
+#: themes/realtyspace/lib/inc/class-cf47rs-fallback.php:54
+#: themes/realtyspace/views/modules/post/macro.twig:22
+msgid "Categories"
+msgstr ""
+
+#: themes/realtyspace/lib/inc/class-cf47rs-fallback.php:111
+#, php-format
+msgid "Comments (%1$s)"
+msgstr ""
+
+#: themes/realtyspace/lib/inc/class-cf47rs-theme-php-guard.php:29
+#, php-format
+msgid ""
+"The theme requires PHP 5.4.0 or greater. \n"
+"            You have %s, so this theme WILL NOT WORK on this WordPress "
+"website.\n"
+"            Please ask your hosting provider to update your PHP version to "
+"5.4.0 or higher.\n"
+"            If you have any questions, please contact us at "
+"support@codefactory47.com\n"
+"            "
+msgstr ""
+
+#: themes/realtyspace/lib/inc/class-cf47rs-theme-php-guard.php:37
+msgid ""
+"The theme is not compatible with php version. \n"
+"                Please log in as admin to see more details."
+msgstr ""
+
+#: themes/realtyspace/lib/inc/class-cf47rs-theme-php-guard.php:55
+#, php-format
+msgid ""
+"The plugin requires PHP 5.4.0 or greater. \n"
+"            You have PHP %s, so this theme WILL NOT WORK on this WordPress "
+"website.\n"
+"            Please ask your hosting provider to update your PHP version to "
+"5.4.0 or higher.\n"
+"            If you have any questions or complaints, please contact us at "
+"support@codefactory47.com\n"
+"            "
+msgstr ""
+
+#: themes/realtyspace/lib/inc/class-cf47rs-theme-plugin-guard.php:30
+msgid "Website under Maintenance"
+msgstr ""
+
+#: themes/realtyspace/lib/inc/class-cf47rs-theme-plugin-guard.php:31
+msgid ""
+"We are performing scheduled maintenance. We will be back on-line shortly!"
+msgstr ""
+
+#: themes/realtyspace/lib/inc/class-cf47rs-theme-plugin-guard.php:33
+msgid "You are almost done!"
+msgstr ""
+
+#: themes/realtyspace/lib/inc/class-cf47rs-theme-plugin-guard.php:37
+#, php-format
+msgid ""
+"The last step is to update Realtyspace Companion plugin to a new version. "
+"<a href=\"%s\">Click here to proceed</a> and press \"Update\".\n"
+"                                 Don't worry, this message is visible only "
+"to you."
+msgstr ""
+
+#: themes/realtyspace/lib/inc/class-cf47rs-theme-plugin-guard.php:54
+#, php-format
+msgid ""
+"You are almost done! The last step is to update Realtyspace Companion "
+"plugin to a new version. <a href=\"%s\">Click here to proceed</a> and "
+"press \"Update\"."
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/customizer/ArchiveOptions.php:44
+#: themes/realtyspace/lib/module/agent/customizer/SingleOptions.php:45
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:56
+#: themes/realtyspace/lib/module/dsidxpress/customizer/SingleOptions.php:41
+#: themes/realtyspace/lib/module/faq/customizer/ArchiveOptions.php:44
+#: themes/realtyspace/lib/module/faq/customizer/SingleOptions.php:44
+#: themes/realtyspace/lib/module/ihomefinder/customizer/SingleOptions.php:42
+#: themes/realtyspace/lib/module/page/customizer/SingleOptions.php:39
+#: themes/realtyspace/lib/module/post/customizer/ArchiveOptions.php:37
+#: themes/realtyspace/lib/module/post/customizer/SingleOptions.php:38
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:44
+#: themes/realtyspace/lib/module/property/customizer/SingleOptions.php:44
+#: themes/realtyspace/lib/module/testimonial/customizer/ArchiveOptions.php:44
+#: themes/realtyspace/lib/module/testimonial/customizer/SingleOptions.php:44
+msgid "Layout"
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/customizer/ArchiveOptions.php:55
+msgid "Display mode"
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/customizer/ArchiveOptions.php:58
+#: themes/realtyspace/lib/module/agent/customizer/SingleOptions.php:89
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:151
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:163
+msgid "List"
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/customizer/ArchiveOptions.php:59
+#: themes/realtyspace/lib/module/agent/customizer/SingleOptions.php:90
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:150
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:162
+msgid "Grid"
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/customizer/ArchiveOptions.php:66
+msgid "Items per page"
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/customizer/ArchiveOptions.php:67
+msgid "Set to -1 to display all testimonials on a single page"
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/customizer/SingleOptions.php:64
+msgid "Hide agent info"
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/customizer/SingleOptions.php:79
+msgid "Hide properties"
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/customizer/SingleOptions.php:86
+msgid "Property display mode"
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/customizer/SingleOptions.php:96
+msgid "Property grid size"
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/customizer/SingleOptions.php:99
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:64
+msgid "Small"
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/customizer/SingleOptions.php:100
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:65
+msgid "Medium"
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/customizer/SingleOptions.php:101
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:66
+msgid "Large"
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/customizer/SingleOptions.php:115
+msgid "Properties per page"
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/customizer/SingleOptions.php:116
+msgid "Set to -1 to display all properties on a single page"
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/customizer/SingleOptions.php:121
+msgid "Show agent contact form"
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/customizer/SingleOptions.php:134
+#: themes/realtyspace/lib/module/contact/ContactWidget.php:16
+#: themes/realtyspace/views/modules/agent/widgets/single-agent/form.twig:6
+#: themes/realtyspace/views/modules/contact/widgets/contact-form/form.twig:4
+msgid "Contact Form 7"
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/section/AgentsConfig.php:50
+msgid "Agent Grid Section"
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/section/AgentsConfig.php:60
+msgid "Our agents"
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/section/AgentsConfig.php:126
+msgid "Agents Grid section"
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/section/AgentsVcConfig.php:43
+msgid "Agents section"
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/viewmodel/UserViewModel.php:56
+msgid "Tel."
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/widget/Agents.php:14
+#: themes/realtyspace/views/modules/agent/widgets/single-agent/form.twig:5
+msgid "Agent list"
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/widget/SingleAgent.php:21
+msgid "Single agent"
+msgstr ""
+
+#: themes/realtyspace/lib/module/agent/widget/SingleAgent.php:39
+msgid "Context-dependent"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:59
+msgid "Layout type"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:63
+msgid "Wide"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:64
+msgid "Boxed"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:81
+msgid "Enable scrollup button"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:90
+msgid "Base configuration"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:102
+msgid "Preloader enabled"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:110
+msgid "Use custom background?"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:117
+msgid "Background pattern"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:123
+#, php-format
+msgid "Make sure to set <a data-focus=\"%s\">Layout</a> type to Boxed first!"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:194
+msgid "Use custom main background?"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:201
+msgid "Main Background color"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:223
+msgid "Main Background image"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:243
+msgid "Main padding"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:262
+msgid "Set custom base font?"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:270
+msgid "Base font"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:295
+msgid "Set custom titles font?"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:303
+msgid "Titles font"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:325
+msgid "Section titles"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:350
+msgid "Section headings"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:381
+msgid "Header Bar"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:385
+msgid "Phone number"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:387
+msgid "+1-800-555-0199"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:389
+msgid "Leave empty to hide"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:393
+msgid "Display currency dropdown"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:402
+msgid "Secondary currency choices"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:411
+msgid "Currency Name"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:428
+msgid "Display area switcher"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:434
+msgid "Display social profiles"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:437
+msgid "Make sure to add them first in Theme Settings / Social Profiles"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:441
+msgid "Display login/register button"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:447
+msgid "Display language dropdown"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:453
+msgid "Theme"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:464
+msgid "Use custom header background?"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:514
+msgid "Navbar"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:519
+msgid "Use custom navbar background?"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:525
+msgid "Navbar background color"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:573
+msgid "Use custom navbar color?"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:579
+msgid "Menu color"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:600
+msgid "Display breadcrumbs"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:604
+msgid ""
+"The breadcrumbs will be visible on all pages except frontpage. \n"
+"                    Make sure you have the breadcrumb-navx plugin "
+"installed!"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:611
+msgid "Display fixed menu"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:615
+msgid "Show menu on scroll"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:619
+msgid "Fixed menu display offset"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:623
+msgid ""
+"Pixel distance from the page top when the fixed header should be displayed"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:636
+msgid "Logo"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:642
+msgid "Use logo type?"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:647
+msgid "SVG"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:648
+msgid "Text logo"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:653
+msgid "Brand Logo"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:665
+msgid "Large Logo Size"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:684
+msgid "Small Logo Size"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:706
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:858
+msgid "Add different small logo?"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:708
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:860
+msgid ""
+"Displayed on smaller screens. If not specified, the standart version will "
+"be displayed"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:723
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:875
+msgid "Small Logo"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:743
+msgid "Add hero logo?"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:745
+msgid ""
+"Displayed above hero section on main page. If not specified, the standart "
+"version will be displayed"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:760
+msgid "Hero Logo"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:778
+msgid "Logo text"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:790
+msgid "Logo font web"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:814
+msgid "Logo font mobile"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:838
+msgid "Logo SVG"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:844
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:881
+msgid "Add SVG"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:900
+msgid "Logo position"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:905
+msgid "Center"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:917
+msgid "Footer"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:921
+msgid "Use custom footer background?"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:966
+msgid "Padding bottom"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:981
+msgid "Use custom footer titles?"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:987
+msgid "Footer titles"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1013
+msgid "Copyright text"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1029
+msgid "Use custom widget background?"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1035
+msgid "Widget background image"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1054
+msgid "Widget Background color"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1074
+msgid "Use custom sidebar titles?"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1080
+msgid "Sidebar titles"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1106
+msgid "Sidebar headings"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1137
+msgid "Share buttons"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1142
+msgid "Sharing links"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1143
+msgid "Customize the share links to social services"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1145
+#: themes/realtyspace/lib/module/social/customizer/ProfileSettings.php:38
+msgid "Facebook"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1146
+#: themes/realtyspace/lib/module/social/customizer/ProfileSettings.php:48
+msgid "Twitter"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1147
+#: themes/realtyspace/lib/module/social/customizer/ProfileSettings.php:43
+msgid "Google+"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1148
+msgid "Pinterest"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1149
+msgid "LinkedIn"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1150
+msgid "StumbleUpon"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1163
+msgid "Color scheme"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1167
+msgid "Theme color scheme"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1184
+msgid "Use custom color scheme"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1189
+msgid "Primary color"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1201
+msgid "Secondary color"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1213
+msgid "Secondary color (dark shade)"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1214
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1227
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1240
+msgid "This color is used for some page elements"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1226
+msgid "Default color "
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/LayoutConfig.php:1239
+msgid "Button color "
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/OtherSettings.php:27
+msgid "Other"
+msgstr ""
+
+#: themes/realtyspace/lib/module/common/customizer/OtherSettings.php:35
+msgid "Profile page"
+msgstr ""
+
+#: themes/realtyspace/lib/module/faq/customizer/ArchiveOptions.php:54
+msgid "Show categories"
+msgstr ""
+
+#: themes/realtyspace/lib/module/navmenu/mainmenu/Walker.php:26
+msgid "Back"
+msgstr ""
+
+#: themes/realtyspace/lib/module/post/Widget.php:11
+msgid "Latest posts"
+msgstr ""
+
+#: themes/realtyspace/lib/module/post/viewmodel/SearchViewModel.php:8
+#: themes/realtyspace/lib/module/property/widget/Filter.php:19
+#: plugins/cf47-realtyspace/views/modules/property/sections/hero.twig:63
+#: plugins/cf47-realtyspace/views/modules/property/sections/map.twig:38
+#: plugins/cf47-realtyspace/views/modules/property/sections/search.twig:22
+#: plugins/cf47-realtyspace/views/modules/property/shortcodes/search-bar.twig:4
+#: themes/realtyspace/views/modules/property/widgets/property-filter/widget.twig:15
+msgid "Search"
+msgstr ""
+
+#: themes/realtyspace/lib/module/post/viewmodel/SearchViewModel.php:13
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/Init.php:81
+msgid "Drop files here to upload"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/Init.php:82
+msgid "Your browser does not support drag'n'drop file uploads."
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/Init.php:83
+msgid ""
+"Please use the fallback form below to upload your files like in the olden "
+"days."
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/Init.php:84
+msgid "You can't upload files of this type."
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/Init.php:85
+msgid "Server responded with {{statusCode}} code."
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/Init.php:86
+msgid "Cancel upload"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/Init.php:87
+msgid "Are you sure you want to cancel this upload?"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/Init.php:88
+msgid "Remove file"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/Init.php:89
+msgid "You can not upload any more files."
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:61
+msgid "Grid size"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:73
+msgid "Show search toolbar"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:79
+msgid "Show sorting"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:92
+msgid "Show view"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:105
+msgid "Show limit per page"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:118
+msgid "Show facets"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:124
+msgid "Show total found in page subtitle"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:129
+msgid "Map mode"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:133
+#: themes/realtyspace/views/modules/property/submit-list.twig:61
+msgid "Hide"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:134
+msgid "Search results"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:135
+msgid "Hero"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:141
+msgid "Enabled view modes"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:152
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:164
+msgid "Table"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:158
+msgid "Default view mode"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:170
+msgid "Table View Columns"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:188
+#: themes/realtyspace/lib/module/property/submit/formfield/Coordinates.php:31
+#: themes/realtyspace/views/modules/property/submit.twig:130
+msgid "Location"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/ArchiveOptions.php:189
+msgid "\"Details\" button"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/SingleOptions.php:67
+#: plugins/cf47-realtyspace/views/modules/property/sections/map.twig:19
+#: themes/realtyspace/views/modules/property/macro.twig:424
+msgid "Show map"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/SingleOptions.php:86
+msgid "Map type"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/SingleOptions.php:90
+msgid "Roadmap"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/SingleOptions.php:91
+msgid "Hybrid"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/SingleOptions.php:92
+msgid "Terrain"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/SingleOptions.php:93
+msgid "Satellite"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/SingleOptions.php:105
+msgid "Show street view"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/SingleOptions.php:111
+msgid "Show related properties"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/SingleOptions.php:117
+msgid "Show sharing icons"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/SingleOptions.php:123
+msgid "Show price box"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/SingleOptions.php:129
+msgid "Show The space section"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/SingleOptions.php:135
+msgid "Show amenities"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/SingleOptions.php:141
+msgid "Show tags"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/SingleOptions.php:147
+msgid "Show description"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/SingleOptions.php:153
+msgid "Show agent"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/SingleOptions.php:159
+msgid "Agent contact form"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/SingleOptions.php:172
+msgid "Show slider thumbnails"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/SingleOptions.php:178
+msgid "Show original photos in slider"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/SingleOptions.php:184
+msgid "Show slider fixed height"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/customizer/SingleOptions.php:197
+msgid "Show original photos in popup"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/submit/AjaxListener.php:84
+msgid "The property has been successfully removed"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/submit/AjaxListener.php:110
+msgid "The post status was successfully changed"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/submit/AjaxListener.php:111
+#: themes/realtyspace/views/modules/property/submit-list.twig:49
+msgid "Hidden"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/submit/AjaxListener.php:138
+msgid "The property status was successfully changed"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/submit/AjaxListener.php:139
+#: themes/realtyspace/views/modules/property/submit-list.twig:51
+msgid "Published"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/submit/formfield/Agent.php:32
+msgid "Show my info as agent"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/submit/formfield/Area.php:19
+#, php-format
+msgid "Area (%s)"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/submit/formfield/Features.php:36
+msgid "Property features"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/submit/formfield/Id.php:17
+msgid "ID"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/submit/formfield/IsFeatured.php:18
+msgid "Is featured?"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/submit/formfield/LandArea.php:20
+#, php-format
+msgid "Land area (%s)"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/submit/formfield/Location.php:38
+msgid "Property location"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/submit/formfield/Price.php:17
+#, php-format
+msgid "Price (%s)"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/submit/formfield/Tags.php:36
+msgid "Property tags"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/submit/formfield/Title.php:18
+msgid "Property title"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/submit/formfield/VideoTour.php:17
+msgid "Video tour URL"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/viewmodel/ArchiveViewModel.php:76
+#, php-format
+msgid "Found %s results"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/widget/Filter.php:17
+msgid "Property search"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/widget/Listing.php:14
+msgid "Property recent/featured"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/widget/Listing.php:34
+msgid "Random"
+msgstr ""
+
+#: themes/realtyspace/lib/module/property/widget/Listing.php:38
+msgid "Specific IDs"
+msgstr ""
+
+#: themes/realtyspace/lib/module/social/LinksWidget.php:11
+#: themes/realtyspace/lib/module/social/LinksWidget.php:13
+msgid "Social links"
+msgstr ""
+
+#: themes/realtyspace/lib/module/social/customizer/ProfileSettings.php:27
+msgid "Me / Social profiles"
+msgstr ""
+
+#: themes/realtyspace/lib/module/social/customizer/ProfileSettings.php:56
+msgid "Profile name"
+msgstr ""
+
+#: themes/realtyspace/lib/module/social/customizer/ProfileSettings.php:61
+msgid "Profile link"
+msgstr ""
+
+#: themes/realtyspace/lib/module/user/Init.php:28
+msgid "Please login to access this page"
+msgstr ""
+
+#: themes/realtyspace/lib/module/user/Init.php:43
+msgid "Account registration"
+msgstr ""
+
+#: themes/realtyspace/lib/module/user/UserWidget.php:14
+msgid "User profile"
+msgstr ""
+
+#: themes/realtyspace/page-templates/template-profile.php:37
+msgid "The profile has been updated"
+msgstr ""
+
+#: themes/realtyspace/page-templates/template-profile.php:39
+#: themes/realtyspace/page-templates/template-profile.php:42
+#: themes/realtyspace/page-templates/template-propertysubmit.php:100
+msgid "Some error have occured."
+msgstr ""
+
+#: themes/realtyspace/page-templates/template-propertysubmit.php:74
+msgid ""
+"The property has been submitted and will be sent for approval after "
+"payment."
+msgstr ""
+
+#: themes/realtyspace/page-templates/template-propertysubmit.php:79
+msgid "The property has been submitted and is sent for approval."
+msgstr ""
+
+#: themes/realtyspace/page-templates/template-propertysubmit.php:84
+msgid "The property has been sucessfully published."
+msgstr ""
+
+#: themes/realtyspace/page-templates/template-submitted-properties.php:45
+msgid ""
+"The payment has been made. Once your submission will be reviewed, the "
+"listing will be published."
+msgstr ""
+
+#: themes/realtyspace/page-templates/template-submitted-properties.php:54
+msgid ""
+"The payment has failed. Please contact site administrator for more details."
+msgstr ""
+
+#: plugins/cf47-realtyspace/views/modules/property/sections/hero.twig:19
+msgid "Property Map"
+msgstr ""
+
+#: plugins/cf47-realtyspace/views/modules/property/sections/map.twig:37
+#: plugins/cf47-realtyspace/views/modules/property/sections/search.twig:21
+#: themes/realtyspace/views/modules/property/widgets/property-filter/widget.twig:14
+msgid "Reset"
+msgstr ""
+
+#: plugins/cf47-realtyspace/views/modules/property/sections/property-group/customizer.twig:59
+msgid "More properties"
+msgstr ""
+
+#: plugins/cf47-realtyspace/views/modules/property/sections/slider.twig:39
+#: themes/realtyspace/views/modules/property/macro.twig:408
+#: themes/realtyspace/views/modules/property/misc/map-tooltip.twig:29
+msgid "Details"
+msgstr ""
+
+#: themes/realtyspace/views/macro.twig:54
+msgid "Previous"
+msgstr ""
+
+#: themes/realtyspace/views/macro.twig:67
+msgid "Next"
+msgstr ""
+
+#: themes/realtyspace/views/macro.twig:149
+msgid "No items"
+msgstr ""
+
+#: themes/realtyspace/views/modules/agent/macro.twig:26
+msgid "more details"
+msgstr ""
+
+#: themes/realtyspace/views/modules/agent/macro.twig:101
+#: themes/realtyspace/views/modules/agent/pages/single/includes/agent-info.twig:19
+#: themes/realtyspace/views/modules/property/single.twig:350
+msgid "Contact agent"
+msgstr ""
+
+#: themes/realtyspace/views/modules/agent/macro.twig:104
+msgid "Listings"
+msgstr ""
+
+#: themes/realtyspace/views/modules/agent/macro.twig:106
+#, python-format
+msgid "1 property"
+msgid_plural "%s properties"
+msgstr[0] ""
+msgstr[1] ""
+
+#: themes/realtyspace/views/modules/agent/macro.twig:125
+msgid "View Details"
+msgstr ""
+
+#: themes/realtyspace/views/modules/agent/pages/single/includes/agent-info.twig:40
+#: themes/realtyspace/views/modules/property/single.twig:336
+msgid "Contact the Agent"
+msgstr ""
+
+#: themes/realtyspace/views/modules/agent/pages/single/includes/agent-properties.twig:7
+msgid "Agent Listings"
+msgstr ""
+
+#: themes/realtyspace/views/modules/agent/sections/agent-grid.twig:51
+#: themes/realtyspace/views/modules/page/single.twig:19
+#: themes/realtyspace/views/modules/post/archive.twig:17
+#: themes/realtyspace/views/modules/post/section.twig:30
+#: themes/realtyspace/views/modules/post/widgets/recent-posts/widget.twig:26
+msgid "Read more"
+msgstr ""
+
+#: themes/realtyspace/views/modules/agent/widgets/single-agent/form.twig:2
+msgid ""
+"The title and subtext will not be visible, if the widget is first in the "
+"sidebar."
+msgstr ""
+
+#: themes/realtyspace/views/modules/contact/template.twig:25
+msgid "Address:"
+msgstr ""
+
+#: themes/realtyspace/views/modules/contact/template.twig:32
+msgid "Telephone:"
+msgstr ""
+
+#: themes/realtyspace/views/modules/contact/template.twig:36
+msgid "Fax:"
+msgstr ""
+
+#: themes/realtyspace/views/modules/contact/template.twig:44
+msgid "Email:"
+msgstr ""
+
+#: themes/realtyspace/views/modules/contact/template.twig:75
+msgid "Our social profiles"
+msgstr ""
+
+#: themes/realtyspace/views/modules/core/403.twig:4
+msgid "Access denied"
+msgstr ""
+
+#: themes/realtyspace/views/modules/core/404.twig:4
+msgid ""
+"It seems we cannot find what you're looking for. Perhaps searching can "
+"help."
+msgstr ""
+
+#: themes/realtyspace/views/modules/core/form-themes/global.twig:179
+#: themes/realtyspace/views/modules/property/archive.twig:81
+msgid "Clear"
+msgstr ""
+
+#: themes/realtyspace/views/modules/core/form-themes/global.twig:180
+msgid "Accept"
+msgstr ""
+
+#: themes/realtyspace/views/modules/core/form-themes/global.twig:208
+msgid "Range"
+msgstr ""
+
+#: themes/realtyspace/views/modules/core/form-themes/global.twig:209
+msgid "From"
+msgstr ""
+
+#: themes/realtyspace/views/modules/core/form-themes/global.twig:210
+msgid "To"
+msgstr ""
+
+#: themes/realtyspace/views/modules/core/form-themes/global.twig:213
+msgid "Input"
+msgstr ""
+
+#: themes/realtyspace/views/modules/core/form-themes/global.twig:253
+#: themes/realtyspace/views/partials/hero-unit.twig:17
+msgid "Address Map"
+msgstr ""
+
+#: themes/realtyspace/views/modules/core/includes/not-found.twig:14
+msgid "Nothing Found"
+msgstr ""
+
+#: themes/realtyspace/views/modules/dsidxpress/template.twig:16
+#: themes/realtyspace/views/modules/ihomefinder/template.twig:19
+#: themes/realtyspace/views/modules/page/single.twig:24
+#: themes/realtyspace/views/modules/post/single.twig:22
+msgid "Share this post"
+msgstr ""
+
+#: themes/realtyspace/views/modules/faq/macro.twig:16
+msgid "Close"
+msgstr ""
+
+#: themes/realtyspace/views/modules/post/archive.twig:23
+#: themes/realtyspace/views/modules/post/search.twig:21
+#: themes/realtyspace/views/modules/property/archive.twig:122
+msgid "The search did not return any results"
+msgstr ""
+
+#: themes/realtyspace/views/modules/post/archive.twig:24
+#: themes/realtyspace/views/modules/post/search.twig:22
+#: themes/realtyspace/views/modules/property/archive.twig:123
+msgid "Please try again with different criteria."
+msgstr ""
+
+#: themes/realtyspace/views/modules/post/section.twig:42
+msgid "See more"
+msgstr ""
+
+#: themes/realtyspace/views/modules/post/widgets/recent-posts/widget.twig:36
+msgid "More articles"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/archive.twig:32
+msgid "View:"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/macro.twig:75
+#: themes/realtyspace/views/modules/property/macro.twig:87
+#: themes/realtyspace/views/modules/property/macro.twig:220
+msgid "View details"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/macro.twig:77
+#: themes/realtyspace/views/modules/property/macro.twig:165
+#: themes/realtyspace/views/modules/property/macro.twig:201
+#: themes/realtyspace/views/modules/property/macro.twig:396
+msgid "Built-Up"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/macro.twig:78
+#: themes/realtyspace/views/modules/property/macro.twig:160
+#: themes/realtyspace/views/modules/property/macro.twig:199
+#: themes/realtyspace/views/modules/property/macro.twig:394
+#: themes/realtyspace/views/modules/property/single.twig:209
+msgid "Land Size"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/macro.twig:218
+msgid "Added date"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/macro.twig:288
+msgid "Pay with PayPal"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/macro.twig:300
+msgid "Property type:"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/macro.twig:304
+msgid "Area:"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/macro.twig:308
+msgid "Rooms:"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/macro.twig:315
+msgid "Bathrooms:"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/macro.twig:319
+msgid "Bedrooms:"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/macro.twig:337
+msgid "No properties available"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/macro.twig:374
+msgid "More"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/macro.twig:384
+msgid "Location Address"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/single.twig:30
+msgid "Share this:"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/single.twig:37
+msgid "Print"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/single.twig:203
+msgid "The space"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/single.twig:212
+msgid "Year Built"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/single.twig:227
+#: themes/realtyspace/views/modules/property/submit.twig:81
+msgid "Amenities"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/single.twig:249
+msgid "More information ..."
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/single.twig:269
+msgid "Show attachments"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/single.twig:313
+msgid "Street view"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/single.twig:334
+msgid "Contact the owner"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/single.twig:412
+msgid "Similar properties"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/submit-list.twig:20
+msgid "Submit property"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/submit-list.twig:45
+msgid "Awaiting payment"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/submit-list.twig:47
+msgid "Awaiting review"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/submit-list.twig:72
+msgid "Edit"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/submit-list.twig:79
+#: themes/realtyspace/views/modules/property/submit-list.twig:120
+msgid "Delete"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/submit-list.twig:103
+msgid "You did not submit any properties yet"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/submit-list.twig:117
+msgid "Are you sure?"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/submit-list.twig:121
+msgid "Cancel"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/submit.twig:22
+msgid "Basic information"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/submit.twig:22
+msgid "Fields marked with * are required!"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/submit.twig:62
+msgid "Listing"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/submit.twig:81
+msgid "You can choose amenities that you have."
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/submit.twig:91
+msgid "You can choose tags that you have."
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/submit.twig:101
+msgid "Special features"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/submit.twig:130
+msgid "Set Google Maps location"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/submit.twig:138
+msgid "Photos"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/submit.twig:138
+msgid "The first image will be set as property cover"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/submit.twig:149
+#: themes/realtyspace/views/modules/user/template.twig:72
+msgid "Save"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/widgets/property-filter/form.twig:5
+msgid "Search fields:"
+msgstr ""
+
+#: themes/realtyspace/views/modules/property/widgets/property-filter/form.twig:11
+msgid "Drag and drop to sort the fields."
+msgstr ""
+
+#: themes/realtyspace/views/modules/user/includes/header-nav.twig:31
+#: themes/realtyspace/views/modules/user/includes/profile-card.twig:30
+msgid "Profile"
+msgstr ""
+
+#: themes/realtyspace/views/modules/user/includes/header-nav.twig:37
+#: themes/realtyspace/views/modules/user/includes/profile-card.twig:35
+msgid "Log out"
+msgstr ""
+
+#: themes/realtyspace/views/modules/user/template.twig:39
+msgid "About me"
+msgstr ""
+
+#: themes/realtyspace/views/modules/user/template.twig:50
+msgid "Change your password"
+msgstr ""
+
+#: themes/realtyspace/views/modules/user/widgets/user-profile/form.twig:3
+msgid "This widget will be visible only to logged-in users"
+msgstr ""
+
+#: themes/realtyspace/views/partials/auth.twig:10
+msgid "Log in"
+msgstr ""
+
+#: themes/realtyspace/views/partials/auth.twig:19
+#: themes/realtyspace/views/partials/register.twig:23
+msgid "Sign up"
+msgstr ""
+
+#: themes/realtyspace/views/partials/auth.twig:31
+msgid "Hi"
+msgstr ""
+
+#: themes/realtyspace/views/partials/footer.twig:18
+msgid "All rights reserved."
+msgstr ""
+
+#: themes/realtyspace/views/partials/header.twig:173
+msgid "Organizer"
+msgstr ""
+
+#: themes/realtyspace/views/partials/login.twig:3
+msgid "Login in your account"
+msgstr ""
+
+#: themes/realtyspace/views/partials/login.twig:5
+msgid "This page is available for authentificated users only!"
+msgstr ""
+
+#: themes/realtyspace/views/partials/login.twig:10
+#: themes/realtyspace/views/partials/register.twig:6
+msgid "Username"
+msgstr ""
+
+#: themes/realtyspace/views/partials/login.twig:21
+msgid "Forgot password?"
+msgstr ""
+
+#: themes/realtyspace/views/partials/login.twig:23
+msgid "Sign in"
+msgstr ""
+
+#: themes/realtyspace/views/partials/login.twig:27
+msgid "Remember me"
+msgstr ""
+
+#: themes/realtyspace/views/partials/login.twig:32
+msgid "Not a user yet?"
+msgstr ""
+
+#: themes/realtyspace/views/partials/login.twig:33
+msgid "Get an account"
+msgstr ""
+
+#: themes/realtyspace/views/partials/register.twig:2
+msgid "Sign up a new account"
+msgstr ""
+
+#: themes/realtyspace/views/partials/register.twig:10
+msgid "E-mail"
+msgstr ""
+
+#: themes/realtyspace/views/partials/register.twig:15
+msgid "Back to"
+msgstr ""
+
+#: themes/realtyspace/views/partials/register.twig:16
+msgid "Log In"
+msgstr ""

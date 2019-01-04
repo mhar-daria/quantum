@@ -1,0 +1,14 @@
+{% import 'macro-widget-form.twig' as form %}
+{{ form.text_field(title) }}
+{{ form.text_field(subtext) }}
+
+<p>{{ __('Search fields:', 'realtyspace')|format() }}</p>
+<ul id="{{ widget_id }}-sortable-list">
+  {% for field in field_order.value %}
+    {{ form.checkbox_sort_field(attribute(_context, ('show_field_'~field)), field|capitalize|replace({'_': ' '}), field) }}
+  {% endfor %}
+</ul>
+<i>{{ __('Drag and drop to sort the fields.', 'realtyspace')|format() }}</i>
+<br>
+<br>
+{{ form.hidden_field(field_order) }}

@@ -1,0 +1,195 @@
+<header class="
+header
+{% if layout.show_hero_header(page) %}
+ header--overlay header--dark
+{% else %}
+{{ option.preheader_theme == 'dark' ? 'header--dark' }}
+{{ option.preheader_theme == 'white' ? 'header--white' }}
+{{ option.preheader_theme == 'standart' ? 'header--brand' }}
+{% endif %}
+">
+  <div class="container">
+    <div class="header__row">
+      <a href="{{ fn('home_url') }}" class="header__logo" title="{{ bloginfo('name') }}">
+        {% set header_logo_type = option.header_logo_type %}
+
+        {% if header_logo_type == 'text' %}
+          {{ option.header_logo_text|raw }}
+        {% elseif header_logo_type == 'image' %}
+          {% if option.use_small_logo and option.header_logo_small is not empty %}
+            <img src="{{ option.header_logo_small }}" alt="{{ bloginfo('name') }}">
+          {% else %}
+            <img src="{{ option.header_logo }}" alt="{{ bloginfo('name') }}">
+          {% endif %}
+
+        {% elseif header_logo_type == 'svg' %}
+
+          {% if option.use_small_logo_svg and option.header_logo_small_svg is not empty %}
+            {{ option.header_logo_small_svg|raw }}
+          {% else %}
+            {{ option.header_logo_svg|raw }}
+          {% endif %}
+
+        {% else %}
+          <svg>
+            <use xlink:href="#icon-logo--mob"></use>
+          </svg>
+        {% endif %}
+      </a>
+      <div class="header__settings">
+        {% if wpcurrency.show_preheader_dropdown %}
+          <div class="header__settings-column">
+            <div class="dropdown dropdown--header">
+              <button data-toggle="dropdown" type="button" class="dropdown-toggle dropdown__btn">
+                <svg class="header__settings-icon">
+                  <use xlink:href="#icon-money"></use>
+                </svg>
+                {{ wpcurrency.active }}
+              </button>
+              <div class="dropdown__menu js-currency-switch">
+                <ul>
+                  {% for currency in wpcurrency.enabled_list %}
+                    <li class="dropdown__item">
+                      <a href="{{ wpcurrency.switch_url(currency) }}" class="dropdown__link">{{ currency }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- end of block .header__settings-column-->
+        {% endif %}
+
+
+        {% if wparea.show_preheader_control %}
+          {% set module_id = js_module('propertyAreaSwitcher', {
+          url: wparea.ajax_url,
+          }) %}
+          <div class="header__settings-column">
+            <div class="switch switch--header">
+              <label>{{ wparea.primary_label|raw }}
+                <input id="{{ module_id }}" type="checkbox"
+                    {% if wparea.is_secondary_active %}
+                      checked
+                    {% endif %}
+                    {% if wparea.is_secondary_active %}
+                      value="{{ wparea.primary_value }}"
+                    {% else %}
+                      value="{{ wparea.secondary_value }}"
+                    {% endif %}
+                >
+                <span class="lever"></span>{{ wparea.secondary_label|raw }}
+              </label>
+            </div>
+          </div>
+          <!-- end of block .header__settings-column-->
+        {% endif %}
+        {% if option.preheader_display_lang_choice %}
+          {% if wpglt is defined %}
+            {% if wpglt.languages|length %}
+              <div class="header__settings-column">
+                <div class="dropdown dropdown--header js-glt">
+                  <button data-toggle="dropdown" type="button" class="dropdown-toggle dropdown__btn">
+                    <svg class="header__settings-icon">
+                      <use xlink:href="#icon-earth"></use>
+                    </svg>
+                    <span class="js-current-glt-lang notranslate"></span>
+                  </button>
+                  <div class="dropdown__menu">
+                    <ul>
+                      {% for lang in wpglt.languages %}
+                        <li class="dropdown__item ">
+                          {{ dd }}
+                          <a data-lang="{{ lang.code }}" class="nturl notranslate {{ lang.code }} dropdown__link js-gtl-item">
+                            {{ lang.name }}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- end of block .header__settings-column-->
+            {% endif %}
+          {% else %}
+            {% set languages = wpml_languages() %}
+            {% if languages|length %}
+              <div class="header__settings-column">
+                <div class="dropdown dropdown--header">
+                  <button data-toggle="dropdown" type="button" class="dropdown-toggle dropdown__btn">
+                    <svg class="header__settings-icon">
+                      <use xlink:href="#icon-earth"></use>
+                    </svg>
+                    {% for lang in languages %}
+                      {% if lang.active %}
+                        {{ lang.native_name }}
+                      {% endif %}
+                    {% endfor %}
+                  </button>
+                  <div class="dropdown__menu">
+                    <ul>
+                      {% for lang in languages %}
+                        <li class="dropdown__item ">
+                          <a href="{{ lang.url }}"
+                             class="{% if lang.active %}active{% endif %} dropdown__link">
+                            {{ lang.native_name }}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- end of block .header__settings-column-->
+            {% endif %}
+          {% endif %}
+        {% endif %}
+      </div>
+      {% if option.preheader_phone %}
+        <div class="header__contacts {% if header.social_profiles %} header__contacts--social {% endif %}">
+          <a href="tel:{{ option.preheader_phone }}" class="header__phone">
+            <svg class="header__phone-icon">
+              <use xlink:href="#icon-phone"></use>
+            </svg>
+            <span class="header__span">{{ option.preheader_phone }}</span>
+          </a>
+        </div>
+      {% endif %}
+      {% if header.social_profiles %}
+        <div class="header__social {% if option.preheader_phone %} header__social--contacts {% endif %}">
+          <div class="social social--header social--circles">
+            {% for service in header.social_profiles %}
+              <a target="_blank" href="{{ service.link|e('esc_url') }}" class="social__item" title="{{ service.name }}">
+                {{ macro.fa_icon(service.icon) }}
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+      <!-- end of block .header__contacts-->
+      {% if header.show_auth %}
+        {% if 'optima-express/iHomefinder.php' is activated %}
+          <div class="auth auth--header">
+            <a href="{{ wpurl.url('property-organizer-login') }}" class="auth__name"> {{ __('Organizer', 'realtyspace') }}</a>
+
+          </div>
+
+        {% else %}
+          {% include 'partials/auth.twig' %}
+
+        {% endif %}
+      {% endif %}
+      <button type="button" class="header__navbar-toggle js-navbar-toggle">
+        <svg class="header__navbar-show">
+          <use xlink:href="#icon-menu"></use>
+        </svg>
+        <svg class="header__navbar-hide">
+          <use xlink:href="#icon-menu-close"></use>
+        </svg>
+      </button>
+      <!-- end of block .header__navbar-toggle-->
+    </div>
+  </div>
+</header>
+<!-- END HEADER-->
+{% include 'partials/top-nav.twig' %}

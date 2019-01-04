@@ -1,0 +1,41 @@
+{% from 'modules/user/macro.twig' import avatar %}
+<div class="auth auth--header">
+  <ul class="auth__nav">
+    {% if not logged_in %}
+      <li class="dropdown auth__nav-item">
+        <button data-toggle="dropdown" type="button" class="dropdown-toggle js-auth-nav-btn auth__nav-btn">
+          <svg class="auth__icon-user">
+            <use xlink:href="#icon-user"></use>
+          </svg>
+          <span class="header__span">{{ __('Log in', 'realtyspace') }} {{ can_register ? '/' }}</span>
+        </button>
+        <div class="dropdown__menu auth__dropdown--login">
+          {% include 'partials/login.twig' with {'type': 'dropdown'} %}
+        </div>
+      </li>
+      {% if can_register %}
+        <li class="dropdown auth__nav-item">
+          <button data-toggle="dropdown" type="button" class="dropdown-toggle auth__nav-btn">
+            <span class="header__span">{{ __('Sign up', 'realtyspace') }}</span>
+          </button>
+          <div class="dropdown__menu auth__dropdown--register">
+            {% include 'partials/register.twig' with {'type': 'dropdown'} %}
+          </div>
+        </li>
+      {% endif %}
+    {% else %}
+      <li class="dropdown auth__nav-item">
+        <button data-toggle="dropdown" type="button" class="dropdown-toggle js-auth-nav-btn auth__nav-btn">
+          {{ avatar(current_user.id, 50, 'auth__avatar') }}
+          <span class="auth__name">
+            {{ __('Hi', 'realtyspace') }} {{ current_user.name }}
+          </span>
+        </button>
+        <div class="dropdown__menu auth__dropdown--logged-in js-user-logged-in">
+          {{ include('modules/user/includes/header-nav.twig') }}
+        </div>
+      </li>
+    {% endif %}
+  </ul>
+  <!-- end of block .auth header-->
+</div>
